@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Arkipelago";
+  src: url("./fonts/Arkipelago.woff2"), url("./fonts/Arkipelago.woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.pg-banner {
+  position: relative;
+}
+
+section {
+  width: 100%;
+}
+
+.pg-banner .banner-bg {
+  height: 540px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.pg-banner .hero__title {
+  font-family: "Arkipelago";
+  font-size: 9vw;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: #fff;
+}
+
+.pg-header {
+  background: #fff;
+  position: relative;
+  z-index: 1;
+}
+.pg-header .header-content {
+  text-align: center;
+  position: relative;
+}
+.pg-header .header-content .nav-call {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+.pg-header .header-content .nav-call img {
+  height: 60px;
+  width: auto;
+}
+.pg-header .header-content .logo {
+}
+.pg-header .header-content .logo img {
+  height: 70px;
+  width: auto;
+}
+.offcanvas-menu {
+}
+.offcanvas-menu ul {
+  list-style: none;
+}
+.offcanvas-menu ul li {
+  line-height: 1.6;
+}
+.offcanvas-menu ul li:not(:last-child) {
+  border-bottom: 1px solid rgba(84, 84, 84, 0.11);
+}
+.offcanvas-menu ul li a {
+  color: rgb(84, 84, 84);
+  padding: 14px 0;
+  display: block;
+}
+
+.offcanvas-menu ul li a {
+    font-size: 20px;
+}
+.offcanvas-menu ul li a:hover {
+  color: #b29058;
+}
+
+/*  inner page banner  */
+.pg-banner {
+  position: relative;
+}
+.pg-banner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+}
+.pg-banner .banner-bg {
+  height: 540px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.pg-banner .hero__title {
+  font-family: "Arkipelago";
+  font-size: 9vw;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  color: #fff;
+}
+
+.pg-banner .hero__filter {
+  font-family: "Arkipelago";
+  font-size: 9vw;
+  font-weight: 500;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  color: #fff;
+}
+
+.nav-menu {
+  background: #fff;
+  color: #b29058;
+  min-width: 200px;
+  text-align: center;
+  border-radius: 0.25rem;
+  padding: 7px 20px;
+  border: 2px solid #b29058;
+  text-decoration: none;
+}
+
+.nav-menu:hover {
+    background: #b1945c;
+    transition: all .15s ease;
+    color:#ffffff;
+}
+
+/*  property-list page  */
+.property-list {
+  height: 660px;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+.property-list .vila-blank {
+  font-size: 18px;
+  font-weight: 600;
+  color: #dc3545;
+  text-align: center;
+  margin: 3rem 0;
+}
+.property-list .list-item {
+  display: flex;
+  border: 2px solid #e1e1e1;
+  padding: 16px;
+  width: calc(100% - 7px);
+  position: relative;
+}
+.property-list .list-item:hover {
+  border: 2px solid #a7905e;
+  transition: all 0.2s;
+}
+.property-list .list-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+.property-list .slide-item {
+}
+.property-list .slick-slide {
+  margin: 0 15px;
+}
+.property-list .slick-list {
+  margin: 0 -15px;
+}
+.property-list .list-item .property-img {
+  flex: 0 0 auto;
+  width: 50%;
+}
+.property-list .list-item .property-img img {
+  max-width: 100%;
+  height: auto;
+}
+.property-list .list-item .prop-list-info {
+  flex: 0 0 auto;
+  width: 50%;
+  margin-left: 20px;
+}
+.property-list .prop-list-info {
+}
+.property-list .prop-list-info .prop-titl {
+  font-weight: 700;
+}
+.property-list .prop-list-info .prop-titl:hover {
+  color: #0a4239;
+}
+.property-list .prop-list-info .info-title {
+  font-size: 18px;
+  color: inherit;
+}
+.property-list .prop-list-info .prop-opt {
+  list-style: none;
+  padding: 0;
+}
+.property-list .prop-list-info .prop-extra {
+}
+.property-list .prop-list-info .prop-share {
+}
+.property-list .prop-list-info .prop-share .btn {
+}
+.property-list .prop-list-info .prop-share .btn:not(:last-child) {
+  margin-right: 10px;
+}
+.property-list .prop-list-info .prop-share .btn.share1 {
+}
+.property-list .prop-list-info .prop-share .btn.share2 {
+  background: #46c756;
+  border-color: #46c756;
+}
+.property-list .prop-list-info .prop-share .btn.share3 {
+}
+.property-filter {
+}
+.property-filter .filter-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+.property-filter .filter-form #form_to {
+  width: 275px;
+}
+.property-filter .filter-form .filter-submit {
+  background: #b1945c;
+  color: #fff;
+  padding: 1rem 1.75rem;
+  border-radius: 0.375rem;
+  transition: all 0.15s ease;
+}
+.property-filter .filter-form .filter-submit:hover {
+  background: #8c6e35;
+}
+.property-filter .filter-form .filter-reset {
+  color: red;
+}
+
+
+@media only screen and (max-width: 576px) {
+  .pg-header .header-content .logo img {
+    height: 55px;
+  }
+
+  .pg-header .header-content .nav-call img {
+    height: 50px;
+    margin-left: -10px;
+  }
+}
+
+@media (max-width: 480px) {
+    .pg-banner .banner-bg {
+        height: 170px;
+        background-size: cover;
+        background-attachment: inherit;
+    }
+}
