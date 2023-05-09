@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="./lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstarp css cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- navbar start  -->
+
+
+    <header class="pg-header">
+        <div class="container-fluid px-md-5">
+            <div class="header-content d-md-flex d-lg-flex  justify-content-between align-items-center">
+                <div class="nav-left-menu d-none  d-xs-none d-sm-none d-md-block"><a href=""
+                        class="nav-menu">Gallery</a>
+                    <a href="" class="nav-menu">Villas</a>
+                </div>
+
+                <a href="javascript:;" class="nav-call  d-sm-block d-md-none" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img src="http://127.0.0.1:5501/Property%20Project/www.rftpm.in/public/frontend/img/icons-06.webp"
+                        alt="">
+                </a>
+                <a href="index.html" class="logo">
+                    <img src="https://www.rftpm.in/public/frontend/img/rftpm_logo_900x.webp" alt="logo">
+                </a>
+
+                <div class="nav-right-menu d-none  d-xs-none d-sm-none d-md-block">
+                    <a href="" class="nav-menu">
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start none" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="offcanvas-menu">
+                    <div class="offcanvas-logo">
+                        <img src="https://www.rftpm.in/public/frontend/img/rftpm_logo_trans.png" alt="logo">
+                    </div>
+                    <ul>
+                        <li><a href="home.html">Gallery</a></li>
+                        <li><a href="villas.html">Villas</a></li>
+                        <li><a href="villas.html">Home</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- navbar End  -->
+
+    <!-- Hero section start  -->
+
+    <section class="pg-banner">
+        <div class="banner-bg"
+            style="background-image: url('https://www.rftpm.in/public/uploads/cms/1669714697.jpeg');"></div>
+        <h1 class="hero__title">Our Properties</h1>
+
+        <div class="hero__filter">
+            Filter
+        </div>
+
+    </section>
+
+    <Section class="getAllProperties ">
+        <div class="container py-3">
+            <div class="row justify-content-between property-list h-100">
+
+                <div class="col-md-6 col-12 mt-sm-3">
+                    <div class="list-item" data-markerid="88">
+                        <a target="_blank" class="property-img" href="property/amger.html">
+                            <img class="lazyload" src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
+                        </a>
+                        <div class="prop-list-info">
+                            <a target="_blank" href="property/amger.html" class="info-title"><b>Amger</b></a>
+                            <ul class="prop-opt">
+                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Parra, North Goa</li>
+                                <li>Private Pool </li>
+                                <li>4 Bedrooms, 8 Guests Max</li>
+                                <li>2 Nights Minimum Stay</li>
+                                <li>Pets not allowed</li>
+                                <li></li>
+                            </ul>
+                            <div class="prop-footer">
+                                <div class="prop-share-new d-flex mt-2">
+                                    <a target="_blank"
+                                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Famger"
+                                        class="share-new "><img
+                                            src="https://www.rftpm.in/public/frontend/img/rftpm_wa_icon.png?t=12"
+                                            alt=""></a>
+                                    <a target="_blank"
+                                        href="cdn-cgi/l/email-protection.html#231c505641494640571e624e44465105424e5318414c475a1e734f464250460350464603574b46034f4a4d48034b575753500610620611650611655454540d514557534e0d4a4d06116553514c534651575a061165424e444651"
+                                        class="share-new"><img
+                                            src="https://www.rftpm.in/public/frontend/img/rftpm_mail_icon.png?t=12"
+                                            alt=""></a>
+                                </div>
+                                <div class="prop-extra">
+                                    Rs. 60,000 /Night
+                                    <br>+ 18% taxes<br>
+                                    <span>Extra Rs. 50,000/- security deposit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-12 mt-sm-3">
+                    <div class="list-item col-12 col-md-6" data-markerid="88">
+                        <a target="_blank" class="property-img" href="property/amger.html">
+                            <img class="lazyload" src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
+                        </a>
+                        <div class="prop-list-info">
+                            <a target="_blank" href="property/amger.html" class="info-title"><b>Amger</b></a>
+                            <ul class="prop-opt">
+                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Parra, North Goa</li>
+                                <li>Private Pool </li>
+                                <li>4 Bedrooms, 8 Guests Max</li>
+                                <li>2 Nights Minimum Stay</li>
+                                <li>Pets not allowed</li>
+                                <li></li>
+                            </ul>
+                            <div class="prop-footer">
+                                <div class="prop-share-new d-flex mt-2">
+                                    <a target="_blank"
+                                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Famger"
+                                        class="share-new "><img
+                                            src="https://www.rftpm.in/public/frontend/img/rftpm_wa_icon.png?t=12"
+                                            alt=""></a>
+                                    <a target="_blank"
+                                        href="cdn-cgi/l/email-protection.html#231c505641494640571e624e44465105424e5318414c475a1e734f464250460350464603574b46034f4a4d48034b575753500610620611650611655454540d514557534e0d4a4d06116553514c534651575a061165424e444651"
+                                        class="share-new"><img
+                                            src="https://www.rftpm.in/public/frontend/img/rftpm_mail_icon.png?t=12"
+                                            alt=""></a>
+                                </div>
+                                <div class="prop-extra">
+                                    Rs. 60,000 /Night
+                                    <br>+ 18% taxes<br>
+                                    <span>Extra Rs. 50,000/- security deposit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-12 mt-sm-3">
+                    <div class="list-item col-12 col-md-6" data-markerid="88">
+                        <a target="_blank" class="property-img" href="property/amger.html">
+                            <img class="lazyload" src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
+                        </a>
+                        <div class="prop-list-info">
+                            <a target="_blank" href="property/amger.html" class="info-title"><b>Amger</b></a>
+                            <ul class="prop-opt">
+                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Parra, North Goa</li>
+                                <li>Private Pool </li>
+                                <li>4 Bedrooms, 8 Guests Max</li>
+                                <li>2 Nights Minimum Stay</li>
+                                <li>Pets not allowed</li>
+                                <li></li>
+                            </ul>
+                            <div class="prop-footer">
+                                <div class="prop-share-new d-flex mt-2">
+                                    <a target="_blank"
+                                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Famger"
+                                        class="share-new "><img
+                                            src="https://www.rftpm.in/public/frontend/img/rftpm_wa_icon.png?t=12"
+                                            alt=""></a>
+                                    <a target="_blank"
+                                        href="cdn-cgi/l/email-protection.html#231c505641494640571e624e44465105424e5318414c475a1e734f464250460350464603574b46034f4a4d48034b575753500610620611650611655454540d514557534e0d4a4d06116553514c534651575a061165424e444651"
+                                        class="share-new"><img
+                                            src="https://www.rftpm.in/public/frontend/img/rftpm_mail_icon.png?t=12"
+                                            alt=""></a>
+                                </div>
+                                <div class="prop-extra">
+                                    Rs. 60,000 /Night
+                                    <br>+ 18% taxes<br>
+                                    <span>Extra Rs. 50,000/- security deposit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 mt-sm-3">
+                    <div class="list-item col-12 col-md-6" data-markerid="88">
+                        <a target="_blank" class="property-img" href="property/amger.html">
+                            <img class="lazyload" src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
+                        </a>
+                        <div class="prop-list-info">
+                            <a target="_blank" href="property/amger.html" class="info-title"><b>Amger</b></a>
+                            <ul class="prop-opt">
+                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Parra, North Goa</li>
+                                <li>Private Pool </li>
+                                <li>4 Bedrooms, 8 Guests Max</li>
+                                <li>2 Nights Minimum Stay</li>
+                                <li>Pets not allowed</li>
+                                <li></li>
+                            </ul>
+                            <div class="prop-footer">
+                                <div class="prop-share-new d-flex mt-2">
+                                    <a target="_blank"
+                                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Famger"
+                                        class="share-new "><img
+                                            src="https://www.rftpm.in/public/frontend/img/rftpm_wa_icon.png?t=12"
+                                            alt=""></a>
+                                    <a target="_blank"
+                                        href="cdn-cgi/l/email-protection.html#231c505641494640571e624e44465105424e5318414c475a1e734f464250460350464603574b46034f4a4d48034b575753500610620611650611655454540d514557534e0d4a4d06116553514c534651575a061165424e444651"
+                                        class="share-new"><img
+                                            src="https://www.rftpm.in/public/frontend/img/rftpm_mail_icon.png?t=12"
+                                            alt=""></a>
+                                </div>
+                                <div class="prop-extra">
+                                    Rs. 60,000 /Night
+                                    <br>+ 18% taxes<br>
+                                    <span>Extra Rs. 50,000/- security deposit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-12 mt-sm-3">
+                    <div class="list-item col-12 col-md-6" data-markerid="88">
+                        <a target="_blank" class="property-img" href="property/amger.html">
+                            <img class="lazyload" src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
+                        </a>
+                        <div class="prop-list-info">
+                            <a target="_blank" href="property/amger.html" class="info-title"><b>Amger</b></a>
+                            <ul class="prop-opt">
+                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Parra, North Goa</li>
+                                <li>Private Pool </li>
+                                <li>4 Bedrooms, 8 Guests Max</li>
+                                <li>2 Nights Minimum Stay</li>
+                                <li>Pets not allowed</li>
+                                <li></li>
+                            </ul>
+                            <div class="prop-footer">
+                                <div class="prop-share-new d-flex mt-2">
+                                    <a target="_blank"
+                                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Famger"
+                                        class="share-new "><img
+                                            src="https://www.rftpm.in/public/frontend/img/rftpm_wa_icon.png?t=12"
+                                            alt=""></a>
+                                    <a target="_blank"
+                                        href="cdn-cgi/l/email-protection.html#231c505641494640571e624e44465105424e5318414c475a1e734f464250460350464603574b46034f4a4d48034b575753500610620611650611655454540d514557534e0d4a4d06116553514c534651575a061165424e444651"
+                                        class="share-new"><img
+                                            src="https://www.rftpm.in/public/frontend/img/rftpm_mail_icon.png?t=12"
+                                            alt=""></a>
+                                </div>
+                                <div class="prop-extra">
+                                    Rs. 60,000 /Night
+                                    <br>+ 18% taxes<br>
+                                    <span>Extra Rs. 50,000/- security deposit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 mt-sm-3">
+                    <div class="list-item col-12 col-md-6" data-markerid="88">
+                        <a target="_blank" class="property-img" href="property/amger.html">
+                            <img class="lazyload" src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
+                        </a>
+                        <div class="prop-list-info">
+                            <a target="_blank" href="property/amger.html" class="info-title"><b>Amger</b></a>
+                            <ul class="prop-opt">
+                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Parra, North Goa</li>
+                                <li>Private Pool </li>
+                                <li>4 Bedrooms, 8 Guests Max</li>
+                                <li>2 Nights Minimum Stay</li>
+                                <li>Pets not allowed</li>
+                                <li></li>
+                            </ul>
+                            <div class="prop-footer">
+                                <div class="prop-share-new d-flex mt-2">
+                                    <a target="_blank"
+                                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Famger"
+                                        class="share-new "><img
+                                            src="https://www.rftpm.in/public/frontend/img/rftpm_wa_icon.png?t=12"
+                                            alt=""></a>
+                                    <a target="_blank"
+                                        href="cdn-cgi/l/email-protection.html#231c505641494640571e624e44465105424e5318414c475a1e734f464250460350464603574b46034f4a4d48034b575753500610620611650611655454540d514557534e0d4a4d06116553514c534651575a061165424e444651"
+                                        class="share-new"><img
+                                            src="https://www.rftpm.in/public/frontend/img/rftpm_mail_icon.png?t=12"
+                                            alt=""></a>
+                                </div>
+                                <div class="prop-extra">
+                                    Rs. 60,000 /Night
+                                    <br>+ 18% taxes<br>
+                                    <span>Extra Rs. 50,000/- security deposit</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </Section>
+
+    <!-- <section>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    ddsd
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+
+    <!-- Hero section End  -->
+
+
+    <!-- Footer Start  -->
+    <section class="footer-section">
+  
+     <div class="container">
+            <div class="row">
+                <div class="col-md-12 mt-5">
+                    <div class="property-filter">
+                        <input type="hidden" id="old_select_location" value="">
+                        <form class="filter-form" id="VillasFilterForm" method="GET" autocomplete="off">
+                            <div class="form-floating mb-3">
+                                <select name="location" class="form-select select2-hidden-accessible"
+                                    id="inputPropertyVillage" data-placeholder="Choose your location in Goa"
+                                    data-select2-id="inputPropertyVillage" tabindex="-1" aria-hidden="true">
+                                    <option data-select2-id="2"></option>
+                                    <option value="Anjuna" data-id="2">Anjuna</option>
+                                    <option value="Arpora" data-id="10">Arpora</option>
+                                    <option value="Assagao" data-id="1">Assagao</option>
+                                    <option value="Candolim" data-id="3">Candolim</option>
+                                    <option value="Chapora" data-id="21">Chapora</option>
+                                    <option value="Nerul" data-id="13">Nerul</option>
+                                    <option value="Parra" data-id="11">Parra</option>
+                                    <option value="Reis Magos" data-id="19">Reis Magos</option>
+                                    <option value="Saipem" data-id="22">Saipem</option>
+                                    <option value="Salvador" data-id="18">Salvador</option>
+                                    <option value="Siolim" data-id="15">Siolim</option>
+                                    <option value="Vagator" data-id="20">Vagator</option>
+                                </select><span class="select2 select2-container select2-container--bootstrap-5"
+                                    dir="ltr" data-select2-id="1" style="width: 200px;"><span class="selection"><span
+                                            class="select2-selection select2-selection--single" role="combobox"
+                                            aria-haspopup="true" aria-expanded="false" tabindex="0"
+                                            aria-disabled="false"
+                                            aria-labelledby="select2-inputPropertyVillage-container"><span
+                                                class="select2-selection__rendered"
+                                                id="select2-inputPropertyVillage-container" role="textbox"
+                                                aria-readonly="true"><span class="select2-selection__placeholder">Choose
+                                                    your location in Goa</span></span><span
+                                                class="select2-selection__arrow" role="presentation"><b
+                                                    role="presentation"></b></span></span></span><span
+                                        class="dropdown-wrapper" aria-hidden="true"></span></span>
+                                <input type="hidden" name="token" id="select_location" value="">
+                                <label for="inputPropertyVillage">GOING TO</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="check_in" class="form-control datepickerField"
+                                    id="datepickerCheckIn" value="" placeholder="dd/mm/yyyy">
+                                <label for="form_in">CHECK IN</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="check_out" class="form-control datepickerField"
+                                    id="datepickerCheckOut" value="" placeholder="dd/mm/yyyy">
+                                <label for="form_out">CHECK OUT</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select name="guest" class="form-select" id="filterGuest">
+                                    <option value="">Select guest</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21+</option>
+                                </select>
+                                <label for="filterGuest">GUESTS</label>
+                            </div>
+                            <div class="mb-3 price-range2">
+                                <div class="price-range-slider">
+                                    <p class="range-value">
+                                        <input type="text" id="priceRange" readonly="">
+                                        <input type="hidden" name="price_min" id="priceRangeMinVal" value="16200">
+                                        <input type="hidden" name="price_max" id="priceRangeMaxVal" value="288000">
+                                        <input type="hidden" id="defualtPriceRangeMinVal" value="16200.00">
+                                        <input type="hidden" id="defualtPriceRangeMaxVal" value="288000.00">
+                                    </p>
+                                    <div id="slider-range"
+                                        class="range-bar ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"
+                                        aria-disabled="false">
+                                        <div class="ui-slider-range ui-widget-header ui-corner-all"
+                                            style="left: 0%; width: 100%;"></div><a
+                                            class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                            style="left: 0%;"></a><a
+                                            class="ui-slider-handle ui-state-default ui-corner-all" href="#"
+                                            style="left: 100%;"></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" id="onClickToValidateFilter"
+                                class="filter-submit mb-3">Search</button>
+                        </form>
+                        <p id="FilterFormMessage"
+                            style="text-align: center;border-radius: 0.25rem;border: 1px solid transparent;padding: 0.35rem;font-size: 18px;">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div> 
+
+    </section>
+    
+    <!-- Footer End  -->
+
+
+
+    <!-- Bootstrap js CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
