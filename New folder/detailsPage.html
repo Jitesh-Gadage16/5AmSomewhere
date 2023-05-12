@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="./lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstarp css cdn  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+
+</head>
+
+<body>
+    <!-- navbar start  -->
+
+
+    <header class="pg-header">
+        <div class="container-fluid px-md-5">
+            <div class="header-content d-md-flex d-lg-flex  justify-content-between align-items-center">
+                <div class="nav-left-menu d-none  d-xs-none d-sm-none d-md-block"><a href=""
+                        class="nav-menu">Gallery</a>
+                    <a href="" class="nav-menu">Villas</a>
+                </div>
+
+                <a href="javascript:;" class="nav-call  d-sm-block d-md-none" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img src="./assets/icons-06.webp" alt="">
+                </a>
+                <a href="index.html" class="logo">
+                    <img src="./assets/logo-no-background.png" alt="logo">
+                </a>
+
+                <div class="nav-right-menu d-none  d-xs-none d-sm-none d-md-block">
+                    <a href="" class="nav-menu">
+                        Home
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start none" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="offcanvas-menu">
+                    <div class="offcanvas-logo">
+                        <img src="https://www.rftpm.in/public/frontend/img/rftpm_logo_trans.png" alt="logo">
+                    </div>
+                    <ul>
+                        <li><a href="home.html">Gallery</a></li>
+                        <li><a href="villas.html">Villas</a></li>
+                        <li><a href="villas.html">Home</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- navbar End  -->
+
+    <!-- Hero section start  -->
+
+    <section class="py-4 details-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-12" style="">
+                    <div class="slider-gallery">
+                        <div class="slide">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-1.jpg" />
+                        </div>
+                        <div class="slide">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-2.jpg" />
+                        </div>
+                        <div class="slide">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-3.jpg" />
+                        </div>
+                        <div class="slide">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-2.jpg" />
+                        </div>
+                        <div class="slide">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-3.jpg" />
+                        </div>
+                    </div>
+
+                    <div class="slider-nav d-md-none d-none d-xs-none d-sm-none d-lg-flex">
+                        <div class="slide nav-slide">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-1.jpg" />
+                        </div>
+                        <div class="slide nav-slide">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-2.jpg" />
+                        </div>
+                        <div class="slide nav-slide">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-3.jpg" />
+                        </div>
+                        <div class="slide nav-slide">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-2.jpg" />
+                        </div>
+                        <div class="slide nav-slide">
+                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-3.jpg" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-12">
+                   <div class="property-details">
+                    <div class="d-flex flex-column justify-content-start ">
+                        <h4>Property Details</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis! Totam assumenda debitis eius rem? Fugiat, similique! Deserunt, ad nostrum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ea culpa nemo maxime est, praesentium aspernatur iure dolorem beatae natus?</p>
+                    </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <div class="container-fluid bg-dark text-light">
+        <div class="row">
+
+            <div class="col-md-3 col-12">
+                <div id="text-3" class="widget widget_text">
+                    <h4 class="widget-title"><span class="gg-first-word">Luxury</span> Villa</h4>
+                    <div class="textwidget">10800-20498 VIA SAN MARINO,
+                        CUPERTINO, CA 95014, USA
+                        +1-354-895-4592</div>
+                </div>
+                <div id="gg_social_icons_widget-2" class="widget social-icons">
+                    <div class="social-icons-widget">
+                        <ul class="list-inline">
+                            <li><a class="symbol social-facebook" title="circlefacebook" href="http://asd"
+                                    target="_blank"></a></li>
+                            <li><a class="symbol social-twitter" title="circletwitter" href="http://okwpthemes"
+                                    target="_blank"></a></li>
+                        </ul>
+
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-9 col-12">
+                <div class="maps-div">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.14571513576!2d72.71637275542062!3d19.082177512163835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1683928685953!5m2!1sen!2sin" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                
+            </div>
+            <div class="clearfix visible-sm"></div>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Hero section End  -->
+
+
+    <!-- Footer Start  -->
+    <section class="footer-section">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 py-4">
+                    <div class="property-filter ">
+                        <input type="hidden" id="old_select_location" value="">
+                        <form class="filter-form " id="VillasFilterForm" method="GET" autocomplete="off">
+                            <div class="form-floating mb-3">
+                                <select name="location" class="form-select" id="inputPropertyVillage"
+                                    data-placeholder="Choose your location in Goa">
+                                    <option>Choose your location ....</option>
+                                    <option value="Anjuna" data-id="2">Anjuna</option>
+                                    <option value="Arpora" data-id="10">Arpora</option>
+                                    <option value="Assagao" data-id="1">Assagao</option>
+                                    <option value="Candolim" data-id="3">Candolim</option>
+                                    <option value="Chapora" data-id="21">Chapora</option>
+                                    <option value="Nerul" data-id="13">Nerul</option>
+                                    <option value="Parra" data-id="11">Parra</option>
+                                    <option value="Reis Magos" data-id="19">Reis Magos</option>
+                                    <option value="Saipem" data-id="22">Saipem</option>
+                                    <option value="Salvador" data-id="18">Salvador</option>
+                                    <option value="Siolim" data-id="15">Siolim</option>
+                                    <option value="Vagator" data-id="20">Vagator</option>
+                                </select>
+
+                                <input type="hidden" name="token" id="select_location" value="">
+                                <label for="inputPropertyVillage">GOING TO</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="check_in" class="form-control datepickerField"
+                                    id="datepickerCheckIn" value="" placeholder="dd/mm/yyyy">
+                                <label for="form_in">CHECK IN</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="check_out" class="form-control datepickerField"
+                                    id="datepickerCheckOut" value="" placeholder="dd/mm/yyyy">
+                                <label for="form_out">CHECK OUT</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select name="guest" class="form-select" id="filterGuest">
+                                    <option value="">Select guest</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21+</option>
+                                </select>
+                                <label for="filterGuest">GUESTS</label>
+                            </div>
+                            <!-- <div class="mb-3 price-range2 ">
+                                <div class="price-range-slider">
+                                    <p class="range-value">
+                                        <input type="text" id="priceRange" readonly>
+                                        <input type="hidden" name="price_min" id="priceRangeMinVal"
+                                            value="16200.00">
+                                        <input type="hidden" name="price_max" id="priceRangeMaxVal"
+                                            value="288000.00">
+                                        <input type="hidden" id="defualtPriceRangeMinVal" value="16200.00">
+                                        <input type="hidden" id="defualtPriceRangeMaxVal" value="288000.00">
+                                    </p>
+                                    <div id="slider-range" class="range-bar"></div>
+                                </div>
+                            </div> -->
+
+                            <div class="form-floating mb-3">
+
+
+                                <div class="price-range price-range-slider">
+                                    <div class="range-slider">
+                                        <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
+                                    </div>
+                                    <div class="range-labels">
+                                        <span class="min-label">$0</span>
+                                        <span class="max-label">$100</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" id="onClickToValidateFilter"
+                                class="filter-submit mb-3">Search</button>
+                        </form>
+
+                    </div>
+
+                    <div class="property-social-icons">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Footer End  -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <!-- <script src="your-script.js"></script> -->
+
+    <script type="text/javascript">
+        $('.slider-gallery').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            fade: true,
+            asNavFor: '.slider-nav',
+            prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+            nextArrow: '<button type="button" class="slick-next">Next</button>'
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            asNavFor: '.slider-gallery',
+            dots: false,
+            centerMode: true,
+            focusOnSelect: true
+        });
+    </script>
+
+    <script>
+
+        var slider = document.getElementById("myRange");
+        var minLabel = document.querySelector(".min-label");
+        var maxLabel = document.querySelector(".max-label");
+
+        minLabel.innerHTML = "$0";
+        maxLabel.innerHTML = "$" + slider.max;
+
+        slider.oninput = function () {
+            minLabel.innerHTML = "$" + this.value;
+            maxLabel.innerHTML = "$" + slider.max;
+        }
+
+
+        $(function () {
+            $("#slider-range").slider({
+                range: true,
+                min: parseInt($('#VillasFilterForm').find('#defualtPriceRangeMinVal').val(), 10),
+                max: parseInt($('#VillasFilterForm').find('#defualtPriceRangeMaxVal').val(), 10),
+                values: [parseInt($('#VillasFilterForm').find('#priceRangeMinVal').val(), 10), parseInt($('#VillasFilterForm').find('#priceRangeMaxVal').val(), 10)],
+                slide: function (event, ui) {
+                    $("#priceRange").val("₹" + ui.values[0] + " - ₹" + ui.values[1]);
+                    $("#priceRangeMinVal").val(ui.values[0]);
+                    $("#priceRangeMaxVal").val(ui.values[1]);
+                }
+            });
+            $("#priceRange").val("₹" + $("#slider-range").slider("values", 0) + " - ₹" + $("#slider-range").slider("values", 1));
+            $("#priceRangeMinVal").val($("#slider-range").slider("values", 0));
+            $("#priceRangeMaxVal").val($("#slider-range").slider("values", 1));
+        });
+    </script>
+
+
+
+    <!-- Bootstrap js CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+</html>
