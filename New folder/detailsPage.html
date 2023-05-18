@@ -27,7 +27,7 @@
             <div class="header-content d-md-flex d-lg-flex  justify-content-between align-items-center">
                 <div class="nav-left-menu d-none  d-xs-none d-sm-none d-md-block"><a href=""
                         class="nav-menu">Gallery</a>
-                    <a href="" class="nav-menu">Villas</a>
+                    <a href="./gallery.html" class="nav-menu">Villas</a>
                 </div>
 
                 <a href="javascript:;" class="nav-call  d-sm-block d-md-none" data-bs-toggle="offcanvas"
@@ -57,9 +57,9 @@
                         <img src="https://www.rftpm.in/public/frontend/img/rftpm_logo_trans.png" alt="logo">
                     </div>
                     <ul>
-                        <li><a href="home.html">Gallery</a></li>
-                        <li><a href="villas.html">Villas</a></li>
-                        <li><a href="villas.html">Home</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="./detailsPage.html">Villas</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
@@ -71,96 +71,127 @@
 
     <!-- Hero section start  -->
 
-    <section class="py-4 details-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 col-12" style="">
-                    <div class="slider-gallery">
-                        <div class="slide">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-1.jpg" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-2.jpg" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-3.jpg" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-2.jpg" />
-                        </div>
-                        <div class="slide">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-3.jpg" />
-                        </div>
-                    </div>
 
-                    <div class="slider-nav d-md-none d-none d-xs-none d-sm-none d-lg-flex">
-                        <div class="slide nav-slide">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-1.jpg" />
-                        </div>
-                        <div class="slide nav-slide">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-2.jpg" />
-                        </div>
-                        <div class="slide nav-slide">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-3.jpg" />
-                        </div>
-                        <div class="slide nav-slide">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-2.jpg" />
-                        </div>
-                        <div class="slide nav-slide">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/152229/slider-img-3.jpg" />
-                        </div>
-                    </div>
-                </div>
+    <!-- <section class="pg-banner">
+        <div class="banner-bg"
+            style="background-image: url('https://www.rftpm.in/public/uploads/cms/1669714697.jpeg');"></div>
+        <h1 class="hero__title">Our Properties</h1>
 
-                <div class="col-md-6 col-12">
-                   <div class="property-details">
-                    <div class="d-flex flex-column justify-content-start ">
-                        <h4>Property Details</h4>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro, nobis! Totam assumenda debitis eius rem? Fugiat, similique! Deserunt, ad nostrum? Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ea culpa nemo maxime est, praesentium aspernatur iure dolorem beatae natus?</p>
-                    </div>
-                   </div>
+        
+
+    </section> -->
+
+    <section class="page-content">
+        <div class="single-villa-img with-bg">
+            <img src="http://127.0.0.1:5500/www.rftpm.in/public/uploads/villa/1660203214.png" class="villa-img">
+            <div class="villa-title">
+                <h1 class="hero__title">Fairview</h1>
+                <h2 class="hero__sub">Assagao</h2>
+            </div>
+            <div class="img-option ">
+
+                <div class="container position-relative">
+                    <a class="img-vuall" href="javascript:;" id="dynamic-gallery">View all photos</a>
                 </div>
             </div>
         </div>
-
+        <div class="villa-details">
+            <div class="container">
+                <div class="villa-titl mb-3">
+                    <h1 class="titl">Fairview </h1>
+                    <a target="blank"
+                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Ffairview"
+                        class="villa-share">Share <i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                </div>
+                <div class="villa-location mb-1"><i class="fa fa-map-marker" aria-hidden="true"></i> Assagao, Goa,
+                    India</div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="villa-titl-features mb-3 text-secondary">4 Bedrooms | Up to 8 Guests | Private
+                            Pool | 2 Nights Min Stay | Pets Not Allowed</div>
+                      
+                        <div class="villa-sec-titl my-3">Gallery</div>
+                        <div class="inner-gallery" id="inner_gallery">
+                            <a href="javascript:;" class="gallery-img">
+                                <img class="lazyload" data-src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg" alt="img1" src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg">
+                            </a>
+                            <a href="javascript:;" class="gallery-img">
+                                <img class="lazyload" data-src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg" alt="img1" src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg">
+                            </a>
+                            <a href="javascript:;" class="gallery-img">
+                                <img class="lazyload" data-src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg" alt="img1" src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg">
+                            </a>
+                            <a href="javascript:;" class="gallery-img">
+                                <img class="lazyload" data-src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg" alt="img1" src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg">
+                            </a>
+                            <a href="javascript:;" class="gallery-img">
+                                <img class="lazyload" data-src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg" alt="img1" src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg">
+                            </a>
+                            <a href="javascript:;" class="more gallery-img" data-more-text="More">
+                                <img class="lazyload" data-src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg" alt="img1" src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg">
+                            </a>
+                        </div>
+                        <div class="villa-sec-titl my-3">Video</div>
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/1CwR2oXlnls?rel=0" title="YouTube video"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="villa-sec-titl my-3">Inclusions</div>
+                        <div class="detail-tab-box mb-3">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="details-tab" data-bs-toggle="tab"
+                                        data-bs-target="#details" type="button" role="tab" aria-controls="details"
+                                        aria-selected="true">Amenities</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="facilities-tab" data-bs-toggle="tab"
+                                        data-bs-target="#facilities" type="button" role="tab" aria-controls="facilities"
+                                        aria-selected="true">Facilities</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="details" role="tabpanel"
+                                    aria-labelledby="details-tab">
+                                    <ul>
+                                        <li>24/7Security</li>
+                                        <li>Butler</li>
+                                        <li>Cook</li>
+                                        <li>High Speed Wifi</li>
+                                        <li>Housekeeping</li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane fade" id="facilities" role="tabpanel"
+                                    aria-labelledby="facilities-tab">
+                                    <ul>
+                                        <li>100% Power Backup</li>
+                                        <li>Car Parking</li>
+                                        <li>Outdoor Lounging Area</li>
+                                        <li>Swimming pool</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="villa-booking">
+                            <h3 class="booking-titl">Rs. 62,400.00 /<span class="unit">Night</span></h3>
+                            <small class="d-block mb-1">* 18% tax will be applicable</small>
+                            <small class="d-block mb-1">* Rs. 30,000/- security deposit</small>
+                            <br>
+                            <a href="https://wht.cx/UUqyb9ZXe" class="h6 mt-1 d-inline-block prop-chat prop-chat-new"
+                                target="_blank">Chat with
+                                Us</a>
+                        </div>
+                    </div>
+                </div>
+               
+              
+            
+        </div>
     </section>
 
 
-    <div class="container-fluid bg-dark text-light">
-        <div class="row">
-
-            <div class="col-md-3 col-12">
-                <div id="text-3" class="widget widget_text">
-                    <h4 class="widget-title"><span class="gg-first-word">Luxury</span> Villa</h4>
-                    <div class="textwidget">10800-20498 VIA SAN MARINO,
-                        CUPERTINO, CA 95014, USA
-                        +1-354-895-4592</div>
-                </div>
-                <div id="gg_social_icons_widget-2" class="widget social-icons">
-                    <div class="social-icons-widget">
-                        <ul class="list-inline">
-                            <li><a class="symbol social-facebook" title="circlefacebook" href="http://asd"
-                                    target="_blank"></a></li>
-                            <li><a class="symbol social-twitter" title="circletwitter" href="http://okwpthemes"
-                                    target="_blank"></a></li>
-                        </ul>
-
-                        <div class="clearfix"></div>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-md-9 col-12">
-                <div class="maps-div">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241317.14571513576!2d72.71637275542062!3d19.082177512163835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1683928685953!5m2!1sen!2sin" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                
-            </div>
-            <div class="clearfix visible-sm"></div>
-
-        </div>
-    </div>
 
 
 
@@ -278,11 +309,292 @@
 
     </section>
 
+    <div class="lg-container custom-gallery-class  d-none" id="lg-container-1" tabindex="-1" aria-modal="true" role="dialog">
+        <div id="lg-backdrop-1" class="lg-backdrop" style="transition-duration: 300ms;"></div>
+
+        <div id="lg-outer-1" class="lg-outer lg-use-css3 lg-css3 lg-slide lg-grab lg-show-after-load lg-use-transition-for-zoom lg-animate-thumb lg-has-thumb">
+                <div id="lg-content-1" class="lg" style="width: 100%; height:100%">
+                    <div id="lg-inner-1" class="lg-inner" style="transition-timing-function: ease; transition-duration: 400ms;"></div>
+                    <div id="lg-toolbar-1" class="lg-toolbar lg-group">
+                    
+                    <button type="button" aria-label="Close gallery" id="lg-close-1" class="lg-close lg-icon"></button>
+                <div class="lg-counter" role="status" aria-live="polite">
+            <span id="lg-counter-current-1" class="lg-counter-current">1 </span> / 
+            <span id="lg-counter-all-1" class="lg-counter-all">28 </span></div><button id="lg-actual-size-1" type="button" aria-label="View actual size" class="lg-zoom-in lg-icon"></button><button type="button" aria-label="Toggle fullscreen" class="lg-fullscreen lg-icon"></button></div>
+                <button type="button" id="lg-prev-1" aria-label="Previous slide" class="lg-prev lg-icon">  </button>
+            <button type="button" id="lg-next-1" aria-label="Next slide" class="lg-next lg-icon">  </button>
+                <div id="lg-components-1" class="lg-components">
+                    <div class="lg-sub-html" role="status" aria-live="polite"></div>
+                <div class="lg-thumb-outer lg-thumb-align-middle lg-grab">
+    <div class="lg-thumb lg-group" style="transition-duration: 400ms; width: 2940px; position: relative;"><div data-lg-item-id="0" class="lg-thumb-item  active" style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="0" src="https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg">
+    </div><div data-lg-item-id="1" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="1" src="https://www.rftpm.in/public/uploads/villa/000002-1668103054.jpg">
+    </div><div data-lg-item-id="2" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="2" src="https://www.rftpm.in/public/uploads/villa/000004-1668103055.jpg">
+    </div><div data-lg-item-id="3" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="3" src="https://www.rftpm.in/public/uploads/villa/000005-1668103056.jpg">
+    </div><div data-lg-item-id="4" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="4" src="https://www.rftpm.in/public/uploads/villa/000006-1668103056.jpg">
+    </div><div data-lg-item-id="5" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="5" src="https://www.rftpm.in/public/uploads/villa/000007-1668103057.jpg">
+    </div><div data-lg-item-id="6" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="6" src="https://www.rftpm.in/public/uploads/villa/000008-1668103058.jpg">
+    </div><div data-lg-item-id="7" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="7" src="https://www.rftpm.in/public/uploads/villa/000009-1668103058.jpg">
+    </div><div data-lg-item-id="8" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="8" src="https://www.rftpm.in/public/uploads/villa/000010-1668103059.jpg">
+    </div><div data-lg-item-id="9" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="9" src="https://www.rftpm.in/public/uploads/villa/000011-1668103059.jpg">
+    </div><div data-lg-item-id="10" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="10" src="https://www.rftpm.in/public/uploads/villa/000012-1668103059.jpg">
+    </div><div data-lg-item-id="11" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="11" src="https://www.rftpm.in/public/uploads/villa/000013-1668103060.jpg">
+    </div><div data-lg-item-id="12" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="12" src="https://www.rftpm.in/public/uploads/villa/000014-1668103060.jpg">
+    </div><div data-lg-item-id="13" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="13" src="https://www.rftpm.in/public/uploads/villa/000015-1668103062.jpg">
+    </div><div data-lg-item-id="14" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="14" src="https://www.rftpm.in/public/uploads/villa/000016-1668103062.jpg">
+    </div><div data-lg-item-id="15" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="15" src="https://www.rftpm.in/public/uploads/villa/000017-1668103063.jpg">
+    </div><div data-lg-item-id="16" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="16" src="https://www.rftpm.in/public/uploads/villa/000018-1668103063.jpg">
+    </div><div data-lg-item-id="17" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="17" src="https://www.rftpm.in/public/uploads/villa/000019-1668103064.jpg">
+    </div><div data-lg-item-id="18" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="18" src="https://www.rftpm.in/public/uploads/villa/000020-1668103065.jpg">
+    </div><div data-lg-item-id="19" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="19" src="https://www.rftpm.in/public/uploads/villa/000022-1668103065.jpg">
+    </div><div data-lg-item-id="20" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="20" src="https://www.rftpm.in/public/uploads/villa/000023-1668103067.jpg">
+    </div><div data-lg-item-id="21" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="21" src="https://www.rftpm.in/public/uploads/villa/000024-1668103069.jpg">
+    </div><div data-lg-item-id="22" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="22" src="https://www.rftpm.in/public/uploads/villa/000025-1668103069.jpg">
+    </div><div data-lg-item-id="23" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="23" src="https://www.rftpm.in/public/uploads/villa/000026-1668103070.jpg">
+    </div><div data-lg-item-id="24" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="24" src="https://www.rftpm.in/public/uploads/villa/000027-1668103070.jpg">
+    </div><div data-lg-item-id="25" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="25" src="https://www.rftpm.in/public/uploads/villa/000028-1668103071.jpg">
+    </div><div data-lg-item-id="26" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="26" src="https://www.rftpm.in/public/uploads/villa/000029-1668103071.jpg">
+    </div><div data-lg-item-id="27" class="lg-thumb-item " style="width:100px; height: 80px;
+        margin-right: 5px;">
+        <img data-lg-item-id="27" src="https://www.rftpm.in/public/uploads/villa/000030-1668103072.jpg">
+    </div></div>
+    </div></div>
+            </div> 
+        </div>
+    </div>
+
     <!-- Footer End  -->
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <!-- <script src="your-script.js"></script> -->
+    <script src="./lib/lightgallery/lightgallery.min.js"></script>
+    <script src="./lib/lightgallery/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="./lib/lightgallery/plugins/video/lg-video.min.js"></script>
+    <script src="./lib/lightgallery/plugins/fullscreen/lg-fullscreen.min.js"></script>
+    <script src="./lib/lightgallery/plugins/thumbnail/lg-thumbnail.min.js"></script>
+
+
+    <script>
+        const $dynamicGallery = document.getElementById("dynamic-gallery");
+        const dynamicGallery = window.lightGallery($dynamicGallery, {
+            dynamic: true,
+            animateThumb: true,
+            zoomFromOrigin: false,
+            //allowMediaOverlap: true,
+            addClass: 'custom-gallery-class',
+            download: false,
+            toggleThumb: true,
+            videojs: true,
+            plugins: [lgZoom, lgVideo, lgThumbnail, lgFullscreen],
+            dynamicEl: [
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000001-1668103055.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000002-1668103054.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000002-1668103054.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000004-1668103055.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000004-1668103055.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000005-1668103056.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000005-1668103056.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000006-1668103056.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000006-1668103056.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000007-1668103057.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000007-1668103057.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000008-1668103058.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000008-1668103058.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000009-1668103058.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000009-1668103058.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000010-1668103059.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000010-1668103059.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000011-1668103059.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000011-1668103059.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000012-1668103059.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000012-1668103059.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000013-1668103060.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000013-1668103060.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000014-1668103060.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000014-1668103060.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000015-1668103062.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000015-1668103062.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000016-1668103062.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000016-1668103062.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000017-1668103063.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000017-1668103063.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000018-1668103063.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000018-1668103063.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000019-1668103064.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000019-1668103064.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000020-1668103065.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000020-1668103065.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000022-1668103065.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000022-1668103065.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000023-1668103067.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000023-1668103067.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000024-1668103069.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000024-1668103069.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000025-1668103069.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000025-1668103069.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000026-1668103070.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000026-1668103070.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000027-1668103070.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000027-1668103070.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000028-1668103071.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000028-1668103071.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000029-1668103071.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000029-1668103071.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+                {
+                    src: "https://www.rftpm.in/public/uploads/villa/000030-1668103072.jpg",
+                    thumb: "https://www.rftpm.in/public/uploads/villa/000030-1668103072.jpg",
+                    //subHtml: `<div class="lightGallery-captions"><p>Description of the slide 1</p></div>`
+                },
+            ]
+        });
+        $dynamicGallery.addEventListener("click", () => {
+            dynamicGallery.openGallery(0);
+        });
+        $('#img-next-gallery, #img-prev-gallery').click(function () {
+            dynamicGallery.openGallery(0);
+        });
+        $(".villa-details .inner-gallery a.gallery-img").each(function () {
+            $(this).click(function () {
+                dynamicGallery.openGallery(0);
+            });
+        });
+
+    </script>
 
     <script type="text/javascript">
         $('.slider-gallery').slick({

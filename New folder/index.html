@@ -21,9 +21,9 @@
     <header class="pg-header">
         <div class="container-fluid px-md-5">
             <div class="header-content d-md-flex d-lg-flex  justify-content-between align-items-center">
-                <div class="nav-left-menu d-none  d-xs-none d-sm-none d-md-block"><a href=""
+                <div class="nav-left-menu d-none  d-xs-none d-sm-none d-md-block"><a href="./gallery.html"
                         class="nav-menu">Gallery</a>
-                    <a href="" class="nav-menu">Villas</a>
+                    <a href="./villas.html" class="nav-menu">Villas</a>
                 </div>
 
                 <a href="javascript:;" class="nav-call  d-sm-block d-md-none" data-bs-toggle="offcanvas"
@@ -53,488 +53,193 @@
                         <img src="https://www.rftpm.in/public/frontend/img/rftpm_logo_trans.png" alt="logo">
                     </div>
                     <ul>
-                        <li><a href="home.html">Gallery</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="villas.html">Villas</a></li>
-                        <li><a href="villas.html">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </header>
+    <main>
 
-    <!-- navbar End  -->
+        <!-- navbar End  -->
 
-    <!-- Hero section start  -->
+        <!-- Hero section start  -->
 
-    <section class="pg-banner">
-        <div class="banner-bg"
-            style="background-image: url('https://www.rftpm.in/public/uploads/cms/1669714697.jpeg');"></div>
-        <h1 class="hero__title">Our Properties</h1>
-
-        
-
-    </section>
-
-
-
-    <Section class="getAllProperties ">
-        <div class="container-fluid py-3">
-            <div class="row justify-content-between property-list h-100">
-
-                <div class="col-md-12">
-                    <div class="property-filter">
-                        <input type="hidden" id="old_select_location" value="">
-                        <form class="filter-form" id="VillasFilterForm" method="GET" autocomplete="off">
-                            <div class="form-floating mb-3">
-                                <select name="location" class="form-select" id="inputPropertyVillage"
-                                    data-placeholder="Choose your location in Goa">
-                                    <option>Choose your location ....</option>
-                                    <option value="Anjuna" data-id="2">Anjuna</option>
-                                    <option value="Arpora" data-id="10">Arpora</option>
-                                    <option value="Assagao" data-id="1">Assagao</option>
-                                    <option value="Candolim" data-id="3">Candolim</option>
-                                    <option value="Chapora" data-id="21">Chapora</option>
-                                    <option value="Nerul" data-id="13">Nerul</option>
-                                    <option value="Parra" data-id="11">Parra</option>
-                                    <option value="Reis Magos" data-id="19">Reis Magos</option>
-                                    <option value="Saipem" data-id="22">Saipem</option>
-                                    <option value="Salvador" data-id="18">Salvador</option>
-                                    <option value="Siolim" data-id="15">Siolim</option>
-                                    <option value="Vagator" data-id="20">Vagator</option>
-                                </select>
-
-                                <input type="hidden" name="token" id="select_location" value="">
-                                <label for="inputPropertyVillage">GOING TO</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" name="check_in" class="form-control datepickerField"
-                                    id="datepickerCheckIn" value="" placeholder="dd/mm/yyyy">
-                                <label for="form_in">CHECK IN</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" name="check_out" class="form-control datepickerField"
-                                    id="datepickerCheckOut" value="" placeholder="dd/mm/yyyy">
-                                <label for="form_out">CHECK OUT</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <select name="guest" class="form-select" id="filterGuest">
-                                    <option value="">Select guest</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21+</option>
-                                </select>
-                                <label for="filterGuest">GUESTS</label>
-                            </div>
-                            <!-- <div class="mb-3 price-range2 ">
-                                <div class="price-range-slider">
-                                    <p class="range-value">
-                                        <input type="text" id="priceRange" readonly>
-                                        <input type="hidden" name="price_min" id="priceRangeMinVal"
-                                            value="16200.00">
-                                        <input type="hidden" name="price_max" id="priceRangeMaxVal"
-                                            value="288000.00">
-                                        <input type="hidden" id="defualtPriceRangeMinVal" value="16200.00">
-                                        <input type="hidden" id="defualtPriceRangeMaxVal" value="288000.00">
-                                    </p>
-                                    <div id="slider-range" class="range-bar"></div>
-                                </div>
-                            </div> -->
-
-                            <div class="form-floating mb-3">
-
-
-                                <div class="price-range price-range-slider">
-                                    <div class="range-slider">
-                                        <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
-                                    </div>
-                                    <div class="range-labels">
-                                        <span class="min-label">$0</span>
-                                        <span class="max-label">$100</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <button type="submit" id="onClickToValidateFilter"
-                                class="filter-submit mb-3">Search</button>
-                        </form>
-                        <p id="FilterFormMessage"
-                            style="text-align: center;border-radius: 0.25rem;border: 1px solid transparent;padding: 0.35rem;font-size: 18px;">
-                        </p>
+        <section class="hp-banner">
+            <div class="video-bg-container">
+                <div class="video-bg-player" data-video="rhXqiSmLm1k">
+                    <div class="video-bg">
+                        <div id="yt-player"></div>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-12 mt-sm-3">
-                    <div class="list-item" data-markerid="88">
-                        <a target="_blank" class="property-img" href="property/amger.html">
-                            <img class="lazyload" src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
-                        </a>
-                        <div class="prop-list-info">
-                            <a target="_blank" href="property/amger.html" class="info-title"><b>Amger</b></a>
-                            <ul class="prop-opt">
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Parra, North Goa</li>
-                                <li>Private Pool </li>
-                                <li>4 Bedrooms, 8 Guests Max</li>
-                                <li>2 Nights Minimum Stay</li>
-                                <li>Pets not allowed</li>
-                                <li></li>
-                            </ul>
-                            <div class="prop-footer">
-                                <div class="prop-share-new d-flex mt-2">
-                                    <a target="_blank"
-                                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Famger"
-                                        class="share-new "><img
-                                            src="https://www.rftpm.in/public/frontend/img/rftpm_wa_icon.png?t=12"
-                                            alt=""></a>
-                                    <a target="_blank"
-                                        href="cdn-cgi/l/email-protection.html#231c505641494640571e624e44465105424e5318414c475a1e734f464250460350464603574b46034f4a4d48034b575753500610620611650611655454540d514557534e0d4a4d06116553514c534651575a061165424e444651"
-                                        class="share-new"><img
-                                            src="https://www.rftpm.in/public/frontend/img/rftpm_mail_icon.png?t=12"
-                                            alt=""></a>
-                                </div>
-                                <div class="prop-extra">
-                                    Rs. 60,000 /Night
-                                    <br>+ 18% taxes<br>
-                                    <span>Extra Rs. 50,000/- security deposit</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12 mt-sm-3">
-                    <div class="list-item col-12 col-md-6" data-markerid="88">
-                        <a target="_blank" class="property-img" href="property/amger.html">
-                            <img class="lazyload" src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
-                        </a>
-                        <div class="prop-list-info">
-                            <a target="_blank" href="property/amger.html" class="info-title"><b>Amger</b></a>
-                            <ul class="prop-opt">
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Parra, North Goa</li>
-                                <li>Private Pool </li>
-                                <li>4 Bedrooms, 8 Guests Max</li>
-                                <li>2 Nights Minimum Stay</li>
-                                <li>Pets not allowed</li>
-                                <li></li>
-                            </ul>
-                            <div class="prop-footer">
-                                <div class="prop-share-new d-flex mt-2">
-                                    <a target="_blank"
-                                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Famger"
-                                        class="share-new "><img
-                                            src="https://www.rftpm.in/public/frontend/img/rftpm_wa_icon.png?t=12"
-                                            alt=""></a>
-                                    <a target="_blank"
-                                        href="cdn-cgi/l/email-protection.html#231c505641494640571e624e44465105424e5318414c475a1e734f464250460350464603574b46034f4a4d48034b575753500610620611650611655454540d514557534e0d4a4d06116553514c534651575a061165424e444651"
-                                        class="share-new"><img
-                                            src="https://www.rftpm.in/public/frontend/img/rftpm_mail_icon.png?t=12"
-                                            alt=""></a>
-                                </div>
-                                <div class="prop-extra">
-                                    Rs. 60,000 /Night
-                                    <br>+ 18% taxes<br>
-                                    <span>Extra Rs. 50,000/- security deposit</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12 mt-sm-3">
-                    <div class="list-item col-12 col-md-6" data-markerid="88">
-                        <a target="_blank" class="property-img" href="property/amger.html">
-                            <img class="lazyload" src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
-                        </a>
-                        <div class="prop-list-info">
-                            <a target="_blank" href="property/amger.html" class="info-title"><b>Amger</b></a>
-                            <ul class="prop-opt">
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Parra, North Goa</li>
-                                <li>Private Pool </li>
-                                <li>4 Bedrooms, 8 Guests Max</li>
-                                <li>2 Nights Minimum Stay</li>
-                                <li>Pets not allowed</li>
-                                <li></li>
-                            </ul>
-                            <div class="prop-footer">
-                                <div class="prop-share-new d-flex mt-2">
-                                    <a target="_blank"
-                                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Famger"
-                                        class="share-new "><img
-                                            src="https://www.rftpm.in/public/frontend/img/rftpm_wa_icon.png?t=12"
-                                            alt=""></a>
-                                    <a target="_blank"
-                                        href="cdn-cgi/l/email-protection.html#231c505641494640571e624e44465105424e5318414c475a1e734f464250460350464603574b46034f4a4d48034b575753500610620611650611655454540d514557534e0d4a4d06116553514c534651575a061165424e444651"
-                                        class="share-new"><img
-                                            src="https://www.rftpm.in/public/frontend/img/rftpm_mail_icon.png?t=12"
-                                            alt=""></a>
-                                </div>
-                                <div class="prop-extra">
-                                    Rs. 60,000 /Night
-                                    <br>+ 18% taxes<br>
-                                    <span>Extra Rs. 50,000/- security deposit</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-12 mt-sm-3">
-                    <div class="list-item col-12 col-md-6" data-markerid="88">
-                        <a target="_blank" class="property-img" href="property/amger.html">
-                            <img class="lazyload" src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
-                        </a>
-                        <div class="prop-list-info">
-                            <a target="_blank" href="property/amger.html" class="info-title"><b>Amger</b></a>
-                            <ul class="prop-opt">
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Parra, North Goa</li>
-                                <li>Private Pool </li>
-                                <li>4 Bedrooms, 8 Guests Max</li>
-                                <li>2 Nights Minimum Stay</li>
-                                <li>Pets not allowed</li>
-                                <li></li>
-                            </ul>
-                            <div class="prop-footer">
-                                <div class="prop-share-new d-flex mt-2">
-                                    <a target="_blank"
-                                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Famger"
-                                        class="share-new "><img
-                                            src="https://www.rftpm.in/public/frontend/img/rftpm_wa_icon.png?t=12"
-                                            alt=""></a>
-                                    <a target="_blank"
-                                        href="cdn-cgi/l/email-protection.html#231c505641494640571e624e44465105424e5318414c475a1e734f464250460350464603574b46034f4a4d48034b575753500610620611650611655454540d514557534e0d4a4d06116553514c534651575a061165424e444651"
-                                        class="share-new"><img
-                                            src="https://www.rftpm.in/public/frontend/img/rftpm_mail_icon.png?t=12"
-                                            alt=""></a>
-                                </div>
-                                <div class="prop-extra">
-                                    Rs. 60,000 /Night
-                                    <br>+ 18% taxes<br>
-                                    <span>Extra Rs. 50,000/- security deposit</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-12 mt-sm-3">
-                    <div class="list-item col-12 col-md-6" data-markerid="88">
-                        <a target="_blank" class="property-img" href="property/amger.html">
-                            <img class="lazyload" src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
-                        </a>
-                        <div class="prop-list-info">
-                            <a target="_blank" href="property/amger.html" class="info-title"><b>Amger</b></a>
-                            <ul class="prop-opt">
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Parra, North Goa</li>
-                                <li>Private Pool </li>
-                                <li>4 Bedrooms, 8 Guests Max</li>
-                                <li>2 Nights Minimum Stay</li>
-                                <li>Pets not allowed</li>
-                                <li></li>
-                            </ul>
-                            <div class="prop-footer">
-                                <div class="prop-share-new d-flex mt-2">
-                                    <a target="_blank"
-                                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Famger"
-                                        class="share-new "><img
-                                            src="https://www.rftpm.in/public/frontend/img/rftpm_wa_icon.png?t=12"
-                                            alt=""></a>
-                                    <a target="_blank"
-                                        href="cdn-cgi/l/email-protection.html#231c505641494640571e624e44465105424e5318414c475a1e734f464250460350464603574b46034f4a4d48034b575753500610620611650611655454540d514557534e0d4a4d06116553514c534651575a061165424e444651"
-                                        class="share-new"><img
-                                            src="https://www.rftpm.in/public/frontend/img/rftpm_mail_icon.png?t=12"
-                                            alt=""></a>
-                                </div>
-                                <div class="prop-extra">
-                                    Rs. 60,000 /Night
-                                    <br>+ 18% taxes<br>
-                                    <span>Extra Rs. 50,000/- security deposit</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-12 mt-sm-3">
-                    <div class="list-item col-12 col-md-6" data-markerid="88">
-                        <a target="_blank" class="property-img" href="property/amger.html">
-                            <img class="lazyload" src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
-                        </a>
-                        <div class="prop-list-info">
-                            <a target="_blank" href="property/amger.html" class="info-title"><b>Amger</b></a>
-                            <ul class="prop-opt">
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i> Parra, North Goa</li>
-                                <li>Private Pool </li>
-                                <li>4 Bedrooms, 8 Guests Max</li>
-                                <li>2 Nights Minimum Stay</li>
-                                <li>Pets not allowed</li>
-                                <li></li>
-                            </ul>
-                            <div class="prop-footer">
-                                <div class="prop-share-new d-flex mt-2">
-                                    <a target="_blank"
-                                        href="https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.rftpm.in%2Fproperty%2Famger"
-                                        class="share-new "><img
-                                            src="https://www.rftpm.in/public/frontend/img/rftpm_wa_icon.png?t=12"
-                                            alt=""></a>
-                                    <a target="_blank"
-                                        href="cdn-cgi/l/email-protection.html#231c505641494640571e624e44465105424e5318414c475a1e734f464250460350464603574b46034f4a4d48034b575753500610620611650611655454540d514557534e0d4a4d06116553514c534651575a061165424e444651"
-                                        class="share-new"><img
-                                            src="https://www.rftpm.in/public/frontend/img/rftpm_mail_icon.png?t=12"
-                                            alt=""></a>
-                                </div>
-                                <div class="prop-extra">
-                                    Rs. 60,000 /Night
-                                    <br>+ 18% taxes<br>
-                                    <span>Extra Rs. 50,000/- security deposit</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                <div class="video-bg-overlay"
+                    style="background-image: url('./img.youtube.com/vi/cw0ZDocv65w/maxresdefault.jpg');"></div>
             </div>
-        </div>
-    </Section>
-
-    <!-- <section>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    ddsd
-                </div>
+            <div class="video-text">
+                <h1>Experience</h1>
+                <h2>GOA</h2>
+                <p>LIKE NEVER BEFORE</p>
+                <a class="video-btn" href="villas.html">Book Now</a>
             </div>
-        </div>
-    </section> -->
+        </section>
 
 
-    <!-- Hero section End  -->
 
 
-    <!-- Footer Start  -->
-    <section class="footer-section">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 py-4">
-                    <div class="property-filter ">
-                        <input type="hidden" id="old_select_location" value="">
-                        <form class="filter-form " id="VillasFilterForm" method="GET" autocomplete="off">
-                            <div class="form-floating mb-3">
-                                <select name="location" class="form-select" id="inputPropertyVillage"
-                                    data-placeholder="Choose your location in Goa">
-                                    <option>Choose your location ....</option>
-                                    <option value="Anjuna" data-id="2">Anjuna</option>
-                                    <option value="Arpora" data-id="10">Arpora</option>
-                                    <option value="Assagao" data-id="1">Assagao</option>
-                                    <option value="Candolim" data-id="3">Candolim</option>
-                                    <option value="Chapora" data-id="21">Chapora</option>
-                                    <option value="Nerul" data-id="13">Nerul</option>
-                                    <option value="Parra" data-id="11">Parra</option>
-                                    <option value="Reis Magos" data-id="19">Reis Magos</option>
-                                    <option value="Saipem" data-id="22">Saipem</option>
-                                    <option value="Salvador" data-id="18">Salvador</option>
-                                    <option value="Siolim" data-id="15">Siolim</option>
-                                    <option value="Vagator" data-id="20">Vagator</option>
-                                </select>
+        <!-- Hero section End  -->
 
-                                <input type="hidden" name="token" id="select_location" value="">
-                                <label for="inputPropertyVillage">GOING TO</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" name="check_in" class="form-control datepickerField"
-                                    id="datepickerCheckIn" value="" placeholder="dd/mm/yyyy">
-                                <label for="form_in">CHECK IN</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" name="check_out" class="form-control datepickerField"
-                                    id="datepickerCheckOut" value="" placeholder="dd/mm/yyyy">
-                                <label for="form_out">CHECK OUT</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <select name="guest" class="form-select" id="filterGuest">
-                                    <option value="">Select guest</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                    <option value="13">13</option>
-                                    <option value="14">14</option>
-                                    <option value="15">15</option>
-                                    <option value="16">16</option>
-                                    <option value="17">17</option>
-                                    <option value="18">18</option>
-                                    <option value="19">19</option>
-                                    <option value="20">20</option>
-                                    <option value="21">21+</option>
-                                </select>
-                                <label for="filterGuest">GUESTS</label>
-                            </div>
-                            <!-- <div class="mb-3 price-range2 ">
-                                <div class="price-range-slider">
-                                    <p class="range-value">
-                                        <input type="text" id="priceRange" readonly>
-                                        <input type="hidden" name="price_min" id="priceRangeMinVal"
-                                            value="16200.00">
-                                        <input type="hidden" name="price_max" id="priceRangeMaxVal"
-                                            value="288000.00">
-                                        <input type="hidden" id="defualtPriceRangeMinVal" value="16200.00">
-                                        <input type="hidden" id="defualtPriceRangeMaxVal" value="288000.00">
-                                    </p>
-                                    <div id="slider-range" class="range-bar"></div>
+
+        <!-- Footer Start  -->
+        <section class="footer-section">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 py-4">
+                        <div class="property-filter ">
+                            <input type="hidden" id="old_select_location" value="">
+                            <form class="filter-form " id="VillasFilterForm" method="GET" autocomplete="off">
+                                <div class="form-floating mb-3">
+                                    <select name="location" class="form-select" id="inputPropertyVillage"
+                                        data-placeholder="Choose your location in Goa">
+                                        <option>Choose your location ....</option>
+                                        <option value="Anjuna" data-id="2">Anjuna</option>
+                                        <option value="Arpora" data-id="10">Arpora</option>
+                                        <option value="Assagao" data-id="1">Assagao</option>
+                                        <option value="Candolim" data-id="3">Candolim</option>
+                                        <option value="Chapora" data-id="21">Chapora</option>
+                                        <option value="Nerul" data-id="13">Nerul</option>
+                                        <option value="Parra" data-id="11">Parra</option>
+                                        <option value="Reis Magos" data-id="19">Reis Magos</option>
+                                        <option value="Saipem" data-id="22">Saipem</option>
+                                        <option value="Salvador" data-id="18">Salvador</option>
+                                        <option value="Siolim" data-id="15">Siolim</option>
+                                        <option value="Vagator" data-id="20">Vagator</option>
+                                    </select>
+
+                                    <input type="hidden" name="token" id="select_location" value="">
+                                    <label for="inputPropertyVillage">GOING TO</label>
                                 </div>
-                            </div> -->
-
-                            <div class="form-floating mb-3">
-
-
-                                <div class="price-range price-range-slider">
-                                    <div class="range-slider">
-                                        <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
-                                    </div>
-                                    <div class="range-labels">
-                                        <span class="min-label">$0</span>
-                                        <span class="max-label">$100</span>
-                                    </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="check_in" class="form-control datepickerField"
+                                        id="datepickerCheckIn" value="" placeholder="dd/mm/yyyy">
+                                    <label for="form_in">CHECK IN</label>
                                 </div>
-                            </div>
-                            <button type="submit" id="onClickToValidateFilter"
-                                class="filter-submit mb-3">Search</button>
-                        </form>
-                        
-                    </div>
+                                <div class="form-floating mb-3">
+                                    <input type="text" name="check_out" class="form-control datepickerField"
+                                        id="datepickerCheckOut" value="" placeholder="dd/mm/yyyy">
+                                    <label for="form_out">CHECK OUT</label>
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select name="guest" class="form-select" id="filterGuest">
+                                        <option value="">Select guest</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21+</option>
+                                    </select>
+                                    <label for="filterGuest">GUESTS</label>
+                                </div>
+                               
 
-                    <div class="property-social-icons">
+                               
+                                <button type="submit" id="onClickToValidateFilter"
+                                    class="filter-submit mb-3">Search</button>
+                            </form>
 
+                        </div>
+
+                        <div class="property-social-icons">
+
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-    </section>
+        </section>
+
+    </main>
+
+
+    <script>
+        const tag = document.createElement('script');
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        const videoID = document.querySelector('.video-bg-player').getAttribute('data-video');
+        const videoOverlay = document.querySelector('.video-bg-overlay');
+        const playerOptions = {
+            autohide: 1,
+            autoplay: 1,
+            controls: 0,
+            disablekb: 1,
+            enablejsapi: 1,
+            iv_load_policy: 3,
+            loop: 1,
+            modestbranding: 1,
+            mute: 1,
+            playlist: videoID,
+            rel: 0,
+            showinfo: 0
+        };
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        let ytPlayer;
+
+        function onYouTubeIframeAPIReady() {
+            ytPlayer = new YT.Player('yt-player', {
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                },
+                height: '720',
+                playerVars: playerOptions,
+                width: '1280',
+                videoId: videoID
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+
+            const videoDuration = event.target.getDuration();
+
+            setInterval(function () {
+                const videoCurrentTime = event.target.getCurrentTime();
+                const timeDifference = videoDuration - videoCurrentTime;
+
+                if (2 > timeDifference > 0) {
+                    event.target.seekTo(0);
+                }
+            }, 1000);
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING) {
+                videoOverlay.classList.add('video-bg-overlay--fadeOut');
+            }
+        }
+    </script>
 
     <!-- Footer End  -->
 
@@ -553,22 +258,22 @@
         }
 
 
-        $(function () {
-            $("#slider-range").slider({
-                range: true,
-                min: parseInt($('#VillasFilterForm').find('#defualtPriceRangeMinVal').val(), 10),
-                max: parseInt($('#VillasFilterForm').find('#defualtPriceRangeMaxVal').val(), 10),
-                values: [parseInt($('#VillasFilterForm').find('#priceRangeMinVal').val(), 10), parseInt($('#VillasFilterForm').find('#priceRangeMaxVal').val(), 10)],
-                slide: function (event, ui) {
-                    $("#priceRange").val("₹" + ui.values[0] + " - ₹" + ui.values[1]);
-                    $("#priceRangeMinVal").val(ui.values[0]);
-                    $("#priceRangeMaxVal").val(ui.values[1]);
-                }
-            });
-            $("#priceRange").val("₹" + $("#slider-range").slider("values", 0) + " - ₹" + $("#slider-range").slider("values", 1));
-            $("#priceRangeMinVal").val($("#slider-range").slider("values", 0));
-            $("#priceRangeMaxVal").val($("#slider-range").slider("values", 1));
-        });
+        // $(function () {
+        //     $("#slider-range").slider({
+        //         range: true,
+        //         min: parseInt($('#VillasFilterForm').find('#defualtPriceRangeMinVal').val(), 10),
+        //         max: parseInt($('#VillasFilterForm').find('#defualtPriceRangeMaxVal').val(), 10),
+        //         values: [parseInt($('#VillasFilterForm').find('#priceRangeMinVal').val(), 10), parseInt($('#VillasFilterForm').find('#priceRangeMaxVal').val(), 10)],
+        //         slide: function (event, ui) {
+        //             $("#priceRange").val("₹" + ui.values[0] + " - ₹" + ui.values[1]);
+        //             $("#priceRangeMinVal").val(ui.values[0]);
+        //             $("#priceRangeMaxVal").val(ui.values[1]);
+        //         }
+        //     });
+        //     $("#priceRange").val("₹" + $("#slider-range").slider("values", 0) + " - ₹" + $("#slider-range").slider("values", 1));
+        //     $("#priceRangeMinVal").val($("#slider-range").slider("values", 0));
+        //     $("#priceRangeMaxVal").val($("#slider-range").slider("values", 1));
+        // });
     </script>
 
 
