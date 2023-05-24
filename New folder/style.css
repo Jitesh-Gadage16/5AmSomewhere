@@ -974,6 +974,20 @@ button {
     z-index: 9999;
 }
 
+.arrow-prev {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    font-size: 40px;
+}
+
+.arrow-next {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    font-size: 40px;
+}
+
 
 /* foote css start  */
 
