@@ -102,6 +102,25 @@ button {
     border: 1px solid #fff;
 }
 
+.list-one {
+    color: #b29058;
+    font-size: 25px;
+    padding: 8px 0;
+}
+
+.social-div-one img{
+    width: 50px;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #b1945c;;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 15px;
+  }
+
 
 /*  homepage banner  */
 
@@ -175,6 +194,9 @@ button {
 }
 
 @media (max-width: 768px) {
+    .banner-overlar-div{
+        display: none;
+    }
     .video-bg-player {
         height: 100%;
         padding-bottom: 0;
@@ -989,6 +1011,10 @@ button {
 }
 
 
+.img-social-icons img {
+    width: 30px;
+}
+
 /* foote css start  */
 
 .footer-section {
@@ -1004,7 +1030,7 @@ button {
 
 @media only screen and (max-width: 576px) {
     .pg-header .header-content .logo img {
-        height: 13px;
+        height: 30px;
     }
     .pg-header .header-content .nav-call img {
         height: 30px;
@@ -1094,7 +1120,18 @@ button {
 }
 
 
+
+
 /*  property-details page  */
+
+.banner-overlar-div{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(24, 15, 44, 0.8) !important;
+    height: 100vh;
+    width: 30%;
+}
 
 .popup-backdrop {
     position: fixed;
