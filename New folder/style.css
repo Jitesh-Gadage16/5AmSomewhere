@@ -56,7 +56,7 @@ button {
 .hp-banner .video-text {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 30%;
     transform: translate(-50%, -50%);
     color: #fff;
     text-align: center;
@@ -178,7 +178,7 @@ button {
     .video-bg-player {
         height: 100%;
         padding-bottom: 0;
-        transform: translate(-100%, -50%);
+        transform: translate(-115%, -50%);
     }
     .villa-details .inner-gallery {
         flex-wrap: wrap;
@@ -222,8 +222,8 @@ button {
 }
 
 .pg-header .header-content .logo {
-    height: 50px;
-    padding: 10px;
+    height: 60px;
+    /* padding: 10px; */
 }
 
 .pg-header .header-content .logo img {
@@ -935,12 +935,12 @@ button {
     padding: 0;
     border: none;
     border-radius: 100%;
-    background-color: blue;
+    background-color: #212529;
     text-indent: -9999px;
 }
 
 .slick-dots li.slick-active button {
-    background-color: red;
+    background-color: #585e64;
 }
 
 .nav-slide {

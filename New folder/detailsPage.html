@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 
     <script src="https://kit.fontawesome.com/cb9a997e82.js" crossorigin="anonymous"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
 
 
     <style>
@@ -107,7 +109,7 @@
                     <img src="./assets/icons-06.webp" alt="">
                 </a>
                 <a href="index.html" class="logo">
-                    <img src="./assets/logo-no-background.png" alt="logo">
+                    <img src="./assets/new-logo.png" alt="logo" />
                 </a>
 
                 <div class="nav-right-menu d-none  d-xs-none d-sm-none d-md-block">
@@ -211,6 +213,14 @@
                             <button type="button" id="Book_now" class="btn h6 mt-1 d-inline-block prop-chat prop-chat-new" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Book Now
                             </button>
+                            <form id="paymentForm" class="d-none">
+                                <input type="text" name="amount" placeholder="Enter Amount" required>
+                                <input type="text" name="name" placeholder="Enter Name" required>
+                                <input type="email" name="email" placeholder="Enter Email" required>
+                                <input type="tel" name="phone" placeholder="Enter Phone Number" required>
+                                <button type="submit">Pay Now</button>
+                            </form>
+
 
 
 
@@ -729,6 +739,38 @@
 
         $('.input-group').on('click', '.button-minus', function(e) {
             decrementValue(e);
+        });
+    </script>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var amount = document.getElementsByName('amount')[0].value;
+            var name = document.getElementsByName('name')[0].value;
+            var email = document.getElementsByName('email')[0].value;
+            var phone = document.getElementsByName('phone')[0].value;
+
+            var options = {
+                "key": "rzp_test_PWZMWJQtVpE5IO",
+                "amount": amount * 100,
+                "name": name,
+                "email": email,
+                "contact": phone,
+                "currency": "INR",
+                "description": "Payment for Product",
+                "image": "https://your-image-url.com/logo.png",
+                "handler": function(response) {
+                    alert('Payment successful! Payment ID: ' + response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": name,
+                    "email": email,
+                    "contact": phone
+                }
+            };
+
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
         });
     </script>
 
