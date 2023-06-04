@@ -127,7 +127,7 @@ button {
 .video-bg-container {
     position: relative;
     overflow: hidden;
-    height: 100vh;
+    height: 90vh;
 }
 
 .video-bg-player,
