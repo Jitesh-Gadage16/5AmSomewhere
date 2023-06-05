@@ -61,29 +61,37 @@ button {
     color: #fff;
     text-align: center;
 }
+.hp-banner .video-text2 {
+    position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: #fff;
+text-align: center;
+}
 
-.hp-banner .video-text {}
 
-.hp-banner .video-text h1 {
+
+.hp-banner .video-text h1,.hp-banner .video-text2 h1 {
     font-family: arkipelago;
     font-size: 80px;
     margin-bottom: 0px;
     font-weight: 500;
 }
 
-.hp-banner .video-text h2 {
+.hp-banner .video-text h2 ,.hp-banner .video-text2 h2{
     font-family: "Playfair Display", serif;
     font-size: 100px;
     font-weight: 400;
     line-height: 0.2em;
 }
 
-.hp-banner .video-text p {
+.hp-banner .video-text p,.hp-banner .video-text2 p  {
     font-size: 30px;
     margin-top: 56px;
 }
 
-.hp-banner .video-text .video-btn {
+.hp-banner .video-text .video-btn ,.hp-banner .video-text2 .video-btn {
     display: inline-block;
     margin: 0;
     background-color: transparent;
@@ -127,7 +135,7 @@ button {
 .video-bg-container {
     position: relative;
     overflow: hidden;
-    height: 90vh;
+    height: 70vh;
 }
 
 .video-bg-player,
@@ -185,6 +193,15 @@ button {
     color: #fff;
 }
 
+.offcanvas-logo{
+    width: 200px;
+    margin: 0 auto;
+}
+
+.offcanvas-logo img{
+    width: 100%;
+}
+
 @media (max-width: 480px) {
     .single-villa-img.with-bg {
         height: 170px;
@@ -194,7 +211,7 @@ button {
 }
 
 @media (max-width: 768px) {
-    .banner-overlar-div{
+    .banner-overlar-div,.villa-text {
         display: none;
     }
     .video-bg-player {
@@ -1018,7 +1035,7 @@ button {
 /* foote css start  */
 
 .footer-section {
-    border: 2px solid #a7905e;
+    /* border: 2px solid #a7905e; */
     transition: all 0.2s;
 }
 
@@ -1123,6 +1140,21 @@ button {
 
 
 /*  property-details page  */
+.villa-text{
+    right: 10px;
+    bottom: 10px;
+    font-size: 22px;
+    border: 3px solid #b29058;
+    padding: 10px;
+    color: #b29058;
+    font-weight: 500;
+
+}
+
+
+
+
+
 
 .banner-overlar-div{
     position: absolute;

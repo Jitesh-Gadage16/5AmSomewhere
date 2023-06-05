@@ -12,7 +12,8 @@
     <!-- Bootstarp css cdn  -->
     <script src="https://kit.fontawesome.com/cb9a997e82.js" crossorigin="anonymous"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -29,7 +30,8 @@
                     <a href="./villas.html" class="nav-menu">Villas</a>
                 </div>
 
-                <a href="javascript:;" class="nav-call d-sm-block d-md-none" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <a href="javascript:;" class="nav-call d-sm-block d-md-none" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <img src="./assets/icons-06.webp" alt="" />
                 </a>
                 <a href="index.html" class="logo">
@@ -41,14 +43,15 @@
                 </div>
             </div>
         </div>
-        <div class="offcanvas offcanvas-start none" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas offcanvas-start none" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
             <div class="offcanvas-header">
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
                 <div class="offcanvas-menu">
                     <div class="offcanvas-logo">
-                        <img src="https://www.rftpm.in/public/frontend/img/rftpm_logo_trans.png" alt="logo" />
+                        <img src="./assets/new-logo.png" alt="logo" />
                     </div>
                     <ul>
                         <li><a href="gallery.html">Gallery</a></li>
@@ -66,8 +69,8 @@
         <!-- Hero section start  -->
 
         <section class="hp-banner">
-            <div class="single-item">
-                <div class="slider-div">
+            <div class="single-item position-relative">
+                <div class="slider-div ">
                     <div class="video-bg-container">
                         <div class="video-bg-player" data-video="rhXqiSmLm1k">
                             <div class="video-bg">
@@ -84,6 +87,11 @@
                         <p>LIKE NEVER BEFORE</p>
                         <a class="video-btn" href="villas.html">Book Now</a>
                     </div>
+                    <div class="banner-bootom-text position-relative">
+                        <div class="villa-text position-absolute ">
+                            Amore, Goa
+                        </div>
+                    </div>
                 </div>
 
                 <div class="slider-div">
@@ -96,6 +104,21 @@
                         <div class="video-bg-overlay" style="
                   background-image: url('./img.youtube.com/vi/cw0ZDocv65w/maxresdefault.jpg');
                 "></div>
+                        <div class="postion-relative">
+
+
+                            <div class="video-text2">
+                                <h1>Experience</h1>
+                                <h2>GOA</h2>
+                                <p>LIKE NEVER BEFORE</p>
+                                <a class="video-btn" href="villas.html">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="banner-bootom-text position-relative">
+                            <div class="villa-text position-absolute ">
+                                Amore, Goa
+                            </div>
+                        </div>
                     </div>
 
 
@@ -121,10 +144,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 py-4">
-                        
+
                         <div class="property-social-icons d-flex justify-content-center align-items-center gap-2 mb-3">
                             <div class="img-social-icons">
-                                <img src="./assets/whatsapp-logo.png" alt="">
+                                <a href="//api.whatsapp.com/send?phone=919137897117">
+                                    <img src="./assets/whatsapp-logo.png" alt="">
+                                </a>
                             </div>
                             <div class="img-social-icons">
                                 <img src="./assets/instagram-logo.avif" alt="">
@@ -137,66 +162,69 @@
                             <input type="hidden" id="old_select_location" value="" />
                             <form class="filter-form" id="VillasFilterForm" method="GET" autocomplete="off">
                                 <div class="form-floating mb-3">
-                                    <select name="location" class="form-select" id="inputPropertyVillage" data-placeholder="Choose your location in Goa">
-                      <option>Choose your location ....</option>
-                      <option value="Anjuna" data-id="2">Anjuna</option>
-                      <option value="Arpora" data-id="10">Arpora</option>
-                      <option value="Assagao" data-id="1">Assagao</option>
-                      <option value="Candolim" data-id="3">Candolim</option>
-                      <option value="Chapora" data-id="21">Chapora</option>
-                      <option value="Nerul" data-id="13">Nerul</option>
-                      <option value="Parra" data-id="11">Parra</option>
-                      <option value="Reis Magos" data-id="19">
-                        Reis Magos
-                      </option>
-                      <option value="Saipem" data-id="22">Saipem</option>
-                      <option value="Salvador" data-id="18">Salvador</option>
-                      <option value="Siolim" data-id="15">Siolim</option>
-                      <option value="Vagator" data-id="20">Vagator</option>
-                    </select>
+                                    <select name="location" class="form-select" id="inputPropertyVillage"
+                                        data-placeholder="Choose your location in Goa">
+                                        <option>Choose your location ....</option>
+                                        <option value="Anjuna" data-id="2">Anjuna</option>
+                                        <option value="Arpora" data-id="10">Arpora</option>
+                                        <option value="Assagao" data-id="1">Assagao</option>
+                                        <option value="Candolim" data-id="3">Candolim</option>
+                                        <option value="Chapora" data-id="21">Chapora</option>
+                                        <option value="Nerul" data-id="13">Nerul</option>
+                                        <option value="Parra" data-id="11">Parra</option>
+                                        <option value="Reis Magos" data-id="19">
+                                            Reis Magos
+                                        </option>
+                                        <option value="Saipem" data-id="22">Saipem</option>
+                                        <option value="Salvador" data-id="18">Salvador</option>
+                                        <option value="Siolim" data-id="15">Siolim</option>
+                                        <option value="Vagator" data-id="20">Vagator</option>
+                                    </select>
 
                                     <input type="hidden" name="token" id="select_location" value="" />
                                     <label for="inputPropertyVillage">GOING TO</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" name="check_in" class="form-control datepickerField" id="datepickerCheckIn" value="" placeholder="dd/mm/yyyy" />
+                                    <input type="text" name="check_in" class="form-control datepickerField"
+                                        id="datepickerCheckIn" value="" placeholder="dd/mm/yyyy" />
                                     <label for="form_in">CHECK IN</label>
                                 </div>
                                 <div class="form-floating mb-3">
-                                    <input type="text" name="check_out" class="form-control datepickerField" id="datepickerCheckOut" value="" placeholder="dd/mm/yyyy" />
+                                    <input type="text" name="check_out" class="form-control datepickerField"
+                                        id="datepickerCheckOut" value="" placeholder="dd/mm/yyyy" />
                                     <label for="form_out">CHECK OUT</label>
                                 </div>
                                 <div class="form-floating mb-3">
                                     <select name="guest" class="form-select" id="filterGuest">
-                      <option value="">Select guest</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">11</option>
-                      <option value="12">12</option>
-                      <option value="13">13</option>
-                      <option value="14">14</option>
-                      <option value="15">15</option>
-                      <option value="16">16</option>
-                      <option value="17">17</option>
-                      <option value="18">18</option>
-                      <option value="19">19</option>
-                      <option value="20">20</option>
-                      <option value="21">21+</option>
-                    </select>
+                                        <option value="">Select guest</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21+</option>
+                                    </select>
                                     <label for="filterGuest">GUESTS</label>
                                 </div>
 
                                 <button type="submit" id="onClickToValidateFilter" class="filter-submit mb-3">
-                    Search
-                  </button>
+                                    Search
+                                </button>
                             </form>
                         </div>
 
@@ -251,7 +279,7 @@
 
             const videoDuration = event.target.getDuration();
 
-            setInterval(function() {
+            setInterval(function () {
                 const videoCurrentTime = event.target.getCurrentTime();
                 const timeDifference = videoDuration - videoCurrentTime;
 
@@ -278,7 +306,7 @@
         minLabel.innerHTML = "$0";
         maxLabel.innerHTML = "$" + slider.max;
 
-        slider.oninput = function() {
+        slider.oninput = function () {
             minLabel.innerHTML = "$" + this.value;
             maxLabel.innerHTML = "$" + slider.max;
         };
@@ -304,11 +332,13 @@
     <!-- Bootstrap js CDN  -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
     <script type="text/javascript">
         $(".single-item").slick({
-            dots: true,
+            dots: false,
             prevArrow: '.arrow-prev ',
             nextArrow: '.arrow-next'
         });
