@@ -1161,7 +1161,7 @@ text-align: center;
     top: 0;
     right: 0;
     background: rgba(24, 15, 44, 0.8) !important;
-    height: 100vh;
+    height: 70vh;
     width: 30%;
 }
 
@@ -1201,7 +1201,7 @@ text-align: center;
 .single-villa-img {
     width: 100%;
     /*height: 540px;*/
-    height: calc(100vh - 70px);
+    height: 70vh;
     overflow: hidden;
     position: relative;
 }
@@ -1239,6 +1239,22 @@ text-align: center;
     text-align: center;
     width: 100%;
 }
+.overlary-wrapper,.overlay-content{
+    height: 100%;
+}
+
+.form_in{
+    left: 0;
+    top: 0;
+    position: absolute;
+    height: 100%;
+    padding: 1rem 0.75rem;
+    pointer-events: none;
+    border: 1px solid transparent;
+    transform-origin: 0 0;
+    transition: opacity .1s ease-in-out,transform .1s ease-in-out;
+}
+
 
 .single-villa-img .villa-title .hero__title {
     font-family: "Arkipelago";
