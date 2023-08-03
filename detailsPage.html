@@ -271,7 +271,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="villa-booking">
-                            <h3 class="booking-titl">Rs. 62,400.00 /<span class="unit">Night</span></h3>
+                            <h3 class="booking-titl"></h3>
                             <small class="d-block mb-1">* 18% tax will be applicable</small>
 
                             <br>
@@ -849,8 +849,13 @@
             document.querySelector('.villa-title').innerHTML = `<h1 class="hero__title">${data.title}</h1>
                 <h2 class="hero__sub">${data.street}</h2>`
 
+                document.querySelector('.booking-titl').innerHTML = `${data.price} /<span class="unit">Night</span> `
+
             document.querySelector('#title').innerHTML = data.street;
-            document.querySelector('#villa-titl-features').innerHTML = `${data.bedrooms} Bedrooms | Up to ${data.guests_max} Guests | Private Pool | 2 Nights Min Stay | Pets Not Allowed`;
+            document.querySelector('#villa-titl-features').innerHTML = `${data.bedrooms} Bedrooms | Up to ${data.guests_max} Guests | Private Pool | 2 Nights Min Stay | Pets Not Allowed `;
+
+
+          
             
 
         }
