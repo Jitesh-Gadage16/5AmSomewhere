@@ -226,7 +226,7 @@
 
 
 
-                <div class="villa-location mb-1"><i class="fa fa-map-marker" aria-hidden="true"></i> Assagao, Goa, India
+                <div class="villa-location mb-1"><i class="fa fa-map-marker" aria-hidden="true"></i> <span id="title"></span> 
                 </div>
                 <div class="row">
                     <div class="col-md-8">
@@ -648,7 +648,7 @@
                 <p>Description of the slide 2</p>
             </div>`,
                 }
-    ],
+            ],
         });
     </script>
 
@@ -777,6 +777,86 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+
+       
+
+
+    <script>
+        let hrefLocation = window.location.href;
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        console.log("id", id)
+
+
+
+        var data = {
+            "id": 1,
+            "title": "Mumbai Property",
+            "street": "Chembur",
+            "houseno": "101",
+            "city_id": 1,
+            "state_id": 1,
+            "pincode": "400071",
+            "country_id": 1,
+            "description": "Chembur properties in prime locations in Mumbai Site",
+            "short_description": "Mumbai Dream City",
+            "bedrooms": 1,
+            "guests_max": 2,
+            "price": 50000,
+            "whatsapp": "http://127.0.0.1:8000/villas/",
+            "insta": "http://127.0.0.1:8000/details/",
+            "app": "http://127.0.0.1:8000/index/",
+            "map": "http://127.0.0.1:8000/index/",
+            "top_bulleticon1": "dymmy_circle_icon_lqM812Q.png",
+            "top_bulleticon2": "dymmy_circle_icon_cvy5BJf_olRU6gl.png",
+            "top_bulleticon3": "dymmy_circle_icon_cvy5BJf_6gJIrpW_lDLFGb8.png",
+            "top_bulleticon4": "dymmy_circle_icon_cvy5BJf_bkNhBMG_y43tSU2.png",
+            "top_bulleticon5": "",
+            "top_bulleticon6": "",
+            "top_bulleticon7": "",
+            "top_bulleticon8": "",
+            "top_bulleticon9": "",
+            "top_bulleticon10": "",
+            "top_bullet_description1": "Private Pool",
+            "top_bullet_description2": "Security System",
+            "top_bullet_description3": "High-Speed Internet",
+            "top_bullet_description4": "Private Parking",
+            "top_bullet_description5": "",
+            "top_bullet_description6": "",
+            "top_bullet_description7": "",
+            "top_bullet_description8": "",
+            "top_bullet_description9": "",
+            "top_bullet_description10": "",
+            "inclusions_1": "24/7Security",
+            "inclusions_2": "Butler",
+            "inclusions_3": "Cook",
+            "inclusions_4": "High Speed Wifi",
+            "inclusions_5": "",
+            "inclusions_6": "",
+            "inclusions_7": "",
+            "inclusions_8": "",
+            "inclusions_9": "",
+            "inclusions_10": ""
+        }
+        var content = "";
+
+        console.log(data)
+
+        if (data.id == id) {
+
+            document.querySelector('.villa-title').innerHTML = `<h1 class="hero__title">${data.title}</h1>
+                <h2 class="hero__sub">${data.street}</h2>`
+
+            document.querySelector('#title').innerHTML = data.street;
+            document.querySelector('#villa-titl-features').innerHTML = `${data.bedrooms} Bedrooms | Up to ${data.guests_max} Guests | Private Pool | 2 Nights Min Stay | Pets Not Allowed`;
+            
+
+        }
+
+       
+    </script>
 
 
 

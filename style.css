@@ -390,6 +390,7 @@ text-align: center;
     width: calc(100% - 10px);
     position: relative;
     height: fit-content;
+    justify-content: space-between;
 }
 
 .property-list .list-item:hover {
@@ -426,7 +427,7 @@ text-align: center;
 
 .property-list .list-item .property-img img {
     max-width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .property-list .list-item .prop-list-info {
@@ -1101,6 +1102,16 @@ text-align: center;
 @media (max-width: 768px) {
     .property-filter .filter-form {
         flex-wrap: wrap;
+    }
+
+    .prop-footer {
+       flex-wrap: wrap!important;
+    }
+
+    .property-list {
+       height: 100%!important;
+       gap: 20px;
+        /* overflow-y: none; */
     }
 }
 
