@@ -61,6 +61,15 @@ button {
     color: #fff;
     text-align: center;
 }
+
+.hp-banner .video-text-sliders {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
 .hp-banner .video-text2 {
     position: absolute;
 top: 50%;
@@ -72,7 +81,7 @@ text-align: center;
 
 
 
-.hp-banner .video-text h1,.hp-banner .video-text2 h1 {
+.hp-banner .video-text h1,.hp-banner .video-text2 h1,.hp-banner .video-text-sliders h1 {
     font-family: arkipelago;
     font-size: 80px;
     margin-bottom: 0px;
@@ -86,12 +95,12 @@ text-align: center;
     line-height: 0.2em;
 }
 
-.hp-banner .video-text p,.hp-banner .video-text2 p  {
+.hp-banner .video-text p,.hp-banner .video-text2 p,.video-text-sliders p  {
     font-size: 30px;
     margin-top: 56px;
 }
 
-.hp-banner .video-text .video-btn ,.hp-banner .video-text2 .video-btn {
+.hp-banner .video-text .video-btn ,.hp-banner .video-text2 .video-btn,.hp-banner .video-text-sliders .video-btn {
     display: inline-block;
     margin: 0;
     background-color: transparent;
@@ -104,7 +113,7 @@ text-align: center;
     transition: all 0.15s ease;
 }
 
-.hp-banner .video-text .video-btn:hover {
+.hp-banner .video-text .video-btn:hover ,.hp-banner .video-text-s .video-btn:hover {
     background-color: #fff;
     color: #000;
     border: 1px solid #fff;
@@ -1495,6 +1504,7 @@ text-align: center;
     border-left: 1px solid #e1e1e1;
     border-right: 1px solid #e1e1e1;
     border-bottom: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
     padding: 25px;
 }
 
@@ -1569,3 +1579,12 @@ text-align: center;
 
 
 /*  property-details page  */
+
+
+.inline-gallery-container {
+    width: 100%;
+
+   
+    height: 0;
+    padding-bottom: 65%;
+}
