@@ -11,8 +11,25 @@
     <link href="./lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/cb9a997e82.js" crossorigin="anonymous"></script>
     <!-- Bootstarp css cdn  -->
+
+    <!-- Bootstarp css cdn  -->
+    <script src="https://kit.fontawesome.com/cb9a997e82.js" crossorigin="anonymous"></script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- slick carousel  -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Date Picker cdn  -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+    <title>Bootstrap Datepicker</title>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.
     css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-autoplay.min.
@@ -99,9 +116,9 @@
                 <div class="col-md-12">
                     <div class="property-filter">
                         <input type="hidden" id="old_select_location" value="">
-                        <form class="filter-form" id="VillasFilterForm" method="GET" autocomplete="off">
+                        <form class="filter-form" id="VillasFilterForm" autocomplete="off">
                             <div class="form-floating mb-3">
-                                <select name="location" class="form-select" id="inputPropertyVillage"
+                                <select name="inputPropertyVillage" class="form-select" id="inputPropertyVillage"
                                     data-placeholder="Choose your location in Goa">
                                     <option>Choose your location ....</option>
                                     <option value="Anjuna" data-id="2">Anjuna</option>
@@ -121,15 +138,28 @@
                                 <input type="hidden" name="token" id="select_location" value="">
                                 <label for="inputPropertyVillage">GOING TO</label>
                             </div>
+
                             <div class="form-floating mb-3">
-                                <input type="text" name="check_in" class="form-control datepickerField"
-                                    id="datepickerCheckIn" value="" placeholder="dd/mm/yyyy">
-                                <label for="form_in">CHECK IN</label>
+                                <div class="input-group date" id="datepicker_in">
+                                    <input type="text" class="form-control" placeholder="CHECK IN">
+                                    <span class="input-group-append">
+                                        <span class="input-group-text bg-white py-3">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </span>
+                                </div>
                             </div>
+
+
                             <div class="form-floating mb-3">
-                                <input type="text" name="check_out" class="form-control datepickerField"
-                                    id="datepickerCheckOut" value="" placeholder="dd/mm/yyyy">
-                                <label for="form_out">CHECK OUT</label>
+                                <div class="input-group date" id="datepicker_out">
+                                    <input type="text" class="form-control" placeholder="CHECK OUT">
+                                    <span class="input-group-append">
+                                        <span class="input-group-text bg-white py-3">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </span>
+                                </div>
                             </div>
                             <div class="form-floating mb-3">
                                 <select name="guest" class="form-select" id="filterGuest">
@@ -174,8 +204,7 @@
                             </div> -->
 
 
-                            <button type="submit" id="onClickToValidateFilter"
-                                class="filter-submit mb-3">Search</button>
+                            <button type="buton" id="onClickToValidateFilter" class="filter-submit mb-3">Search</button>
                         </form>
                         <p id="FilterFormMessage"
                             style="text-align: center;border-radius: 0.25rem;border: 1px solid transparent;padding: 0.35rem;font-size: 18px;">
@@ -185,9 +214,11 @@
 
                 <div class="row justify-content-between property-list h-100 m-auto" id="show_data">
 
+                    <!-- <div id="villa-container"></div> -->
 
 
-                    <div class="col-md-6 col-12 mt-sm-3">
+
+                    <!-- <div class="col-md-6 col-12 mt-sm-3">
                         <div class="list-item" data-markerid="88">
                             <a target="_blank" class="property-img relative" href="detailsPage.html">
                                 <img class="lazyload"
@@ -444,7 +475,13 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+
+                </div>
+                <div class=" d-flex justify-content-center align-items-center bg-secondary my-4 mx-auto py-3 text-center  other-vilas" style="display: none!important;"><div class=" other-vila" >Other Villas </div></div>
+
+                <div class="row justify-content-between property-list h-100 m-auto" id="show_unfilterdata">
+
 
                 </div>
 
@@ -459,30 +496,17 @@
 
     </section>
 
-    <!-- <section>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    ddsd
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-
-    <!-- Hero section End  -->
-
-
-    <!-- Footer Start  -->
-    <!-- <section class="footer-section">
-      
-    </section> -->
 
     <!-- Footer End  -->
+    <!-- Bootstrap js CDN  -->
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
-        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- lightGallery script  -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
     <script
@@ -505,195 +529,114 @@
         });
     </script>
 
+    <script type="text/javascript">
+        $(function () {
+            $('#datepicker_in').datepicker();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#datepicker_out').datepicker();
+        });
+    </script>
 
 
 
 
-    <!-- Bootstrap js CDN  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+
 
 
 
     <script>
 
-        var villaList = [
-            {
-                "id": 1,
-                "title": "Mumbai Property",
-                "street": "Chembur",
-                "houseno": "101",
-                "city_id": 1,
-                "state_id": 1,
-                "pincode": "400071",
-                "country_id": 1,
-                "description": "Chembur properties in prime locations in Mumbai Site",
-                "short_description": "Mumbai Dream City",
-                "bedrooms": 1,
-                "guests_max": 2,
-                "price": 50000,
-                "whatsapp": "http://127.0.0.1:8000/villas/",
-                "insta": "http://127.0.0.1:8000/details/",
-                "app": "http://127.0.0.1:8000/index/",
-                "map": "http://127.0.0.1:8000/index/",
-                "top_bulleticon1": "dymmy_circle_icon_lqM812Q.png",
-                "top_bulleticon2": "dymmy_circle_icon_cvy5BJf_olRU6gl.png",
-                "top_bulleticon3": "dymmy_circle_icon_cvy5BJf_6gJIrpW_lDLFGb8.png",
-                "top_bulleticon4": "dymmy_circle_icon_cvy5BJf_bkNhBMG_y43tSU2.png",
-                "top_bulleticon5": "",
-                "top_bulleticon6": "",
-                "top_bulleticon7": "",
-                "top_bulleticon8": "",
-                "top_bulleticon9": "",
-                "top_bulleticon10": "",
-                "top_bullet_description1": "Private Pool",
-                "top_bullet_description2": "Security System",
-                "top_bullet_description3": "High-Speed Internet",
-                "top_bullet_description4": "Private Parking",
-                "top_bullet_description5": "",
-                "top_bullet_description6": "",
-                "top_bullet_description7": "",
-                "top_bullet_description8": "",
-                "top_bullet_description9": "",
-                "top_bullet_description10": "",
-                "inclusions_1": "24/7Security",
-                "inclusions_2": "Butler",
-                "inclusions_3": "Cook",
-                "inclusions_4": "High Speed Wifi",
-                "inclusions_5": "",
-                "inclusions_6": "",
-                "inclusions_7": "",
-                "inclusions_8": "",
-                "inclusions_9": "",
-                "inclusions_10": ""
-            },
-            {
-                "id": 2,
-                "title": "Panvel Property",
-                "street": "Navi Mumbai",
-                "houseno": "102",
-                "city_id": 2,
-                "state_id": 1,
-                "pincode": "410206",
-                "country_id": 1,
-                "description": "Panvel City Villa",
-                "short_description": "Panvel Dream City in Navi Mumbai",
-                "bedrooms": 2,
-                "guests_max": 3,
-                "price": 60000,
-                "whatsapp": "http://127.0.0.1:8000/villas/",
-                "insta": "http://127.0.0.1:8000/details/",
-                "app": "http://127.0.0.1:8000/index/",
-                "map": "http://127.0.0.1:8000/index/",
-                "top_bulleticon1": "dymmy_circle_icon_cvy5BJf_t2iaWZx.png",
-                "top_bulleticon2": "dymmy_circle_icon_cvy5BJf_6gJIrpW_lDLFGb8_tYBAe83.png",
-                "top_bulleticon3": "dymmy_circle_icon_cvy5BJf_bkNhBMG_y43tSU2_gKJq1M2.png",
-                "top_bulleticon4": "dymmy_circle_icon_cvy5BJf_bkNhBMG_y43tSU2_Ap3LKSF.png",
-                "top_bulleticon5": "",
-                "top_bulleticon6": "",
-                "top_bulleticon7": "",
-                "top_bulleticon8": "",
-                "top_bulleticon9": "",
-                "top_bulleticon10": "",
-                "top_bullet_description1": "Private Pool 1",
-                "top_bullet_description2": "Security System 1",
-                "top_bullet_description3": "High-Speed Internet 1",
-                "top_bullet_description4": "Private Parking 1",
-                "top_bullet_description5": "",
-                "top_bullet_description6": "",
-                "top_bullet_description7": "",
-                "top_bullet_description8": "",
-                "top_bullet_description9": "",
-                "top_bullet_description10": "",
-                "inclusions_1": "24/7Security 1",
-                "inclusions_2": "Butler 1",
-                "inclusions_3": "Cook 1",
-                "inclusions_4": "High Speed Wifi 1",
-                "inclusions_5": "Housekeeping 1",
-                "inclusions_6": "100% Power Backup 1",
-                "inclusions_7": "",
-                "inclusions_8": "",
-                "inclusions_9": "",
-                "inclusions_10": ""
-            },
-            {
-                "id": 3,
-                "title": "Thane",
-                "street": "Navi Mumbai",
-                "houseno": "125/A",
-                "city_id": 3,
-                "state_id": 2,
-                "pincode": "400102",
-                "country_id": 1,
-                "description": "Godhbunder road-Thane plot site",
-                "short_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500",
-                "bedrooms": 1,
-                "guests_max": 1,
-                "price": 100000,
-                "whatsapp": "http://127.0.0.1:8000/villas/",
-                "insta": "http://127.0.0.1:8000/details/",
-                "app": "http://127.0.0.1:8000/index/",
-                "map": "http://127.0.0.1:8000/index/",
-                "top_bulleticon1": "dymmy_circle_icon_cvy5BJf_JaAj1MY.png",
-                "top_bulleticon2": "dymmy_circle_icon_cvy5BJf_6gJIrpW_PFB4ThG.png",
-                "top_bulleticon3": "dymmy_circle_icon_cvy5BJf_mhfsMrg.png",
-                "top_bulleticon4": "dymmy_circle_icon_cvy5BJf_Tv2tmnF.png",
-                "top_bulleticon5": "",
-                "top_bulleticon6": "",
-                "top_bulleticon7": "",
-                "top_bulleticon8": "",
-                "top_bulleticon9": "",
-                "top_bulleticon10": "",
-                "top_bullet_description1": "Private Pool",
-                "top_bullet_description2": "Security System",
-                "top_bullet_description3": "High-Speed Internet",
-                "top_bullet_description4": "",
-                "top_bullet_description5": "",
-                "top_bullet_description6": "",
-                "top_bullet_description7": "",
-                "top_bullet_description8": "",
-                "top_bullet_description9": "",
-                "top_bullet_description10": "",
-                "inclusions_1": "24/7Security",
-                "inclusions_2": "Butler",
-                "inclusions_3": "Cook 1",
-                "inclusions_4": "High Speed Wifi 1",
-                "inclusions_5": "",
-                "inclusions_6": "",
-                "inclusions_7": "",
-                "inclusions_8": "",
-                "inclusions_9": "",
-                "inclusions_10": ""
-            }
-        ]
 
-        console.log("==>", villaList)
 
         var content = "";
+        var filterContent = "";
+        var unfilterConent = "";
+        var pointsview = '';
 
-        for (let i = 0; i < villaList.length; i++) {
-            console.log("value", villaList[i])
+        const villaContainer = document.getElementById('show_data');
+        const apiUrl = 'https://file.mycenter.co.in/property/api/allProperty';
 
-            var val = villaList[i]
 
-            content += `<div class="col-md-6 col-12 mt-sm-3">
+        const searchButton = document.getElementById('onClickToValidateFilter');
+        searchButton.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the selected value of the inputPropertyVillage <select> element
+            const selectedLocation = document.getElementById('inputPropertyVillage').value;
+
+            // Get the value of the check-in date
+            const checkinDate = document.querySelector('#datepicker_in input').value;
+            const checkinComponents = checkinDate.split('/');
+
+            // Reconstruct the date in the desired format "dd-mm-yyyy"
+            const fromDate = `${checkinComponents[1]}-${checkinComponents[0]}-${checkinComponents[2]}`;
+
+
+            // Get the value of the check-out date
+            const checkoutDate = document.querySelector('#datepicker_out input').value;
+            const checkoutComponents = checkoutDate.split('/');
+
+            // Reconstruct the date in the desired format "dd-mm-yyyy"
+            const toDate = `${checkoutComponents[1]}-${checkoutComponents[0]}-${checkoutComponents[2]}`;
+
+
+            // Do something with the selected value
+            console.log('Selected :', selectedLocation, fromDate, toDate);
+
+            // var formData = {
+            //     location :selectedLocation,
+            //     from_date: fromDate,
+            //     to_Date:toDate
+            // }
+
+            const formData = new URLSearchParams();
+            formData.append('location', selectedLocation);
+            formData.append('fromDate', fromDate);
+            formData.append('toDate', toDate);
+
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded' // Specify URL-encoded content type
+                },
+                body: formData
+            })
+                .then(response => response.json())
+                .then(response => {
+                    console.log("res", response)
+
+                    var AllVillas = response.filtered_data;
+                    var unfilterVillas = response.unfiltered_data
+
+
+
+                    for (let i = 0; i < AllVillas.length; i++) {
+
+
+                        var val = AllVillas[i]
+
+
+                        filterContent += `<div class="col-md-6 col-12 mt-sm-3">
                         <div class="list-item" data-markerid="88">
                             <a target="_blank" class="property-img relative" href="detailsPage.html?id=${val.id}">
                                 <img class="lazyload"
-                                    src="https://www.rftpm.in/public/uploads/villa/thumb/1677410283.jpg">
+                                    src=${val.main_img}>
                                 <i class="fa-sharp fa-regular fa-images open-gallery"></i>
                             </a>
                             <div class="prop-list-info">
-                                <a target="_blank" href="property/amger.html" class="info-title"><b>${val.title}</b></a>
+                                <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
+                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
+
+
                                 <ul class="prop-opt">
-                                    <li><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.street} </span></li>
-                                    <li>${val.top_bullet_description1} </li>
-                                    <li>${val.top_bullet_description2}</li>
-                                    <li>${val.top_bullet_description3}</li>
-                                    <li>${val.top_bullet_description4}</li>
-                                    <li></li>
+                                  
                                 </ul>
+
+                               
                                 <div class="prop-footer ">
                                     <div class="prop-share-new d-flex mt-2">
                                         <a target="_blank"
@@ -711,7 +654,222 @@
 
                                     </div>
                                     <div class="prop-extra ">
-                                        Rs.${val.price}/Night
+                                        Rs.${val.per_night}/Night
+                                        <br>+ 18% taxes<br>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+                   
+
+                    document.querySelector('#show_data').innerHTML = filterContent;
+
+                    var listHtml = '';
+                        var Info = AllVillas[i].info;
+
+                        // console.log(document.querySelectorAll('.prop-opt'),Info)
+
+                        var listDiv = document.querySelectorAll('.prop-opt');
+
+
+                        for(let i = 0; i < Info.length; i++){
+                            listHtml += `<li>${Info[i]}</li>`
+                        }
+
+                        console.log("listHtml",listHtml)
+
+                        for(let j = 0; j <  listDiv.length; j++){
+                            listDiv[j].innerHTML = listHtml;
+
+                            
+                        }
+
+                    }
+
+                    for (let i = 0; i < unfilterVillas.length; i++) {
+                        // console.log("value", unfilterVillas[i])
+
+                        // var cardpoints = document.querySelector('.prop-opt')
+
+                        var Info = unfilterVillas[i].info;
+                        // console.log(info,"is array")
+
+
+                        var val = unfilterVillas[i]
+
+
+                        unfilterConent += `<div class="col-md-6 col-12 mt-sm-3">
+                        <div class="list-item" data-markerid="88">
+                            <a target="_blank" class="property-img relative" href="detailsPage.html?id=${val.id}">
+                                <img class="lazyload"
+                                    src=${val.main_img}>
+                                <i class="fa-sharp fa-regular fa-images open-gallery"></i>
+                            </a>
+                            <div class="prop-list-info">
+                                <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
+                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
+
+                                <ul class="prop-opt">
+                                    
+                                    
+                                </ul>
+
+                               
+                                <div class="prop-footer ">
+                                    <div class="prop-share-new d-flex mt-2">
+                                        <a target="_blank"
+                                        href="${val.whatsapp}"
+                                            class="share-new "><img src="./assets/whatsapp-logo.png" alt=""></a>
+                                        <a target="_blank"
+                                            href="${val.insta}"
+                                            class="share-new"><img src="./assets/instagram-logo.avif" alt=""></a>
+
+                                        <a target="_blank" href="${val.map}" class="share-new "><img src="./assets/airbnb.png"
+                                                alt=""></a>
+                                        <a target="_blank"
+                                        href="${val.map}"
+                                            class="share-new"><img src="./assets/google-map.png" alt=""></a>
+
+                                    </div>
+                                    <div class="prop-extra ">
+                                        Rs.${val.per_night}/Night
+                                        <br>+ 18% taxes<br>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+                  
+
+                    document.querySelector('.other-vilas').style.display = 'block';
+
+                    
+
+                    document.querySelector('#show_unfilterdata').innerHTML = unfilterConent;
+
+                    var listHtml = '';
+                        var Info = AllVillas[i].info;
+
+                        // console.log(document.querySelectorAll('.prop-opt'),Info)
+
+                        var listDiv = document.querySelectorAll('.prop-opt');
+
+
+                        for(let i = 0; i < Info.length; i++){
+                            listHtml += `<li>${Info[i]}</li>`
+                        }
+
+                        console.log("listHtml",listHtml)
+
+                        for(let j = 0; j <  listDiv.length; j++){
+                            listDiv[j].innerHTML = listHtml;
+
+                            
+                        }
+
+                    }
+
+
+                });
+        });
+
+
+
+
+
+
+
+
+
+        fetch(apiUrl, {
+            method: 'get',
+        })
+            .then(response => response.json())
+            .then(response => {
+
+                var option = '';
+
+                var valuess = response.filtered_data;
+                console.log("value", valuess)
+                var slectDiv = document.querySelector('#inputPropertyVillage')
+
+
+
+                valuess.forEach((val, index) => {
+                    option += `<option value="${val.address}" data_id="${index}">${val.address}</option>`
+                })
+
+                document.querySelector('#inputPropertyVillage').innerHTML = option;
+
+                var optiondiv = document.createElement('option');
+                optiondiv.innerHTML = 'Choose your location.. '
+                optiondiv.selected = true;
+                optiondiv.className = "default-option"
+                slectDiv.appendChild(optiondiv);
+
+                const defaultOption = document.querySelector('.default-option');
+
+
+
+                if (defaultOption) {
+                    slectDiv.insertBefore(defaultOption, slectDiv.firstChild);
+                }
+
+            })
+
+        // function getVilllasList() {
+
+            fetch(apiUrl, {
+                method: 'GET',
+            })
+                .then(response => response.json())
+                .then(response => {
+                    console.log("response", response.filtered_data);
+                    var AllVillas = response.filtered_data;
+
+                    for (let i = 0; i < AllVillas.length; i++) {
+
+                        var val = AllVillas[i]
+
+
+                        content += `<div class="col-md-6 col-12 mt-sm-3">
+                        <div class="list-item" data-markerid="88">
+                            <a target="_blank" class="property-img relative" href="detailsPage.html?id=${val.id}">
+                                <img class="lazyload"
+                                    src=${val.main_img}>
+                                <i class="fa-sharp fa-regular fa-images open-gallery"></i>
+                            </a>
+                            <div class="prop-list-info">
+                                <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
+                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
+
+                                <ul class="prop-opt">
+                                    
+                                    
+                                </ul>
+
+                               
+                                <div class="prop-footer ">
+                                    <div class="prop-share-new d-flex mt-2">
+                                        <a target="_blank"
+                                        href="${val.whatsapp}"
+                                            class="share-new "><img src="./assets/whatsapp-logo.png" alt=""></a>
+                                        <a target="_blank"
+                                            href="${val.insta}"
+                                            class="share-new"><img src="./assets/instagram-logo.avif" alt=""></a>
+
+                                        <a target="_blank" href="${val.map}" class="share-new "><img src="./assets/airbnb.png"
+                                                alt=""></a>
+                                        <a target="_blank"
+                                        href="${val.map}"
+                                            class="share-new"><img src="./assets/google-map.png" alt=""></a>
+
+                                    </div>
+                                    <div class="prop-extra ">
+                                        Rs.${val.per_night}/Night
                                         <br>+ 18% taxes<br>
 
                                     </div>
@@ -720,14 +878,190 @@
                         </div>
                     </div>`
 
-        }
+
+                       
+                        document.querySelector('#show_data').innerHTML = content;
+                        var listHtml = '';
+                        var Info = AllVillas[i].info;
+
+                        // console.log(document.querySelectorAll('.prop-opt'),Info)
+
+                        var listDiv = document.querySelectorAll('.prop-opt');
 
 
-        document.querySelector('#show_data').innerHTML = content;
+                        for(let i = 0; i < Info.length; i++){
+                            listHtml += `<li>${Info[i]}</li>`
+                        }
+
+                        console.log("listHtml",listHtml)
+
+                        for(let j = 0; j <  listDiv.length; j++){
+                            listDiv[j].innerHTML = listHtml;
+
+                            
+                        }
+
+                        
+
+                    
+
+
+                        // infoArray.forEach(element => {
+                        //     lintHtml += `<li>${element}</li>`
+
+                        //     // console.log("lintHtml",lintHtml)
+                        // });
+
+                        // console.log("lintHtml==>", lintHtml)
+                        // document.querySelector('.prop-opt').innerHTML = values;
+
+                        // var valuediv = document.querySelectorAll('.prop-list-info');
+
+                        // infoArray.forEach(villa => {
+                        //     var valuediv = document.querySelector('.prop-list-info');
+                        //     // const card = document.createElement('div');
+                        //     // card.className = 'villa-card col-md-6 col-12 mt-sm-3';
+                        //     // const list_itemDiv = document.createElement('div')
+                        //     // list_itemDiv.className = 'list-item'
+
+                        //     // Create the <a> tag
+                        //     //   const villaLink = document.createElement('a');
+                        //     //   villaLink.target = '_blank';
+                        //     //   villaLink.className = 'property-img relative';
+                        //     //   villaLink.href = `detailsPage.html?id=${villa.id}`;
+
+                        //     // Create and append the villa image inside the <a> tag
+                        //     // const villaImage = document.createElement('img');
+                        //     // villaImage.className = 'lazyload';
+                        //     // villaImage.src = villa.main_img;
+                        //     // villaLink.appendChild(villaImage);
+
+                        //     // const gallryImg = document.createElement('i');
+                        //     // gallryImg.className = 'fa-sharp fa-regular fa-images open-gallery'
+                        //     // villaLink.appendChild(gallryImg);
+
+                        //     const propList = document.createElement('div');
+                        //     propList.className = 'prop-list-info';
+
+
+
+                        //     //  const title = document.createElement('a')
+                        //     //  title.target = '_blank';
+                        //     //   title.className = 'info-title';
+                        //     //   title.href = `detailsPage.html?id=${villa.id}`;
+
+                        //     //   propList.appendChild(title);
+
+
+                        //     // const villaName = document.createElement('b');
+                        //     // villaName.textContent = villa.name; // Assuming 'name' is the property for the villa name
+                        //     // title.appendChild(villaName);
+
+                        //     const villaAddress = document.createElement('p');
+                        //     // villaAddress.classList = 'm-0 py-2';
+
+                        //     const locationImg = document.createElement('i');
+                        //     // locationImg.className = 'fa fa-map-marker '
+                        //     // villaAddress.appendChild(locationImg);
+
+
+                        //     // Create and append the <span> element inside the <p> tag
+                        //     // const spanElement = document.createElement('span');
+                        //     // spanElement.className = 'px-1'; // Set the content of the span element
+                        //     // spanElement.textContent = villa.address; 
+                        //     // villaAddress.appendChild(spanElement);
+
+                        //     // propList.appendChild(villaAddress);
+
+
+                        //     const villaInfo = document.createElement('p');
+
+                        //     // const villaInfoArray = villa.info.split(',').map(item => item.trim());
+                        //     const ulElement = document.createElement('ul');
+                        //     ulElement.className = 'prop-opt'
+                        //     // villaInfoArray.forEach(itemText => {
+                        //     const liElement = document.createElement('li');
+
+
+
+                        //     liElement.textContent = villa;
+                        //     ulElement.appendChild(liElement);
+                        //     // });
+
+                        //     propList.appendChild(ulElement);
+
+                        //     const parentElement = document.querySelector('.prop-list-info');
+
+                        //     if (parentElement.children.length >= 3) {
+                        //         parentElement.insertBefore(ulElement, parentElement.children[2]);
+                        //     }
+
+                        //     // const propFooter = document.createElement('div')
+                        //     // propFooter.className = 'prop-footer ';
+
+                        //     // const propInnerDiv = document.createElement('div');
+                        //     // propInnerDiv.className = 'prop-share-new d-flex mt-2'
+                        //     // propFooter.appendChild(propInnerDiv);
+
+                        //     // const socialLink = document.createElement('a');
+                        //     // socialLink.target = '_blank';
+                        //     // socialLink.className = 'share-new ';
+                        //     // socialLink.href = "https://web.whatsapp.com/";
+
+                        //     // const imgDiv = document.createElement('img');
+                        //     // imgDiv.src = "https://property-project.netlify.app/assets/whatsapp-logo.png";
+                        //     // socialLink.appendChild(imgDiv)
+
+
+                        //     // propInnerDiv.appendChild(socialLink);
+
+                        //     // propList.appendChild(propFooter);
+
+
+
+                        //     // card.appendChild(list_itemDiv);
+                        //     // list_itemDiv.appendChild(villaLink);
+                        //     valuediv.appendChild(propList);
+                        //     // list_itemDiv.appendChild(villaAddress);
+                        //     // list_itemDiv.appendChild(ulElement);
+
+                        //     // villaContainer.appendChild(card);
+                        // });
+
+
+
+
+                    }
+
+
+
+
+                    // Create cards for each villa listing
+
+                })
+                .catch(error => console.error('Error fetching data:', error));
+
+
+        // } function end
+
+
+
+
+
+
+
+
+            // })
+
+
+
+
 
 
 
     </script>
+
+
 
     <!-- <script>
         $(document).ready(function () {
@@ -783,7 +1117,7 @@
 
 
 
-    </script> -->
+    </script>  -->
 
 </body>
 

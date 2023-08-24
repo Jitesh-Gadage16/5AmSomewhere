@@ -132,7 +132,7 @@ text-align: center;
 .dot {
     height: 25px;
     width: 25px;
-    background-color: #b1945c;;
+    /* background-color: #b1945c; */
     border-radius: 50%;
     display: inline-block;
     margin-right: 15px;

@@ -20,6 +20,7 @@
 
     <script src="https://kit.fontawesome.com/cb9a997e82.js" crossorigin="anonymous"></script>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- <base href="https://example.com/"> -->
 
     <!-- lightGallery plugin cdn  -->
 
@@ -419,7 +420,7 @@
                                     <li>Housekeeping</li>
                                 </ul>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -713,114 +714,127 @@
 
 
 
-        var data =
-            {
-                "success": "success",
-        "property": {
-            "id": 1,
-            "title": "Mumbai Property",
-            "image": "/media/media/0387e0faf28e4068992955ea88e81951.jpg",
-            "street": "Chembur",
-            "houseno": "101",
-            "pincode": "400071",
-            "description": "Mumbai Dream City Properties",
-            "short_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500",
-            "bedrooms": 2,
-            "guests_max": 1,
-            "price": 10000000,
-            "whatsapp": "http://127.0.0.1:8000/villas/",
-            "insta": "http://127.0.0.1:8000/details/",
-            "app": "http://127.0.0.1:8000/index/",
-            "map": "http://127.0.0.1:8000/admin/villa/propertylisting/1/change/",
-            "content": "<h2>What is Lorem Ipsum?</h2>\r\n\r\n<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n\r\n<h2>Why do we use it?</h2>\r\n\r\n<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using &#39;Content here, content here&#39;, making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for &#39;lorem ipsum&#39; will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>",
-            "top_bulleticon1": "/media/dymmy_circle_icon_XDLsZKc.png",
-            "top_bulleticon2": "/media/dymmy_circle_icon_cvy5BJf_RqsW8SO.png",
-            "top_bulleticon3": "/media/dymmy_circle_icon_cvy5BJf_6gJIrpW_u8kH1zb.png",
-            "top_bulleticon4": "/media/dymmy_circle_icon_cvy5BJf_6gJIrpW_Hyeuf0j_d9MdwtK.png",
-            "top_bulleticon5": null,
-            "top_bulleticon6": null,
-            "top_bulleticon7": null,
-            "top_bulleticon8": null,
-            "top_bulleticon9": null,
-            "top_bulleticon10": null,
-            "top_bullet_description1": "Private Pool",
-            "top_bullet_description2": "Security System",
-            "top_bullet_description3": "High-Speed Internet",
-            "top_bullet_description4": "Private Parking",
-            "top_bullet_description5": "",
-            "top_bullet_description6": "",
-            "top_bullet_description7": "",
-            "top_bullet_description8": "",
-            "top_bullet_description9": "",
-            "top_bullet_description10": "",
-            "inclusions_1": "24/7Security",
-            "inclusions_2": "Butler",
-            "inclusions_3": "Cook 1",
-            "inclusions_4": "High Speed Wifi 1",
-            "inclusions_5": "Housekeeping 1",
-            "inclusions_6": "100% Power Backup",
-            "inclusions_7": "",
-            "inclusions_8": "",
-            "inclusions_9": "",
-            "inclusions_10": "",
-            "city": 1,
-            "state": 1,
-            "country": 1
-        }
-
-            }
-
         var content = "";
 
-        console.log("==",data)
 
-        var Data = data.property
 
-        console.log("das", Data.title)
+        fetch(`https://file.mycenter.co.in/property/api/propertyInfo/${id}`, {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(response => {
+                console.log("page data", response.data[0])
 
-        if (Data.id == id) {
+                var Data = response.data[0]
 
-            document.querySelector('.villa-title').innerHTML = `<h1 class="hero__title">${Data.title}</h1>
-                <h2 class="hero__sub">${Data.street}</h2>`
+                document.querySelector('.villa-title').innerHTML = `<h1 class="hero__title">${Data.name}</h1>
+                <h2 class="hero__sub">${Data.address}</h2>`
 
-            document.querySelector('.booking-titl').innerHTML = `${Data.price} /<span class="unit">Night</span> `
+                document.querySelector('.booking-titl').innerHTML = `${Data.per_night} /<span class="unit">Night</span> `
 
-            document.querySelector('#title').innerHTML = Data.street;
-            document.querySelector('.villa-titl-features').innerHTML = `${Data.bedrooms} Bedrooms | Up to ${Data.guests_max} Guests | Private Pool | 2 Nights Min Stay | Pets Not Allowed `
+                document.querySelector('#title').innerHTML = Data.address;
+                document.querySelector('.villa-titl-features').innerHTML = `${Data.info}`
 
-            document.querySelector('.villa-sec-long-text').innerHTML = `<div class=""long-text>${Data.content}</div>`
+                document.querySelector('.villa-sec-long-text').innerHTML = `<div class=""long-text>${Data.rules}</div>`
 
-            document.querySelector(".overlar-list").innerHTML = `<div class="list-one">
-                                <span class="dot"> </span> ${Data.top_bullet_description1}
-                            </div> 
-                            <div class="list-one">
-                                <span class="dot"> </span> ${Data.top_bullet_description2}
-                            </div>
-                            <div class="list-one">
-                                <span class="dot"> </span> ${Data.top_bullet_description3}
-                            </div>
-                            <div class="list-one">
-                                <span class="dot"> </span> ${Data.top_bullet_description4}
-                            </div>
-                            <div class="list-one">
-                                <span class="dot"> </span> ${Data.top_bullet_description5}
+                var facilities = Data.facilities;
+                // console.log("facilities",JSON.parse(facilities))
+
+                // const facilitiesArray = facilities.split('\n');
+                console.log(JSON.parse(Data.insights));
+
+                var bannerPoints = JSON.parse(Data.insights);
+                var listHtml = "";
+
+                bannerPoints.forEach(val =>  {
+                    console.log("val",val)
+                    listHtml += `<div class="list-one">
+                                <span class=""><img class="dot" src="${val.img}" /> </span> ${val.label}
+                            </div>`;
+                })
+
+                const listContainer = document.querySelector('.overlar-list');
+
+                listContainer.innerHTML = listHtml;
+
+                // facilitiesArray.forEach(facility => {
+                //     const listItem = document.createElement('div');
+                //     listItem.className = 'list-one';
+
+                //     const dotSpan = document.createElement('span');
+                //     dotSpan.className = 'dot';
+
+                //     const textNode = document.createTextNode(' ' + facility);
+
+                //     listItem.appendChild(dotSpan);
+                //     listItem.appendChild(textNode);
+
+                //     listContainer.appendChild(listItem);
+                // });
+
+                var gallery = Data.gallery;
+                const galleryArray = JSON.parse(gallery);
+                console.log("galleryArray", galleryArray)
+                var gallertHtml = "";
+
+                galleryArray.forEach(img => {
+                    console.log("img", img)
+                    gallertHtml += ` 
+                                <a data-lg-size="1400-1400" class="gallery-item"
+                                    data-src="${img}">
+                                    <img class="img-fluid" src="${img}" />
+                                </a>
+                                
+
                             </div>`
 
-            const listDivs = document.querySelectorAll('.list-one');
 
-            // Loop through each div and check if its content is empty, then hide it
-            listDivs.forEach((div) => {
-                const content = div.textContent.trim();
-                if (content === "") {
-                    div.style.display = "none";
-                }
-            });
+                })
+
+                console.log("gallertHtml", gallertHtml)
+
+                document.querySelector('#gallery').innerHTML = gallertHtml
+
+                var value = document.querySelectorAll('.gallery-item')
+                const lastGalleryItem = value[value.length - 1];
+                console.log(lastGalleryItem)
+                lastGalleryItem.classList.add('more');
+                lastGalleryItem.setAttribute('data-more-text', 'More');
 
 
 
 
-        }
 
+
+
+
+
+
+
+
+
+
+
+
+                const listDivs = document.querySelectorAll('.list-one');
+
+                // Loop through each div and check if its content is empty, then hide it
+                listDivs.forEach((div) => {
+                    const content = div.textContent.trim();
+                    if (content === "") {
+                        div.style.display = "none";
+                    }
+                });
+
+
+
+
+
+            })
+
+        // var Data = data.property
+
+        // console.log("das", Data.title)
 
 
 
