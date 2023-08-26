@@ -236,7 +236,9 @@ text-align: center;
         width: 90px !important;
         height: 90px !important;
     }
-    .video-bg-player .video-bg iframe {}
+    .prop-list-info{
+        margin-left: 0!important;
+    }
 }
 
 @media (min-width: 768px) {
@@ -458,6 +460,7 @@ text-align: center;
 .property-list .prop-list-info .info-title {
     font-size: 18px;
     color: inherit;
+    text-decoration: none;
 }
 
 .property-list .prop-list-info .prop-opt {
