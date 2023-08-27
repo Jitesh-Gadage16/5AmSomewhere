@@ -1210,7 +1210,7 @@ text-align: center;
 }
 
 .popup-div {
-    position: absolute;
+    position: fixed;
     background: #fff;
     color: #000;
     height: 50;

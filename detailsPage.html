@@ -181,7 +181,7 @@
             <div class="img-option ">
 
                 <div class="container position-relative">
-                    <a class="img-vuall" href="javascript:;" id="dynamic-gallery">View all photos</a>
+                    <!-- <a class="img-vuall" href="javascript:;" id="dynamic-gallery">View all photos</a> -->
                 </div>
             </div>
             <div class="banner-overlar-div">
@@ -527,6 +527,11 @@
     </section>
 
 
+    <button type="button" class="dynamic-gallery-test">Open Gallery</button>
+    <button type="button" class="dynamic-gallery-test">Open Gallery</button>
+    <button type="button" class="dynamic-gallery-test">Open Gallery</button>
+
+
 
 
 
@@ -547,6 +552,21 @@
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+
+    <script>
+
+
+
+// $dynamicGallerytest.addEventListener('click', function () {
+//     // Starts with third item.(Optional).
+//     // This is useful if you want use dynamic mode with
+//     // custom thumbnails (thumbnails outside gallery),
+//     dynamicGalleryTest.openGallery(2);
+// });
+
+    </script>
+
+
     <script>
         lightGallery(document.getElementById('gallery'), {
             plugins: [lgThumbnail, lgZoom, lgFullscreen, lgShare, lgRotate, lgAutoplay],
@@ -574,6 +594,8 @@
             ],
         });
     </script>
+
+
 
 
 
@@ -746,8 +768,8 @@
                 var bannerPoints = JSON.parse(Data.insights);
                 var listHtml = "";
 
-                bannerPoints.forEach(val =>  {
-                    console.log("val",val)
+                bannerPoints.forEach(val => {
+                    console.log("val", val)
                     listHtml += `<div class="list-one">
                                 <span class=""><img class="dot" src="${val.img}" /> </span> ${val.label}
                             </div>`;
@@ -780,7 +802,7 @@
                 galleryArray.forEach(img => {
                     console.log("img", img)
                     gallertHtml += ` 
-                                <a data-lg-size="1400-1400" class="gallery-item"
+                                <a data-lg-size="1400-1400" type="button" class="dynamic-gallery-test   gallery-item"
                                     data-src="${img}">
                                     <img class="img-fluid" src="${img}" />
                                 </a>
@@ -790,8 +812,22 @@
 
 
                 })
+                var imgobject = ""
+                var dyanmicArray = [];
 
-                console.log("gallertHtml", gallertHtml)
+                galleryArray.forEach(imgss=> {
+                    console.log("ites",imgss)
+                    imgobject = {
+                        src : imgss,
+                        thumb: imgss,
+                    }
+
+                    dyanmicArray.push(imgobject);
+                })
+
+
+
+                console.log("dyanmicArray", dyanmicArray)
 
                 document.querySelector('#gallery').innerHTML = gallertHtml
 
@@ -802,20 +838,6 @@
                 lastGalleryItem.setAttribute('data-more-text', 'More');
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 const listDivs = document.querySelectorAll('.list-one');
 
                 // Loop through each div and check if its content is empty, then hide it
@@ -824,6 +846,22 @@
                     if (content === "") {
                         div.style.display = "none";
                     }
+                });
+
+
+                const $dynamicGallerytest = document.querySelectorAll('.dynamic-gallery-test');
+                console.log("dynamicGallerytest", $dynamicGallerytest)
+                const dynamicGalleryTest = lightGallery($dynamicGallerytest, {
+                    dynamic: true,
+                    dynamicEl: dyanmicArray,
+                });
+
+                $('.dynamic-gallery-test').each(function (index, button) {
+                    $(button).on('click', function () {
+                        dynamicGalleryTest.openGallery(2);
+                        console.log('Button ' + (index + 1) + ' clicked.');
+                        // Your event handling code here
+                    });
                 });
 
 
