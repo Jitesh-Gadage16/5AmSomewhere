@@ -845,10 +845,10 @@
                             <div class="prop-list-info">
                                 <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
                                 <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
-
+                                
                                 <ul class="prop-opt">
                                     
-                                    
+                                    ${val.info.map(infoItem => `<li>${infoItem}</li>`).join('')}
                                 </ul>
 
                                
@@ -881,25 +881,27 @@
 
                        
                         document.querySelector('#show_data').innerHTML = content;
-                        var listHtml = '';
-                        var Info = AllVillas[i].info;
+                        // var listHtml = '';
+                        // var Info = AllVillas[i].info;
 
-                        // console.log(document.querySelectorAll('.prop-opt'),Info)
+                        // // console.log(Info)
 
-                        var listDiv = document.querySelectorAll('.prop-opt');
+                        // var listDiv = document.querySelectorAll('.prop-opt');
 
 
-                        for(let i = 0; i < Info.length; i++){
-                            listHtml += `<li>${Info[i]}</li>`
-                        }
+                        // for(let i = 0; i < Info.length; i++){
+                        //     listHtml += `<li>${Info[i]}</li>`
+                        // }
 
-                        console.log("listHtml",listHtml)
+                        // console.log("listHtml",listHtml)
 
-                        for(let j = 0; j <  listDiv.length; j++){
-                            listDiv[j].innerHTML = listHtml;
+                        
+
+                        // for(let j = 0; j <  listDiv.length; j++){
+                        //     listDiv[j].innerHTML = listHtml;
 
                             
-                        }
+                        // }
 
                         
 
