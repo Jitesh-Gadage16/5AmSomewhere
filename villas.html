@@ -496,6 +496,8 @@
 
     </section>
 
+    <div id="footer-placeholder"></div>
+
 
 
     <!-- Footer End  -->
@@ -505,6 +507,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+
+        <script>
+              fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+        </script>
 
     <!-- lightGallery script  -->
 
@@ -630,10 +640,10 @@
                             <div class="prop-list-info">
                                 <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
                                 <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
-
-
+                                
                                 <ul class="prop-opt">
-                                  
+                                    
+                                    ${val.info.map(infoItem => `<li>${infoItem}</li>`).join('')}
                                 </ul>
 
                                
@@ -662,31 +672,11 @@
                             </div>
                         </div>
                     </div>`
-                   
+                            }
 
                     document.querySelector('#show_data').innerHTML = filterContent;
 
-                    var listHtml = '';
-                        var Info = AllVillas[i].info;
-
-                        // console.log(document.querySelectorAll('.prop-opt'),Info)
-
-                        var listDiv = document.querySelectorAll('.prop-opt');
-
-
-                        for(let i = 0; i < Info.length; i++){
-                            listHtml += `<li>${Info[i]}</li>`
-                        }
-
-                        console.log("listHtml",listHtml)
-
-                        for(let j = 0; j <  listDiv.length; j++){
-                            listDiv[j].innerHTML = listHtml;
-
-                            
-                        }
-
-                    }
+                    
 
                     for (let i = 0; i < unfilterVillas.length; i++) {
                         // console.log("value", unfilterVillas[i])
@@ -710,10 +700,10 @@
                             <div class="prop-list-info">
                                 <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
                                 <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
-
+                                
                                 <ul class="prop-opt">
                                     
-                                    
+                                    ${val.info.map(infoItem => `<li>${infoItem}</li>`).join('')}
                                 </ul>
 
                                
@@ -750,26 +740,7 @@
 
                     document.querySelector('#show_unfilterdata').innerHTML = unfilterConent;
 
-                    var listHtml = '';
-                        var Info = AllVillas[i].info;
-
-                        // console.log(document.querySelectorAll('.prop-opt'),Info)
-
-                        var listDiv = document.querySelectorAll('.prop-opt');
-
-
-                        for(let i = 0; i < Info.length; i++){
-                            listHtml += `<li>${Info[i]}</li>`
-                        }
-
-                        console.log("listHtml",listHtml)
-
-                        for(let j = 0; j <  listDiv.length; j++){
-                            listDiv[j].innerHTML = listHtml;
-
-                            
-                        }
-
+                   
                     }
 
 
@@ -881,157 +852,7 @@
 
                        
                         document.querySelector('#show_data').innerHTML = content;
-                        // var listHtml = '';
-                        // var Info = AllVillas[i].info;
-
-                        // // console.log(Info)
-
-                        // var listDiv = document.querySelectorAll('.prop-opt');
-
-
-                        // for(let i = 0; i < Info.length; i++){
-                        //     listHtml += `<li>${Info[i]}</li>`
-                        // }
-
-                        // console.log("listHtml",listHtml)
-
                         
-
-                        // for(let j = 0; j <  listDiv.length; j++){
-                        //     listDiv[j].innerHTML = listHtml;
-
-                            
-                        // }
-
-                        
-
-                    
-
-
-                        // infoArray.forEach(element => {
-                        //     lintHtml += `<li>${element}</li>`
-
-                        //     // console.log("lintHtml",lintHtml)
-                        // });
-
-                        // console.log("lintHtml==>", lintHtml)
-                        // document.querySelector('.prop-opt').innerHTML = values;
-
-                        // var valuediv = document.querySelectorAll('.prop-list-info');
-
-                        // infoArray.forEach(villa => {
-                        //     var valuediv = document.querySelector('.prop-list-info');
-                        //     // const card = document.createElement('div');
-                        //     // card.className = 'villa-card col-md-6 col-12 mt-sm-3';
-                        //     // const list_itemDiv = document.createElement('div')
-                        //     // list_itemDiv.className = 'list-item'
-
-                        //     // Create the <a> tag
-                        //     //   const villaLink = document.createElement('a');
-                        //     //   villaLink.target = '_blank';
-                        //     //   villaLink.className = 'property-img relative';
-                        //     //   villaLink.href = `detailsPage.html?id=${villa.id}`;
-
-                        //     // Create and append the villa image inside the <a> tag
-                        //     // const villaImage = document.createElement('img');
-                        //     // villaImage.className = 'lazyload';
-                        //     // villaImage.src = villa.main_img;
-                        //     // villaLink.appendChild(villaImage);
-
-                        //     // const gallryImg = document.createElement('i');
-                        //     // gallryImg.className = 'fa-sharp fa-regular fa-images open-gallery'
-                        //     // villaLink.appendChild(gallryImg);
-
-                        //     const propList = document.createElement('div');
-                        //     propList.className = 'prop-list-info';
-
-
-
-                        //     //  const title = document.createElement('a')
-                        //     //  title.target = '_blank';
-                        //     //   title.className = 'info-title';
-                        //     //   title.href = `detailsPage.html?id=${villa.id}`;
-
-                        //     //   propList.appendChild(title);
-
-
-                        //     // const villaName = document.createElement('b');
-                        //     // villaName.textContent = villa.name; // Assuming 'name' is the property for the villa name
-                        //     // title.appendChild(villaName);
-
-                        //     const villaAddress = document.createElement('p');
-                        //     // villaAddress.classList = 'm-0 py-2';
-
-                        //     const locationImg = document.createElement('i');
-                        //     // locationImg.className = 'fa fa-map-marker '
-                        //     // villaAddress.appendChild(locationImg);
-
-
-                        //     // Create and append the <span> element inside the <p> tag
-                        //     // const spanElement = document.createElement('span');
-                        //     // spanElement.className = 'px-1'; // Set the content of the span element
-                        //     // spanElement.textContent = villa.address; 
-                        //     // villaAddress.appendChild(spanElement);
-
-                        //     // propList.appendChild(villaAddress);
-
-
-                        //     const villaInfo = document.createElement('p');
-
-                        //     // const villaInfoArray = villa.info.split(',').map(item => item.trim());
-                        //     const ulElement = document.createElement('ul');
-                        //     ulElement.className = 'prop-opt'
-                        //     // villaInfoArray.forEach(itemText => {
-                        //     const liElement = document.createElement('li');
-
-
-
-                        //     liElement.textContent = villa;
-                        //     ulElement.appendChild(liElement);
-                        //     // });
-
-                        //     propList.appendChild(ulElement);
-
-                        //     const parentElement = document.querySelector('.prop-list-info');
-
-                        //     if (parentElement.children.length >= 3) {
-                        //         parentElement.insertBefore(ulElement, parentElement.children[2]);
-                        //     }
-
-                        //     // const propFooter = document.createElement('div')
-                        //     // propFooter.className = 'prop-footer ';
-
-                        //     // const propInnerDiv = document.createElement('div');
-                        //     // propInnerDiv.className = 'prop-share-new d-flex mt-2'
-                        //     // propFooter.appendChild(propInnerDiv);
-
-                        //     // const socialLink = document.createElement('a');
-                        //     // socialLink.target = '_blank';
-                        //     // socialLink.className = 'share-new ';
-                        //     // socialLink.href = "https://web.whatsapp.com/";
-
-                        //     // const imgDiv = document.createElement('img');
-                        //     // imgDiv.src = "https://property-project.netlify.app/assets/whatsapp-logo.png";
-                        //     // socialLink.appendChild(imgDiv)
-
-
-                        //     // propInnerDiv.appendChild(socialLink);
-
-                        //     // propList.appendChild(propFooter);
-
-
-
-                        //     // card.appendChild(list_itemDiv);
-                        //     // list_itemDiv.appendChild(villaLink);
-                        //     valuediv.appendChild(propList);
-                        //     // list_itemDiv.appendChild(villaAddress);
-                        //     // list_itemDiv.appendChild(ulElement);
-
-                        //     // villaContainer.appendChild(card);
-                        // });
-
-
-
 
                     }
 

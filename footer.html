@@ -1,0 +1,109 @@
+<footer>
+    <section class="getAllProperties ">
+        <div class="container py-3">
+            <div class="row justify-content-between property-list h-100">
+
+                <div class="col-md-12">
+                    <div class="property-filter">
+                        <input type="hidden" id="old_select_location" value="">
+                        <form class="filter-form" id="VillasFilterForm" autocomplete="off">
+                            <div class="form-floating mb-3">
+                                <select name="inputPropertyVillage" class="form-select" id="inputPropertyVillage"
+                                    data-placeholder="Choose your location in Goa">
+                                    <option>Choose your location ....</option>
+                                    <option value="Anjuna" data-id="2">Anjuna</option>
+                                    <option value="Arpora" data-id="10">Arpora</option>
+                                    <option value="Assagao" data-id="1">Assagao</option>
+                                    <option value="Candolim" data-id="3">Candolim</option>
+                                    <option value="Chapora" data-id="21">Chapora</option>
+                                    <option value="Nerul" data-id="13">Nerul</option>
+                                    <option value="Parra" data-id="11">Parra</option>
+                                    <option value="Reis Magos" data-id="19">Reis Magos</option>
+                                    <option value="Saipem" data-id="22">Saipem</option>
+                                    <option value="Salvador" data-id="18">Salvador</option>
+                                    <option value="Siolim" data-id="15">Siolim</option>
+                                    <option value="Vagator" data-id="20">Vagator</option>
+                                </select>
+
+                                <input type="hidden" name="token" id="select_location" value="">
+                                <label for="inputPropertyVillage">GOING TO</label>
+                            </div>
+
+                            <div class="form-floating mb-3">
+                                <div class="input-group date" id="datepicker_in">
+                                    <input type="text" class="form-control" placeholder="CHECK IN">
+                                    <span class="input-group-append">
+                                        <span class="input-group-text bg-white py-3">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+
+
+                            <div class="form-floating mb-3">
+                                <div class="input-group date" id="datepicker_out">
+                                    <input type="text" class="form-control" placeholder="CHECK OUT">
+                                    <span class="input-group-append">
+                                        <span class="input-group-text bg-white py-3">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <select name="guest" class="form-select" id="filterGuest">
+                                    <option value="">Select guest</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21+</option>
+                                </select>
+                                <label for="filterGuest">GUESTS</label>
+                            </div>
+                            <!-- <div class="mb-3 price-range2 ">
+                            <div class="price-range-slider">
+                                <p class="range-value">
+                                    <input type="text" id="priceRange" readonly>
+                                    <input type="hidden" name="price_min" id="priceRangeMinVal"
+                                        value="16200.00">
+                                    <input type="hidden" name="price_max" id="priceRangeMaxVal"
+                                        value="288000.00">
+                                    <input type="hidden" id="defualtPriceRangeMinVal" value="16200.00">
+                                    <input type="hidden" id="defualtPriceRangeMaxVal" value="288000.00">
+                                </p>
+                                <div id="slider-range" class="range-bar"></div>
+                            </div>
+                        </div> -->
+
+
+                            <button type="buton" id="onClickToValidateFilter" class="filter-submit mb-3">Search</button>
+                        </form>
+                        <p id="FilterFormMessage"
+                            style="text-align: center;border-radius: 0.25rem;border: 1px solid transparent;padding: 0.35rem;font-size: 18px;">
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+</footer>

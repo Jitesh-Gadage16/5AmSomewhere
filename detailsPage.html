@@ -279,7 +279,10 @@
                     </div>
                     <div class="col-md-4">
                         <div class="villa-booking">
-                            <h3 class="booking-titl"></h3>
+                            <div class="booking-titl">
+
+                            </div>
+                            <!-- <h3 ></h3>
                             <small class="d-block mb-1">* 18% tax will be applicable</small>
 
                             <br>
@@ -287,7 +290,7 @@
                                 class="btn h6 mt-1 d-inline-block prop-chat prop-chat-new" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
                                 Book Now
-                            </button>
+                            </button> -->
                             <form id="paymentForm" class="d-none">
                                 <input type="text" name="amount" placeholder="Enter Amount" required>
                                 <input type="text" name="name" placeholder="Enter Name" required>
@@ -381,7 +384,8 @@
 
                             </div>
                             <div class="d-flex justify-content-center align-items-center">
-                                <button type="button" class="btn btn-primary my-4  btn-lg">Check Availablity</button>
+                                <button id="checkAvailablity" type="button" class="btn btn-primary my-4  btn-lg">Check
+                                    Availablity</button>
 
                             </div>
 
@@ -695,25 +699,6 @@
     </script>
 
 
-    <script>
-        var book_now_btn = document.querySelector('#Book_now');
-        var close_popup = document.querySelector(".close-popup");
-
-        book_now_btn.addEventListener("click", function () {
-
-
-            document.querySelector('.popup-div').style.display = "flex";
-            document.querySelector('.popup-backdrop').style.display = "block";
-            document.querySelector('.body-class').style.overflow = "hidden";
-        })
-
-        close_popup.addEventListener('click', function () {
-            document.querySelector('.popup-div').style.display = "none";
-            document.querySelector('.popup-backdrop').style.display = "none";
-            document.querySelector('.body-class').style.overflow = "inherit";
-        })
-    </script>
-
 
 
 
@@ -732,76 +717,80 @@
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
 
+        const apiUrl = 'https://file.mycenter.co.in/property/api/checkAvailability';
         console.log("id", id)
 
 
 
         var content = "";
 
+        function getVillaDetails() {
 
+            fetch(`https://file.mycenter.co.in/property/api/propertyInfo/${id}`, {
+                method: 'GET',
+            })
+                .then(response => response.json())
+                .then(response => {
+                    console.log("page data", response.data[0])
 
-        fetch(`https://file.mycenter.co.in/property/api/propertyInfo/${id}`, {
-            method: 'GET',
-        })
-            .then(response => response.json())
-            .then(response => {
-                console.log("page data", response.data[0])
+                    var Data = response.data[0]
 
-                var Data = response.data[0]
-
-                document.querySelector('.villa-title').innerHTML = `<h1 class="hero__title">${Data.name}</h1>
+                    document.querySelector('.villa-title').innerHTML = `<h1 class="hero__title">${Data.name}</h1>
                 <h2 class="hero__sub">${Data.address}</h2>`
 
-                document.querySelector('.booking-titl').innerHTML = `${Data.per_night} /<span class="unit">Night</span> `
+                    document.querySelector('.booking-titl').innerHTML = ` <h3>${Data.per_night} /<span class="unit">Night</span> </h3>
+                <small class="d-block mb-1">* 18% tax will be applicable</small> <br> <button type="button" id="Book_now" value =${Data.id} onClick="getValue(${Data.id})"  class="btn h6 mt-1 d-inline-block prop-chat prop-chat-new" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                Book Now
+                            </button>`
 
-                document.querySelector('#title').innerHTML = Data.address;
-                document.querySelector('.villa-titl-features').innerHTML = `${Data.info}`
+                    document.querySelector('#title').innerHTML = Data.address;
+                    document.querySelector('.villa-titl-features').innerHTML = `${Data.info}`
 
-                document.querySelector('.villa-sec-long-text').innerHTML = `<div class=""long-text>${Data.rules}</div>`
+                    document.querySelector('.villa-sec-long-text').innerHTML = `<div class=""long-text>${Data.rules}</div>`
 
-                var facilities = Data.facilities;
-                // console.log("facilities",JSON.parse(facilities))
+                    var facilities = Data.facilities;
+                    // console.log("facilities",JSON.parse(facilities))
 
-                // const facilitiesArray = facilities.split('\n');
-                console.log(JSON.parse(Data.insights));
+                    // const facilitiesArray = facilities.split('\n');
+                    console.log(JSON.parse(Data.insights));
 
-                var bannerPoints = JSON.parse(Data.insights);
-                var listHtml = "";
+                    var bannerPoints = JSON.parse(Data.insights);
+                    var listHtml = "";
 
-                bannerPoints.forEach(val => {
-                    console.log("val", val)
-                    listHtml += `<div class="list-one">
+                    bannerPoints.forEach(val => {
+                        console.log("val", val)
+                        listHtml += `<div class="list-one">
                                 <span class=""><img class="dot" src="${val.img}" /> </span> ${val.label}
                             </div>`;
-                })
+                    })
 
-                const listContainer = document.querySelector('.overlar-list');
+                    const listContainer = document.querySelector('.overlar-list');
 
-                listContainer.innerHTML = listHtml;
+                    listContainer.innerHTML = listHtml;
 
-                // facilitiesArray.forEach(facility => {
-                //     const listItem = document.createElement('div');
-                //     listItem.className = 'list-one';
+                    // facilitiesArray.forEach(facility => {
+                    //     const listItem = document.createElement('div');
+                    //     listItem.className = 'list-one';
 
-                //     const dotSpan = document.createElement('span');
-                //     dotSpan.className = 'dot';
+                    //     const dotSpan = document.createElement('span');
+                    //     dotSpan.className = 'dot';
 
-                //     const textNode = document.createTextNode(' ' + facility);
+                    //     const textNode = document.createTextNode(' ' + facility);
 
-                //     listItem.appendChild(dotSpan);
-                //     listItem.appendChild(textNode);
+                    //     listItem.appendChild(dotSpan);
+                    //     listItem.appendChild(textNode);
 
-                //     listContainer.appendChild(listItem);
-                // });
+                    //     listContainer.appendChild(listItem);
+                    // });
 
-                var gallery = Data.gallery;
-                const galleryArray = JSON.parse(gallery);
-                console.log("galleryArray", galleryArray)
-                var gallertHtml = "";
+                    var gallery = Data.gallery;
+                    const galleryArray = JSON.parse(gallery);
+                    console.log("galleryArray", galleryArray)
+                    var gallertHtml = "";
 
-                galleryArray.forEach(img => {
-                    console.log("img", img)
-                    gallertHtml += ` 
+                    galleryArray.forEach(img => {
+                        console.log("img", img)
+                        gallertHtml += ` 
                                 <a data-lg-size="1400-1400" type="button" class="dynamic-gallery-test   gallery-item"
                                     data-src="${img}">
                                     <img class="img-fluid" src="${img}" />
@@ -811,64 +800,87 @@
                             </div>`
 
 
-                })
-                var imgobject = ""
-                var dyanmicArray = [];
+                    })
+                    var imgobject = ""
+                    var dyanmicArray = [];
 
-                galleryArray.forEach(imgss=> {
-                    console.log("ites",imgss)
-                    imgobject = {
-                        src : imgss,
-                        thumb: imgss,
-                    }
+                    galleryArray.forEach(imgss => {
+                        console.log("ites", imgss)
+                        imgobject = {
+                            src: imgss,
+                            thumb: imgss,
+                        }
 
-                    dyanmicArray.push(imgobject);
-                })
-
-
-
-                console.log("dyanmicArray", dyanmicArray)
-
-                document.querySelector('#gallery').innerHTML = gallertHtml
-
-                var value = document.querySelectorAll('.gallery-item')
-                const lastGalleryItem = value[value.length - 1];
-                console.log(lastGalleryItem)
-                lastGalleryItem.classList.add('more');
-                lastGalleryItem.setAttribute('data-more-text', 'More');
+                        dyanmicArray.push(imgobject);
+                    })
 
 
-                const listDivs = document.querySelectorAll('.list-one');
 
-                // Loop through each div and check if its content is empty, then hide it
-                listDivs.forEach((div) => {
-                    const content = div.textContent.trim();
-                    if (content === "") {
-                        div.style.display = "none";
-                    }
-                });
+                    console.log("dyanmicArray", dyanmicArray)
+
+                    document.querySelector('#gallery').innerHTML = gallertHtml
+
+                    var value = document.querySelectorAll('.gallery-item')
+                    const lastGalleryItem = value[value.length - 1];
+                    console.log(lastGalleryItem)
+                    lastGalleryItem.classList.add('more');
+                    lastGalleryItem.setAttribute('data-more-text', 'More');
 
 
-                const $dynamicGallerytest = document.querySelectorAll('.dynamic-gallery-test');
-                console.log("dynamicGallerytest", $dynamicGallerytest)
-                const dynamicGalleryTest = lightGallery($dynamicGallerytest, {
-                    dynamic: true,
-                    dynamicEl: dyanmicArray,
-                });
+                    const listDivs = document.querySelectorAll('.list-one');
 
-                $('.dynamic-gallery-test').each(function (index, button) {
-                    $(button).on('click', function () {
-                        dynamicGalleryTest.openGallery(2);
-                        console.log('Button ' + (index + 1) + ' clicked.');
-                        // Your event handling code here
+                    // Loop through each div and check if its content is empty, then hide it
+                    listDivs.forEach((div) => {
+                        const content = div.textContent.trim();
+                        if (content === "") {
+                            div.style.display = "none";
+                        }
                     });
-                });
+
+
+                    const $dynamicGallerytest = document.querySelectorAll('.dynamic-gallery-test');
+                    console.log("dynamicGallerytest", $dynamicGallerytest)
+                    const dynamicGalleryTest = lightGallery($dynamicGallerytest, {
+                        dynamic: true,
+                        dynamicEl: dyanmicArray,
+                    });
+
+                    $('.dynamic-gallery-test').each(function (index, button) {
+                        $(button).on('click', function () {
+                            dynamicGalleryTest.openGallery(2);
+                            console.log('Button ' + (index + 1) + ' clicked.');
+                            // Your event handling code here
+                        });
+                    });
 
 
 
 
 
-            })
+                })
+
+
+
+            //         var book_now_btn = document.querySelector('#Book_now');
+            // var close_popup = document.querySelector(".close-popup");
+
+            // console.log("book_now_btn",book_now_btn)
+
+            // book_now_btn.addEventListener("click", function () {
+
+
+            //     document.querySelector('.popup-div').style.display = "flex";
+            //     document.querySelector('.popup-backdrop').style.display = "block";
+            //     document.querySelector('.body-class').style.overflow = "hidden";
+            // })
+
+            // close_popup.addEventListener('click', function () {
+            //     document.querySelector('.popup-div').style.display = "none";
+            //     document.querySelector('.popup-backdrop').style.display = "none";
+            //     document.querySelector('.body-class').style.overflow = "inherit";
+            // })
+
+        }
 
         // var Data = data.property
 
@@ -876,7 +888,76 @@
 
 
 
+        window.onload = (event) => {
+            getVillaDetails();
+        };
+
+        function getValue(data_id) {
+            console.log("cliked");
+            document.querySelector('.popup-div').style.display = "flex";
+            document.querySelector('.popup-backdrop').style.display = "block";
+            document.querySelector('.body-class').style.overflow = "hidden";
+        }
+
+        // function checkAvailablity() {
+        //     const checkinDate = document.querySelector('#datepicker_in input').value;
+        //     console.log(first)
+        //     // const checkinComponents = checkinDate.split('/');
+        // }
+
+        const checkButton = document.getElementById('checkAvailablity');
+        checkButton.addEventListener('click', function (event) {
+
+            const checkinDate = document.querySelector('#datepicker input').value;
+            const checkinComponents = checkinDate.split('/');
+            // Reconstruct the date in the desired format "dd-mm-yyyy"
+            const fromDate = `${checkinComponents[1]}-${checkinComponents[0]}-${checkinComponents[2]}`;
+
+            const checkoutDate = document.querySelector('#endDatepicker input').value;
+            const checkoutComponents = checkinDate.split('/');
+            // Reconstruct the date in the desired format "dd-mm-yyyy"
+            const toDate = `${checkinComponents[1]}-${checkinComponents[0]}-${checkinComponents[2]}`;
+
+            const formData = new URLSearchParams();
+            formData.append('id', id);
+            formData.append('from_date', fromDate);
+            formData.append('to_date', toDate);
+
+            console.log("formData",formData)
+
+
+
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded' 
+                },
+                body: formData
+            })
+
+            .then(response => response.json())
+            .then(response => {
+                    console.log("res", response)
+
+                    if(response.status === true){
+                        console.log(response.data)
+                        alert(response.message)
+                        document.querySelector('.popup-div').style.display = "none";
+                        document.querySelector('.popup-backdrop').style.display = "none";
+                        document.querySelector('.body-class').style.overflow = "inherit";
+                    }
+            })
+        })
+
+
+
+
+
     </script>
+
+
+
+
 
 
 
