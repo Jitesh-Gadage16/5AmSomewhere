@@ -232,10 +232,12 @@
                 </div>
                 <div class="row">
                     <div class="col-md-8">
-                        <div class="villa-titl-features mb-3 text-secondary"></div>
-                        <div class="villa-sec-titl my-3">Gallery</div>
+                        <div class="villa-titl-features  text-secondary"></div>
 
-                        <div class="gallery-container d-flex align-items-center " id="gallery-update-slides-demo">
+
+                        <div class="gallery-container pt-2">
+                            <div class="villa-sec-titl my-3">Gallery</div>
+                            <div class=" d-flex align-items-center " id="gallery-update-slides-demo">
 
                             <div class="inner-gallery" id="gallery">
                                 <a data-lg-size="1400-1400" class="gallery-item"
@@ -267,6 +269,7 @@
                                     <img class="img-fluid" src="https://www.rftpm.in/public/uploads/villa/000000.jpg" />
                                 </a>
 
+                            </div>
                             </div>
 
                         </div>
@@ -398,7 +401,7 @@
 
                         <div class="container ">
 
-                            <div class="close-popup">
+                            <div class="close-popup-booking">
                                 <i class="fa-sharp fa-regular fa-circle-xmark"></i>
                             </div>
                             <h2 class="py-4 text-center">Book Now</h2>
@@ -515,9 +518,9 @@
 
 
 
-                    <div class="villa-sec-titl my-3">Rules and Regulations</div>
+                    <!-- <div class="villa-sec-titl my-3 pt-2">Rules and Regulations</div> -->
 
-                    <div class="villa-sec-long-text">
+                    <div class="villa-sec-long-text pt-2">
 
                         <a href="javascript:;" class="long-text-action more" data-more="Read more"
                             data-less="Read less"></a>
@@ -872,7 +875,7 @@
                     document.querySelector('.villa-title').innerHTML = `<h1 class="hero__title">${Data.name}</h1>
                 <h2 class="hero__sub">${Data.address}</h2>`
 
-                    document.querySelector('.booking-titl').innerHTML = ` <h3>${Data.per_night} /<span class="unit">Night</span> </h3>
+                    document.querySelector('.booking-titl').innerHTML = ` <h3> Rs. ${Data.per_night} /<span class="unit">Night</span> </h3>
                 <small class="d-block mb-1">* 18% tax will be applicable</small> <br> <button type="button" id="Book_now" value =${Data.id} onClick="getValue(${Data.id})"  class="btn h6 mt-1 d-inline-block prop-chat prop-chat-new" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Book Now
                             </button>`
@@ -880,7 +883,7 @@
                     document.querySelector('#title').innerHTML = Data.address;
                     document.querySelector('.villa-titl-features').innerHTML = `${Data.info}`
 
-                    document.querySelector('.villa-sec-long-text').innerHTML = `<div class=""long-text>${Data.rules}</div>`
+                    document.querySelector('.villa-sec-long-text').innerHTML = `                    <div class="villa-sec-titl my-3 ">Rules and Regulations</div><div class=""long-text>${Data.rules}</div>`
 
                     var facilities = Data.facilities;
                     // console.log("facilities",JSON.parse(facilities))
@@ -996,7 +999,7 @@
 
 
             //         var book_now_btn = document.querySelector('#Book_now');
-            // var close_popup = document.querySelector(".close-popup");
+            var close_popup = document.querySelector(".close-popup");
 
             // console.log("book_now_btn",book_now_btn)
 
@@ -1008,11 +1011,11 @@
             //     document.querySelector('.body-class').style.overflow = "hidden";
             // })
 
-            // close_popup.addEventListener('click', function () {
-            //     document.querySelector('.popup-div').style.display = "none";
-            //     document.querySelector('.popup-backdrop').style.display = "none";
-            //     document.querySelector('.body-class').style.overflow = "inherit";
-            // })
+            close_popup.addEventListener('click', function () {
+                document.querySelector('.popup-div').style.display = "none";
+                document.querySelector('.popup-backdrop').style.display = "none";
+                document.querySelector('.body-class').style.overflow = "inherit";
+            })
 
         }
 
@@ -1081,6 +1084,13 @@
                         document.querySelector('.popup-div-booking').style.display = "flex";
                         document.querySelector('.popup-backdrop').style.display = "block";
                         document.querySelector('.body-class').style.overflow = "hidden";
+                    } else {
+                        console.log(response.data)
+                        alert(response.message)
+                        document.querySelector('.popup-div').style.display = "none";
+                        // document.querySelector('.popup-div-booking').style.display = "flex";
+                        document.querySelector('.popup-backdrop').style.display = "none";
+                        document.querySelector('.body-class').style.overflow = "inherit";
                     }
                 })
         })
@@ -1093,7 +1103,7 @@
 
             const checkinDate = document.querySelector('#pickstartDate input').value;
 
-            console.log("checkinDate",checkinDate)
+            console.log("checkinDate", checkinDate)
             const checkinComponents = checkinDate.split('/');
             // Reconstruct the date in the desired format "dd-mm-yyyy"
             const fromDate = `${checkinComponents[1]}-${checkinComponents[0]}-${checkinComponents[2]}`;
@@ -1112,7 +1122,7 @@
             // Convert milliseconds to days
             var daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
 
-            console.log("daysDifference",daysDifference)
+            console.log("daysDifference", daysDifference)
 
 
             const firstName = document.querySelector('#firstName').value;
@@ -1130,10 +1140,6 @@
             formData.append('days', daysDifference);
 
             console.log("formData", formData)
-
-
-
-
 
 
             fetch('https://file.mycenter.co.in/property/booking/addpost', {
@@ -1156,7 +1162,7 @@
                         document.querySelector('.popup-backdrop').style.display = "none";
                         document.querySelector('.body-class').style.overflow = "inherit";
                     }
-            })
+                })
         })
 
 
