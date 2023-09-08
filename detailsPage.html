@@ -393,6 +393,126 @@
 
                     </div>
 
+                    <div class="popup-div-booking col-12 col-md-6 justify-content-center align-items-start"
+                        style="display: none;">
+
+                        <div class="container ">
+
+                            <div class="close-popup">
+                                <i class="fa-sharp fa-regular fa-circle-xmark"></i>
+                            </div>
+                            <h2 class="py-4 text-center">Book Now</h2>
+                            <div class="d-flex justify-content-evenly">
+
+
+                                <div class="start-date">
+                                    <label>Select Start Date: </label>
+                                    <div id="pickstartDate" class="input-group date" data-date-format="mm-dd-yyyy">
+                                        <input class="form-control" type="text" readonly />
+                                        <span class="input-group-addon">
+                                            <i class="fa-regular fa-calendar-days"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="end-date">
+
+                                    <label>Select End Date: </label>
+                                    <div id="pickendDate" class="input-group date" data-date-format="mm-dd-yyyy">
+                                        <input class="form-control" type="text" readonly />
+                                        <span class="input-group-addon">
+                                            <i class="fa-regular fa-calendar-days"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="dropdown d-flex flex-column">
+                                    <label>Select People </label>
+                                    <button class="dropdown-btn"> Rooms</button>
+                                    <div class="dropdown-content ">
+                                        <div class="col-12">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <p class="text-dark">Adults</p>
+                                                </div>
+                                                <div class="input-group w-auto justify-content-end align-items-center">
+                                                    <input type="button" value="-"
+                                                        class="button-minus border rounded-circle  icon-shape icon-sm mx-1 "
+                                                        data-field="quantity">
+                                                    <input type="number" step="1" max="10" value="1" name="quantity"
+                                                        class="quantity-field border-0 text-center w-25">
+                                                    <input type="button" value="+"
+                                                        class="button-plus border rounded-circle icon-shape icon-sm "
+                                                        data-field="quantity">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <p class="text-dark">Children</p>
+                                                </div>
+                                                <div class="input-group w-auto justify-content-end align-items-center">
+                                                    <input type="button" value="-"
+                                                        class="button-minus border rounded-circle  icon-shape icon-sm mx-1 "
+                                                        data-field="quantity">
+                                                    <input type="number" step="1" max="10" value="1" name="quantity"
+                                                        class="quantity-field border-0 text-center w-25">
+                                                    <input type="button" value="+"
+                                                        class="button-plus border rounded-circle icon-shape icon-sm "
+                                                        data-field="quantity">
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <div class="row  mx-auto mt-3">
+                                <div class="col-sm-6 col-md-8">
+                                    <label for="firstName" class="form-label m-0">First name</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="" value=""
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-md-8 mt-3">
+                                    <label for="firstName" class="form-label m-0">Mobile Number</label>
+                                    <input type="number" class="form-control" id="phonenumber" placeholder="" value=""
+                                        required="">
+                                    <div class="invalid-feedback">
+                                        Valid first name is required.
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 col-md-8">
+                                    <label for="email" class="form-label m-0">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                                    <div class="invalid-feedback">
+                                        Please enter a valid email address for shipping updates.
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button id="Booking" type="button" class="btn btn-primary my-4  btn-lg">Book
+                                    Now</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
 
 
                     <div class="villa-sec-titl my-3">Rules and Regulations</div>
@@ -620,6 +740,20 @@
                 todayHighlight: true,
             }).datepicker('update', new Date());
         });
+
+        $(function () {
+            $("#pickstartDate").datepicker({
+                autoclose: true,
+                todayHighlight: true,
+            }).datepicker('update', new Date());
+        });
+
+        $(function () {
+            $("#pickendDate").datepicker({
+                autoclose: true,
+                todayHighlight: true,
+            }).datepicker('update', new Date());
+        });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
@@ -752,13 +886,13 @@
                     // console.log("facilities",JSON.parse(facilities))
 
                     // const facilitiesArray = facilities.split('\n');
-                    console.log(JSON.parse(Data.insights));
+                    // console.log(JSON.parse(Data.insights));
 
                     var bannerPoints = JSON.parse(Data.insights);
                     var listHtml = "";
 
                     bannerPoints.forEach(val => {
-                        console.log("val", val)
+                        // console.log("val", val)
                         listHtml += `<div class="list-one">
                                 <span class=""><img class="dot" src="${val.img}" /> </span> ${val.label}
                             </div>`;
@@ -785,11 +919,11 @@
 
                     var gallery = Data.gallery;
                     const galleryArray = JSON.parse(gallery);
-                    console.log("galleryArray", galleryArray)
+                    // console.log("galleryArray", galleryArray)
                     var gallertHtml = "";
 
                     galleryArray.forEach(img => {
-                        console.log("img", img)
+                        // console.log("img", img)
                         gallertHtml += ` 
                                 <a data-lg-size="1400-1400" type="button" class="dynamic-gallery-test   gallery-item"
                                     data-src="${img}">
@@ -805,7 +939,7 @@
                     var dyanmicArray = [];
 
                     galleryArray.forEach(imgss => {
-                        console.log("ites", imgss)
+                        // console.log("ites", imgss)
                         imgobject = {
                             src: imgss,
                             thumb: imgss,
@@ -822,7 +956,7 @@
 
                     var value = document.querySelectorAll('.gallery-item')
                     const lastGalleryItem = value[value.length - 1];
-                    console.log(lastGalleryItem)
+                    // console.log(lastGalleryItem)
                     lastGalleryItem.classList.add('more');
                     lastGalleryItem.setAttribute('data-more-text', 'More');
 
@@ -893,7 +1027,7 @@
         };
 
         function getValue(data_id) {
-            console.log("cliked");
+            // console.log("cliked");
             document.querySelector('.popup-div').style.display = "flex";
             document.querySelector('.popup-backdrop').style.display = "block";
             document.querySelector('.body-class').style.overflow = "hidden";
@@ -918,36 +1052,113 @@
             // Reconstruct the date in the desired format "dd-mm-yyyy"
             const toDate = `${checkinComponents[1]}-${checkinComponents[0]}-${checkinComponents[2]}`;
 
+
             const formData = new URLSearchParams();
             formData.append('id', id);
             formData.append('from_date', fromDate);
             formData.append('to_date', toDate);
 
-            console.log("formData",formData)
+            console.log("formData", formData)
 
 
 
             fetch(apiUrl, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded' 
+                    'Content-Type': 'application/x-www-form-urlencoded'
                 },
                 body: formData
             })
 
-            .then(response => response.json())
-            .then(response => {
+                .then(response => response.json())
+                .then(response => {
                     console.log("res", response)
 
-                    if(response.status === true){
+                    if (response.status === true) {
                         console.log(response.data)
                         alert(response.message)
                         document.querySelector('.popup-div').style.display = "none";
+                        document.querySelector('.popup-div-booking').style.display = "flex";
+                        document.querySelector('.popup-backdrop').style.display = "block";
+                        document.querySelector('.body-class').style.overflow = "hidden";
+                    }
+                })
+        })
+
+        // booking code
+
+
+        const Booking = document.getElementById('Booking');
+        Booking.addEventListener('click', function (event) {
+
+            const checkinDate = document.querySelector('#pickstartDate input').value;
+
+            console.log("checkinDate",checkinDate)
+            const checkinComponents = checkinDate.split('/');
+            // Reconstruct the date in the desired format "dd-mm-yyyy"
+            const fromDate = `${checkinComponents[1]}-${checkinComponents[0]}-${checkinComponents[2]}`;
+
+            const checkoutDate = document.querySelector('#pickendDate input').value;
+            const checkoutComponents = checkinDate.split('/');
+            // Reconstruct the date in the desired format "dd-mm-yyyy"
+            const toDate = `${checkinComponents[1]}-${checkinComponents[0]}-${checkinComponents[2]}`;
+
+            var startDate = new Date(checkinDate);
+            var endDate = new Date(checkoutDate);
+
+            // Calculate the time difference in milliseconds
+            var timeDifference = endDate - startDate;
+
+            // Convert milliseconds to days
+            var daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+            console.log("daysDifference",daysDifference)
+
+
+            const firstName = document.querySelector('#firstName').value;
+            const phonenumber = document.querySelector('#phonenumber').value;
+            const email = document.querySelector('#email').value;
+
+
+            const formData = new URLSearchParams();
+            formData.append('p_id', id);
+            formData.append('from_date', fromDate);
+            formData.append('to_date', toDate);
+            formData.append('name', firstName);
+            formData.append('mobile', phonenumber);
+            formData.append('email', email);
+            formData.append('days', daysDifference);
+
+            console.log("formData", formData)
+
+
+
+
+
+
+            fetch('https://file.mycenter.co.in/property/booking/addpost', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: formData
+            })
+
+                .then(response => response.json())
+                .then(response => {
+                    console.log("res", response)
+
+                    if (response.status === true) {
+                        console.log(response.data)
+                        alert(response.message)
+                        document.querySelector('.popup-div-booking').style.display = "none";
+                        // document.querySelector('.popup-div-booking').style.display = "flex";
                         document.querySelector('.popup-backdrop').style.display = "none";
                         document.querySelector('.body-class').style.overflow = "inherit";
                     }
             })
         })
+
 
 
 

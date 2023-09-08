@@ -1146,7 +1146,7 @@ text-align: center;
         flex-wrap: wrap;
         row-gap: 10px;
     }
-    .popup-div {
+    .popup-div,.popup-div-booking {
         left: 0!important;
         top: 15%!important;
     }
@@ -1216,6 +1216,18 @@ text-align: center;
     height: 50;
     /* transform: translate(40%, 10px); */
     height: 300px;
+    top: 25%;
+    left: 25%;
+    z-index: 9999999;
+}
+
+.popup-div-booking {
+    position: fixed;
+    background: #fff;
+    color: #000;
+    height: 50;
+    /* transform: translate(40%, 10px); */
+    height:auto;
     top: 25%;
     left: 25%;
     z-index: 9999999;
