@@ -9,6 +9,10 @@
 
     <link rel="stylesheet" href="style.css">
     <link href="./lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- font  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
     <!-- Bootstarp css cdn  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -236,7 +240,7 @@
 
 
                         <div class="gallery-container pt-2">
-                            <div class="villa-sec-titl my-3">Gallery</div>
+                            <div class="villa-sec-titl mt-3">Gallery</div>
                             <div class=" d-flex align-items-center " id="gallery-update-slides-demo">
 
                             <div class="inner-gallery" id="gallery">
@@ -323,7 +327,7 @@
                                 <div class="start-date">
                                     <label>Select Start Date: </label>
                                     <div id="datepicker" class="input-group date" data-date-format="mm-dd-yyyy">
-                                        <input class="form-control" type="text" readonly />
+                                        <input class="form-control" placeholder="mm-dd-yyyy" type="text" readonly />
                                         <span class="input-group-addon">
                                             <i class="fa-regular fa-calendar-days"></i>
                                         </span>
@@ -334,7 +338,7 @@
 
                                     <label>Select End Date: </label>
                                     <div id="endDatepicker" class="input-group date" data-date-format="mm-dd-yyyy">
-                                        <input class="form-control" type="text" readonly />
+                                        <input class="form-control" placeholder="mm-dd-yyyy" type="text" readonly />
                                         <span class="input-group-addon">
                                             <i class="fa-regular fa-calendar-days"></i>
                                         </span>
@@ -526,7 +530,7 @@
                             data-less="Read less"></a>
                     </div>
 
-                    <div class="villa-sec-titl my-3">Inclusions</div>
+                    <div class="villa-sec-titl mt-3">Inclusions</div>
                     <div class="detail-tab-box mb-3">
                         <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
@@ -569,13 +573,13 @@
 
                     <div class="property-social-icons d-flex justify-content-center align-items-center gap-2 mb-3">
                         <div class="img-social-icons">
-                            <img src="./assets/whatsapp-logo.png" alt="">
+                            <img src="./assets/whatsapp-overlay.png" alt="">
                         </div>
                         <div class="img-social-icons">
-                            <img src="./assets/instagram-logo.avif" alt="">
+                            <img src="./assets/fb-overlay.png" alt="">
                         </div>
                         <div class="img-social-icons">
-                            <img src="./assets/whatsapp-logo.png" alt="">
+                            <img src="./assets/instagram.png" alt="">
                         </div>
                     </div>
                     <div class="property-filter">
@@ -734,14 +738,14 @@
             $("#datepicker").datepicker({
                 autoclose: true,
                 todayHighlight: true,
-            }).datepicker('update', new Date());
+            });
         });
 
         $(function () {
             $("#endDatepicker").datepicker({
                 autoclose: true,
                 todayHighlight: true,
-            }).datepicker('update', new Date());
+            });
         });
 
         $(function () {
@@ -876,14 +880,14 @@
                 <h2 class="hero__sub">${Data.address}</h2>`
 
                     document.querySelector('.booking-titl').innerHTML = ` <h3> Rs. ${Data.per_night} /<span class="unit">Night</span> </h3>
-                <small class="d-block mb-1">* 18% tax will be applicable</small> <br> <button type="button" id="Book_now" value =${Data.id} onClick="getValue(${Data.id})"  class="btn h6 mt-1 d-inline-block prop-chat prop-chat-new" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <small class="d-block taxdiv mb-1">* 18% tax will be applicable</small>  <small class="d-block taxdiv   mb-1">*  Rs. ${Data.security_deposit}/- security deposit</small> <br>  <button type="button" id="Book_now" value =${Data.id} onClick="getValue(${Data.id})"  class="btn h6 mt-1 d-inline-block prop-chat prop-chat-new" data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Book Now
                             </button>`
 
                     document.querySelector('#title').innerHTML = Data.address;
                     document.querySelector('.villa-titl-features').innerHTML = `${Data.info}`
 
-                    document.querySelector('.villa-sec-long-text').innerHTML = `                    <div class="villa-sec-titl my-3 ">Rules and Regulations</div><div class=""long-text>${Data.rules}</div>`
+                    document.querySelector('.villa-sec-long-text').innerHTML = `                    <div class="villa-sec-titl mt-3 ">Rules and Regulations</div><div class=""long-text>${Data.rules}</div>`
 
                     var facilities = Data.facilities;
                     // console.log("facilities",JSON.parse(facilities))

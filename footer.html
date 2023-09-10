@@ -3,7 +3,20 @@
         <div class="container py-3">
             <div class="row justify-content-between property-list h-100">
 
-                <div class="col-md-12">
+                <div class="col-md-12 py-4">
+                    <div class="property-social-icons d-flex justify-content-center align-items-center gap-2 mb-3">
+                        <div class="img-social-icons">
+                            <a href="//api.whatsapp.com/send?phone=919137897117">
+                                <img src="./assets/whatsapp-overlay.png" alt="">
+                            </a>
+                        </div>
+                        <div class="img-social-icons">
+                            <img src="./assets/fb-overlay.png" alt="">
+                        </div>
+                        <div class="img-social-icons">
+                            <img src="./assets/instagram.png" alt="">
+                        </div>
+                    </div>
                     <div class="property-filter">
                         <input type="hidden" id="old_select_location" value="">
                         <form class="filter-form" id="VillasFilterForm" autocomplete="off">
@@ -79,19 +92,19 @@
                                 <label for="filterGuest">GUESTS</label>
                             </div>
                             <!-- <div class="mb-3 price-range2 ">
-                            <div class="price-range-slider">
-                                <p class="range-value">
-                                    <input type="text" id="priceRange" readonly>
-                                    <input type="hidden" name="price_min" id="priceRangeMinVal"
-                                        value="16200.00">
-                                    <input type="hidden" name="price_max" id="priceRangeMaxVal"
-                                        value="288000.00">
-                                    <input type="hidden" id="defualtPriceRangeMinVal" value="16200.00">
-                                    <input type="hidden" id="defualtPriceRangeMaxVal" value="288000.00">
-                                </p>
-                                <div id="slider-range" class="range-bar"></div>
-                            </div>
-                        </div> -->
+                                <div class="price-range-slider">
+                                    <p class="range-value">
+                                        <input type="text" id="priceRange" readonly>
+                                        <input type="hidden" name="price_min" id="priceRangeMinVal"
+                                            value="16200.00">
+                                        <input type="hidden" name="price_max" id="priceRangeMaxVal"
+                                            value="288000.00">
+                                        <input type="hidden" id="defualtPriceRangeMinVal" value="16200.00">
+                                        <input type="hidden" id="defualtPriceRangeMaxVal" value="288000.00">
+                                    </p>
+                                    <div id="slider-range" class="range-bar"></div>
+                                </div>
+                            </div> -->
 
 
                             <button type="buton" id="onClickToValidateFilter" class="filter-submit mb-3">Search</button>
@@ -107,3 +120,49 @@
     </section>
 
 </footer>
+
+
+
+<!-- <script>
+    const searchButton = document.getElementById('onClickToValidateFilter');
+
+    console.log("searchButton",searchButton)
+        searchButton.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the selected value of the inputPropertyVillage <select> element
+            const selectedLocation = document.getElementById('inputPropertyVillage').value;
+
+            // Get the value of the check-in date
+            const checkinDate = document.querySelector('#datepicker_in input').value;
+            const checkinComponents = checkinDate.split('/');
+
+            // Reconstruct the date in the desired format "dd-mm-yyyy"
+            const fromDate = `${checkinComponents[1]}-${checkinComponents[0]}-${checkinComponents[2]}`;
+
+
+            // Get the value of the check-out date
+            const checkoutDate = document.querySelector('#datepicker_out input').value;
+            const checkoutComponents = checkoutDate.split('/');
+
+            // Reconstruct the date in the desired format "dd-mm-yyyy"
+            const toDate = `${checkoutComponents[1]}-${checkoutComponents[0]}-${checkoutComponents[2]}`;
+
+
+            // Do something with the selected value
+            console.log('Selected :', selectedLocation, fromDate, toDate);
+
+            // var formData = {
+            //     location :selectedLocation,
+            //     from_date: fromDate,
+            //     to_Date:toDate
+            // }
+
+            const formData = new URLSearchParams();
+            formData.append('location', selectedLocation);
+            formData.append('fromDate', fromDate);
+            formData.append('toDate', toDate);
+
+            console.log("formData",formData)
+        });
+</script> -->
