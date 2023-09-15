@@ -13,8 +13,10 @@
 
     <!-- font  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
+        rel="stylesheet">
     <!-- Bootstarp css cdn  -->
 
     <!-- Bootstarp css cdn  -->
@@ -148,8 +150,8 @@
                                 <div class="input-group date" id="datepicker_in">
                                     <input type="text" class="form-control" placeholder="CHECK IN">
                                     <span class="input-group-append">
-                                        <span class="input-group-text bg-white py-3">
-                                            <i class="fa fa-calendar"></i>
+                                        <span class="input-group-text bg-white">
+                                            <img src="./assets/calendar (1).png" class="calender-icon" alt="">
                                         </span>
                                     </span>
                                 </div>
@@ -160,8 +162,8 @@
                                 <div class="input-group date" id="datepicker_out">
                                     <input type="text" class="form-control" placeholder="CHECK OUT">
                                     <span class="input-group-append">
-                                        <span class="input-group-text bg-white py-3">
-                                            <i class="fa fa-calendar"></i>
+                                        <span class="input-group-text bg-white">
+                                            <img src="./assets/calendar (1).png" class="calender-icon" alt="">
                                         </span>
                                     </span>
                                 </div>
@@ -483,7 +485,10 @@
                     </div> -->
 
                 </div>
-                <div class=" d-flex justify-content-center align-items-center my-4 mx-auto py-3 text-center  other-vilas" style="display: none!important;"><div class=" other-vila" >Other Villas </div></div>
+                <div class=" d-flex justify-content-center align-items-center my-4 mx-auto py-3 text-center  other-vilas"
+                    style="display: none!important;">
+                    <div class=" other-vila">Other Villas </div>
+                </div>
 
                 <div class="row justify-content-between property-list h-100 m-auto" id="show_unfilterdata">
 
@@ -513,13 +518,13 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
-        <script>
-              fetch('footer.html')
+    <script>
+        fetch('footer.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
             });
-        </script>
+    </script>
 
     <!-- lightGallery script  -->
 
@@ -564,6 +569,192 @@
 
 
     <script>
+        const apiUrl = 'https://file.mycenter.co.in/property/api/allProperty';
+
+        let hrefLocation = window.location.href;
+
+
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const getid = urlParams.get('id');
+        const from_date = urlParams.get('from_date');
+        const to_date = urlParams.get('to_date');
+
+        if (urlParams.get('id')) {
+            getAddress()
+        } else {
+            console.log("id nahi mila")
+        }
+
+        console.log("hrefLocation", getid, from_date, to_date)
+
+        function getAddress() {
+            fetch(apiUrl, {
+                method: 'get',
+            })
+                .then(response => response.json())
+                .then(response => {
+                    // console.log("res",response)
+                    var address = response
+                    response.filtered_data.forEach(val => {
+                        if (val.id == getid) {
+                            address = val.address
+
+                            const formDataUrl = new URLSearchParams();
+                            formDataUrl.append('location', address);
+                            formDataUrl.append('fromDate', from_date);
+                            formDataUrl.append('toDate', to_date);
+
+                            console.log("formDataUrl", formDataUrl)
+
+                            fetch(apiUrl, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/x-www-form-urlencoded' // Specify URL-encoded content type
+                                },
+                                body: formDataUrl
+                            })
+                                .then(response => response.json())
+                                .then(response => {
+                                    console.log("search response url", response)
+
+                                    var AllVillas = response.filtered_data;
+                                    var unfilterVillas = response.unfiltered_data
+
+
+
+                                    for (let i = 0; i < AllVillas.length; i++) {
+
+
+                                        var val = AllVillas[i]
+
+
+                                        filterContent += `<div class="col-md-6 col-12 mt-sm-3">
+                        <div class="list-item" data-markerid="88">
+                            <a target="_blank" class="property-img relative" href="detailsPage.html?id=${val.id}">
+                                <img class="lazyload"
+                                    src=${val.main_img}>
+                                <i class="fa-sharp fa-regular fa-images open-gallery"></i>
+                            </a>
+                            <div class="prop-list-info d-flex flex-column justify-content-between">
+                                <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
+                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
+                                
+                                <ul class="prop-opt">
+                                    
+                                    ${val.info.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                </ul>
+
+                               
+                                <div class="prop-footer ">
+                                    <div class="prop-share-new d-flex mt-2">
+                                        <a target="_blank"
+                                        href="${val.whatsapp}"
+                                            class="share-new "><img src="./assets/whatsapp-overlay.png" alt=""></a>
+                                        <a target="_blank"
+                                            href="${val.insta}"
+                                            class="share-new"><img src="./assets/instagram.png" alt=""></a>
+
+                                        <a target="_blank" href="${val.map}" class="share-new "><img src="./assets/airbnb-overlay.png"
+                                                alt=""></a>
+                                        <a target="_blank"
+                                        href="${val.map}"
+                                            class="share-new"><img src="./assets/location-overlay.png" alt=""></a>
+
+                                    </div>
+                                    <div class="prop-extra ">
+                                        Rs.${val.per_night}/Night
+                                        <br>+ 18% taxes<br>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+                                    }
+
+                                    document.querySelector('#show_data').innerHTML = filterContent;
+
+
+
+                                    for (let i = 0; i < unfilterVillas.length; i++) {
+                                        // console.log("value", unfilterVillas[i])
+
+                                        // var cardpoints = document.querySelector('.prop-opt')
+
+                                        var Info = unfilterVillas[i].info;
+                                        // console.log(info,"is array")
+
+
+                                        var val = unfilterVillas[i]
+
+
+                                        unfilterConent += `<div class="col-md-6 col-12 mt-sm-3">
+                        <div class="list-item" data-markerid="88">
+                            <a target="_blank" class="property-img relative" href="detailsPage.html?id=${val.id}">
+                                <img class="lazyload"
+                                    src=${val.main_img}>
+                                <i class="fa-sharp fa-regular fa-images open-gallery"></i>
+                            </a>
+                            <div class="prop-list-info d-flex flex-column justify-content-between">
+                                <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
+                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
+                                
+                                <ul class="prop-opt">
+                                    
+                                    ${val.info.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                </ul>
+
+                               
+                                <div class="prop-footer ">
+                                    <div class="prop-share-new d-flex mt-2">
+                                        <a target="_blank"
+                                        href="${val.whatsapp}"
+                                            class="share-new "><img src="./assets/whatsapp-overlay.png" alt=""></a>
+                                        <a target="_blank"
+                                            href="${val.insta}"
+                                            class="share-new"><img src="./assets/instagram.png" alt=""></a>
+
+                                        <a target="_blank" href="${val.map}" class="share-new "><img src="./assets/airbnb-overlay.png"
+                                                alt=""></a>
+                                        <a target="_blank"
+                                        href="${val.map}"
+                                            class="share-new"><img src="./assets/location-overlay.png" alt=""></a>
+
+                                    </div>
+                                    <div class="prop-extra ">
+                                        Rs.${val.per_night}/Night
+                                        <br>+ 18% taxes<br>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+
+
+                                        document.querySelector('.other-vilas').style.display = 'block';
+
+
+
+                                        document.querySelector('#show_unfilterdata').innerHTML = unfilterConent;
+
+
+                                    }
+
+
+                                });
+
+                        }
+                    })
+
+
+
+
+                })
+        }
+
+        // getAddress()
 
 
 
@@ -573,11 +764,12 @@
         var pointsview = '';
 
         const villaContainer = document.getElementById('show_data');
-        const apiUrl = 'https://file.mycenter.co.in/property/api/allProperty';
 
 
         const searchButton = document.getElementById('onClickToValidateFilter');
         searchButton.addEventListener('click', function (event) {
+
+
             event.preventDefault(); // Prevent the default form submission
 
             // Get the selected value of the inputPropertyVillage <select> element
@@ -622,7 +814,7 @@
             })
                 .then(response => response.json())
                 .then(response => {
-                    console.log("res", response)
+                    console.log("res search btn", response)
 
                     var AllVillas = response.filtered_data;
                     var unfilterVillas = response.unfiltered_data
@@ -677,11 +869,11 @@
                             </div>
                         </div>
                     </div>`
-                            }
+                    }
 
                     document.querySelector('#show_data').innerHTML = filterContent;
 
-                    
+
 
                     for (let i = 0; i < unfilterVillas.length; i++) {
                         // console.log("value", unfilterVillas[i])
@@ -737,15 +929,15 @@
                             </div>
                         </div>
                     </div>`
-                  
 
-                    document.querySelector('.other-vilas').style.display = 'block';
 
-                    
+                        document.querySelector('.other-vilas').style.display = 'block';
 
-                    document.querySelector('#show_unfilterdata').innerHTML = unfilterConent;
 
-                   
+
+                        document.querySelector('#show_unfilterdata').innerHTML = unfilterConent;
+
+
                     }
 
 
@@ -798,20 +990,20 @@
 
         // function getVilllasList() {
 
-            fetch(apiUrl, {
-                method: 'GET',
-            })
-                .then(response => response.json())
-                .then(response => {
-                    console.log("response", response.filtered_data);
-                    var AllVillas = response.filtered_data;
+        fetch(apiUrl, {
+            method: 'GET',
+        })
+            .then(response => response.json())
+            .then(response => {
+                console.log("response", response.filtered_data);
+                var AllVillas = response.filtered_data;
 
-                    for (let i = 0; i < AllVillas.length; i++) {
+                for (let i = 0; i < AllVillas.length; i++) {
 
-                        var val = AllVillas[i]
+                    var val = AllVillas[i]
 
 
-                        content += `<div class="col-md-6 col-12 mt-sm-3">
+                    content += `<div class="col-md-6 col-12 mt-sm-3">
                         <div class="list-item" data-markerid="88">
                             <a target="_blank" class="property-img relative" href="detailsPage.html?id=${val.id}">
                                 <img class="lazyload"
@@ -855,19 +1047,19 @@
                     </div>`
 
 
-                       
-                        document.querySelector('#show_data').innerHTML = content;
-                        
 
-                    }
+                    document.querySelector('#show_data').innerHTML = content;
 
 
+                }
 
 
-                    // Create cards for each villa listing
 
-                })
-                .catch(error => console.error('Error fetching data:', error));
+
+                // Create cards for each villa listing
+
+            })
+            .catch(error => console.error('Error fetching data:', error));
 
 
         // } function end
