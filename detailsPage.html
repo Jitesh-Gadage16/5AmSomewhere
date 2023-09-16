@@ -312,7 +312,7 @@
                         </div>
                     </div>
 
-                    <div class="popup-div col-12 col-md-6 justify-content-center align-items-start"
+                    <div class="popup-div col-12 col-md-8 justify-content-center align-items-start"
                         style="display: none;">
 
                         <div class="container ">
@@ -323,35 +323,58 @@
                             <h2 class="py-4 text-center">Check Availablity</h2>
                             <div class="d-flex justify-content-evenly">
 
-
-                                <div class="start-date">
-                                    <label>Select Start Date: </label>
-                                    <div class="form-floating mb-3">
-                                        <div class="input-group date" id="datepicker">
-                                            <input type="text" class="form-control" placeholder="CHECK IN">
-                                            <span class="input-group-append">
-                                                <span class="input-group-text bg-white">
-                                                    <img src="./assets/calendar (1).png" class="calender-icon" alt="">
-                                                </span>
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="end-date">
-
-                                    <label>Select End Date: </label>
-                                    <div class="input-group date" id="endDatepicker">
+                                <!-- <label>Select End Date: </label> -->
+                                <div class="form-floating mb-3">
+                                    <div class="input-group date" id="datepicker_in">
                                         <input type="text" class="form-control" placeholder="CHECK IN">
                                         <span class="input-group-append">
                                             <span class="input-group-text bg-white">
                                                 <img src="./assets/calendar (1).png" class="calender-icon" alt="">
-                                            </span>
+                                             </span>
                                         </span>
                                     </div>
                                 </div>
 
-                                <div class="dropdown d-flex flex-column">
+                                <div class="form-floating mb-3">
+                                    <div class="input-group date" id="datepicker_out">
+                                        <input type="text" class="form-control" placeholder="CHECK OUT">
+                                        <span class="input-group-append">
+                                            <span class="input-group-text bg-white">
+                                                <img src="./assets/calendar (1).png" class="calender-icon" alt="">
+                                             </span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="form-floating mb-3">
+                                    <select name="guest" class="form-select" id="filterGuest">
+                                        <option value="">Select guest</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21+</option>
+                                    </select>
+                                    <label for="filterGuest">GUESTS</label>
+                                </div>
+
+                                <div class="dropdown d-flex flex-column d-none">
                                     <label>Select People </label>
                                     <button class="dropdown-btn"> Rooms</button>
                                     <div class="dropdown-content ">
@@ -406,7 +429,7 @@
 
                     </div>
 
-                    <div class="popup-div-booking col-12 col-md-6 justify-content-center align-items-start"
+                    <div class="popup-div-booking col-12 col-md- justify-content-center align-items-start"
                         style="display: none;">
 
                         <div class="container ">
@@ -741,14 +764,14 @@
         </script>
     <script>
         $(function () {
-            $("#datepicker").datepicker({
+            $("#datepicker_in").datepicker({
                 autoclose: true,
                 todayHighlight: true,
             });
         });
 
         $(function () {
-            $("#endDatepicker").datepicker({
+            $("#datepicker_out").datepicker({
                 autoclose: true,
                 todayHighlight: true,
             });
@@ -1055,12 +1078,12 @@
         const checkButton = document.getElementById('checkAvailablity');
         checkButton.addEventListener('click', function (event) {
 
-            const checkinDate = document.querySelector('#datepicker input').value;
+            const checkinDate = document.querySelector('#datepicker_in input').value;
             const checkinComponents = checkinDate.split('/');
             // Reconstruct the date in the desired format "dd-mm-yyyy"
             const fromDate = `${checkinComponents[1]}-${checkinComponents[0]}-${checkinComponents[2]}`;
 
-            const checkoutDate = document.querySelector('#endDatepicker input').value;
+            const checkoutDate = document.querySelector('#datepicker_out input').value;
             const checkoutComponents = checkinDate.split('/');
             // Reconstruct the date in the desired format "dd-mm-yyyy"
             const toDate = `${checkinComponents[1]}-${checkinComponents[0]}-${checkinComponents[2]}`;

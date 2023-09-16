@@ -159,6 +159,56 @@ text-align: center;
     position: absolute;
 }
 
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+/* Apply the shimmer effect to the .shimmer elements */
+.shimmer {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+}
+
+.shimmer .image-card {
+    width: 45%;
+    float: left;
+    border-radius: 8px;
+    background-color: #cac7c7;
+  }
+
+  .title {
+    width: 40%;
+    background-color: #cac7c7;
+  }
+  .link {
+    width: 60%;
+    background-color: #cac7c7;
+  }
+  .description {
+    width: 70%;
+    background-color: #cac7c7;
+  }
+
+  .stroke {
+    height: 15px;
+    background: #777;
+    margin-top: 20px;
+  }
+
+  .animate {
+    animation: shimmer 3s;
+    animation-iteration-count: infinite;
+    background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+    background-size: 1000px 100%;
+  }
+
 .video-bg-player,
 .video-bg iframe {
     pointer-events: none;
@@ -1161,7 +1211,7 @@ i.fa.fa-calendar {
 
     .property-list {
        height: 100%!important;
-       gap: 20px;
+       /* gap: 20px; */
         /* overflow-y: none; */
     }
 
@@ -1261,7 +1311,7 @@ i.fa.fa-calendar {
     /* transform: translate(40%, 10px); */
     height: 300px;
     top: 25%;
-    left: 25%;
+    left: 20%;
     z-index: 9999999;
 }
 
@@ -1273,7 +1323,7 @@ i.fa.fa-calendar {
     /* transform: translate(40%, 10px); */
     height:auto;
     top: 25%;
-    left: 25%;
+    left: 2%;
     z-index: 9999999;
 }
 
