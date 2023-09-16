@@ -98,7 +98,7 @@ text-align: center;
     font-family: "Playfair Display", serif;
     font-size: 100px;
     font-weight: 400;
-    line-height: 0.2em;
+    line-height: 0.8em;
 }
 
 .hp-banner .video-text p,.hp-banner .video-text2 p,.video-text-sliders p  {
@@ -267,6 +267,10 @@ text-align: center;
     width: 100%;
 }
 
+.mob-menu-div{
+    margin-top: 70px;
+}
+
 @media (max-width: 480px) {
     .single-villa-img.with-bg {
         height: 170px;
@@ -289,11 +293,35 @@ text-align: center;
         row-gap: 10px;
     }
     .villa-details .inner-gallery a {
-        width: 90px !important;
-        height: 90px !important;
+        width: 80px !important;
+        height: 80px !important;
     }
     .prop-list-info{
         margin-left: 0!important;
+    }
+
+    .hp-banner .video-text h1, .hp-banner .video-text2 h1 {
+        
+        font-size: 52px!important;
+        
+    }
+
+    .hp-banner .video-text-sliders h1{
+        font-size: 52px!important;
+    }
+
+    .video-text-sliders h2 {
+        font-size: 55px;
+    }
+
+    .hp-banner .video-text h2, .hp-banner .video-text2 h2 {
+        font-size: 55px;
+    
+        line-height: 0.8em;
+    }
+
+    .hp-banner .video-text p, .hp-banner .video-text2 p, .video-text-sliders p {
+        margin-top: 0px;
     }
 }
 
@@ -458,6 +486,7 @@ text-align: center;
     position: relative;
     height: 270px;
     justify-content: space-between;
+    border-radius: 10px;
 }
 
 .property-list .list-item:hover {
@@ -517,18 +546,21 @@ text-align: center;
     font-size: 18px;
     color: inherit;
     text-decoration: none;
+    margin-top: 15px;
 }
 
 .property-list .prop-list-info .prop-opt {
     list-style: none;
     padding: 0;
+    margin-top: 15px;
+
+    margin-bottom: 0;
+
 }
 
-.property-list .prop-list-info .prop-extra {}
 
-.property-list .prop-list-info .prop-share {}
 
-.property-list .prop-list-info .prop-share .btn {}
+
 
 .property-list .prop-list-info .prop-share .btn:not(:last-child) {
     margin-right: 10px;
@@ -725,11 +757,13 @@ i.fa.fa-calendar {
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    flex: 1;
+    margin-bottom: 15px;
 }
 
 .prop-list-info .prop-extra {
     color: #084f0d;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 1;
     text-align: right;
     padding-right: 10px;
@@ -1113,11 +1147,13 @@ i.fa.fa-calendar {
 }
 
 .calender-icon{
-    width: 32px;
+    width: 25px;
 }
 
 .input-group-text{
-    padding: 12px!important;
+    padding: 15px!important;
+    border-top-left-radius: 0px!important;
+    border-bottom-left-radius: 0px!important;
 }
 
 
@@ -1148,9 +1184,7 @@ i.fa.fa-calendar {
 /* media quary start */
 
 @media only screen and (max-width: 576px) {
-    .pg-header .header-content .logo img {
-        height: 30px;
-    }
+   
     .pg-header .header-content .nav-call img {
         height: 30px;
         margin-left: -10px;
@@ -1176,6 +1210,8 @@ i.fa.fa-calendar {
         flex: 0 0 auto;
         width: 100%;
     }
+
+    
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
@@ -1190,6 +1226,8 @@ i.fa.fa-calendar {
         width: 100%;
         margin-left: 0;
     }
+
+
 }
 
 @media only screen and (min-width: 768px) and (max-width: 992px) {
@@ -1217,6 +1255,10 @@ i.fa.fa-calendar {
 
     .property-list .list-item{
         height: fit-content!important;
+    }
+
+    .pg-header .header-content .logo img {
+        height: 30px;
     }
 }
 
@@ -1261,7 +1303,7 @@ i.fa.fa-calendar {
     bottom: 10px;
     font-size: 22px;
     border: 3px solid #ffffff;
-    padding: 10px;
+    padding: 10px 20px;
     color: #ffffff;
     text-transform: uppercase;
     font-weight: 500;
@@ -1277,7 +1319,7 @@ i.fa.fa-calendar {
     position: absolute;
     top: 0;
     right: 0;
-    background: rgba(24, 15, 44, 0.8) !important;
+    background: rgb(0 0 0 / 80%) !important;
     height: 70vh;
     width: 30%;
 }
@@ -1298,9 +1340,14 @@ i.fa.fa-calendar {
 }
 
 .close-popup {
-    font-size: 30px;
+    font-size: 40px;
     right: 10px;
     position: absolute;
+    top: 5px;
+}
+
+.close-icons{
+    color: #b1945c;
 }
 
 .popup-div {
@@ -1309,10 +1356,29 @@ i.fa.fa-calendar {
     color: #000;
     height: 50;
     /* transform: translate(40%, 10px); */
-    height: 300px;
+    height: 380px;
     top: 25%;
     left: 20%;
     z-index: 9999999;
+    border-radius: 20px;
+    padding: 45px;
+}
+
+#filterGuest-booking{
+   width: 170px;
+}
+
+.check-avail-div{
+    gap: 35px;
+}
+
+#checkAvailablity{
+    background: #b1945c;
+    color: #fff;
+    padding: 17px 41px;
+    border-radius: 0.375rem;
+    transition: all 0.15s ease;
+    border: none;
 }
 
 .popup-div-booking {
@@ -1576,7 +1642,7 @@ i.fa.fa-calendar {
 .villa-details .prop-chat-new {
     background: #003f36;
     color: #fff;
-    min-width: 200px;
+    min-width: 170px;
     text-align: center;
     border-radius: 0.25rem;
     padding: 9px 0;

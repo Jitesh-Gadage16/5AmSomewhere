@@ -150,7 +150,7 @@
                     <div class="offcanvas-logo">
                         <img src="./assets/new-logo.png" alt="logo" />
                     </div>
-                    <ul>
+                    <ul class="mob-menu-div">
                         <!-- <li><a href="gallery.html">Gallery</a></li> -->
                         <li><a href="villas.html">Villas</a></li>
                         <li><a href="index.html">Home</a></li>
@@ -177,10 +177,10 @@
 
     <section class="page-content">
         <div class="single-villa-img with-bg">
-            <img src="https://www.rftpm.in/public/uploads/villa/1660203214.png" class="villa-img">
+            <img  class="villa-img">
             <div class="villa-title">
-                <h1 class="hero__title">Fairview</h1>
-                <h2 class="hero__sub">Assagao</h2>
+                <h1 class="hero__title"></h1>
+                <h2 class="hero__sub"></h2>
             </div>
             <div class="img-option ">
 
@@ -244,34 +244,7 @@
                             <div class=" d-flex align-items-center " id="gallery-update-slides-demo">
 
                             <div class="inner-gallery" id="gallery">
-                                <a data-lg-size="1400-1400" class="gallery-item"
-                                    data-src="https://www.rftpm.in/public/uploads/villa/000000.jpg">
-                                    <img class="img-fluid" src="https://www.rftpm.in/public/uploads/villa/000000.jpg" />
-                                </a>
-                                <a data-lg-size="1400-1400" class="gallery-item"
-                                    data-src="https://www.rftpm.in/public/uploads/villa/000001-1668088911.jpg">
-                                    <img class="img-fluid"
-                                        src="https://www.rftpm.in/public/uploads/villa/000001-1668088911.jpg" />
-                                </a>
-                                <a data-lg-size="1400-1400" class="gallery-item"
-                                    data-src="https://www.rftpm.in/public/uploads/villa/000002-1668088911.jpg">
-                                    <img class="img-fluid"
-                                        src="https://www.rftpm.in/public/uploads/villa/000002-1668088911.jpg" />
-                                </a>
-                                <a data-lg-size="1400-1400" class="gallery-item"
-                                    data-src="https://www.rftpm.in/public/uploads/villa/000003-1668088912.jpg   ">
-                                    <img class="img-fluid"
-                                        src="https://www.rftpm.in/public/uploads/villa/000003-1668088912.jpg" />
-                                </a>
-                                <a data-lg-size="1400-1400" class="gallery-item"
-                                    data-src="https://www.rftpm.in/public/uploads/villa/000005-1668088884.jpg">
-                                    <img class="img-fluid"
-                                        src="https://www.rftpm.in/public/uploads/villa/000005-1668088884.jpg" />
-                                </a>
-                                <a data-lg-size="1400-1400" class="gallery-item more" data-more-text="More"
-                                    data-src="https://www.rftpm.in/public/uploads/villa/000000.jpg">
-                                    <img class="img-fluid" src="https://www.rftpm.in/public/uploads/villa/000000.jpg" />
-                                </a>
+                                
 
                             </div>
                             </div>
@@ -318,10 +291,10 @@
                         <div class="container ">
 
                             <div class="close-popup">
-                                <i class="fa-sharp fa-regular fa-circle-xmark"></i>
+                                <i class="fa-sharp fa-regular fa-circle-xmark close-icons"></i>
                             </div>
                             <h2 class="py-4 text-center">Check Availablity</h2>
-                            <div class="d-flex justify-content-evenly">
+                            <div class="d-flex justify-content-center check-avail-div">
 
                                 <!-- <label>Select End Date: </label> -->
                                 <div class="form-floating mb-3">
@@ -347,7 +320,7 @@
                                 </div>
 
                                 <div class="form-floating mb-3">
-                                    <select name="guest" class="form-select" id="filterGuest">
+                                    <select name="guest" class="form-select" id="filterGuest-booking">
                                         <option value="">Select guest</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -420,8 +393,10 @@
 
                             </div>
                             <div class="d-flex justify-content-center align-items-center">
-                                <button id="checkAvailablity" type="button" class="btn btn-primary my-4  btn-lg">Check
+                                <button id="checkAvailablity" type="button" class="btn  my-4  btn-lg">Check
                                     Availablity</button>
+
+                                    
 
                             </div>
 
@@ -917,6 +892,8 @@
                     document.querySelector('.villa-titl-features').innerHTML = `${Data.info}`
 
                     document.querySelector('.villa-sec-long-text').innerHTML = `                    <div class="villa-sec-titl mt-3 ">Rules and Regulations</div><div class=""long-text>${Data.rules}</div>`
+
+                    document.querySelector('.villa-img').src = Data.main_img;
 
                     var facilities = Data.facilities;
                     // console.log("facilities",JSON.parse(facilities))

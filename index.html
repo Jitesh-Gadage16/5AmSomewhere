@@ -49,12 +49,12 @@
                     data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                     <img src="./assets/icons-06.webp" alt="" />
                 </a>
-                <a href="index.html" class="logo">
+                <a href="/" class="logo">
                     <img src="./assets/new-logo.png" alt="logo" />
                 </a>
 
                 <div class="nav-right-menu d-none d-xs-none d-sm-none d-md-block">
-                    <a href="" class="nav-menu"> Home </a>
+                    <a href="/" class="nav-menu"> Home </a>
                 </div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                     <div class="offcanvas-logo">
                         <img src="./assets/new-logo.png" alt="logo" />
                     </div>
-                    <ul>
+                    <ul class="mob-menu-div">
                         <!-- <li><a href="gallery.html">Gallery</a></li> -->
                         <li><a href="villas.html">Villas</a></li>
                         <li><a href="index.html">Home</a></li>
@@ -273,13 +273,17 @@
 
     <script type="text/javascript">
         $(function () {
-            $('#datepicker_in').datepicker();
+            $('#datepicker_in').datepicker({
+                todayHighlight: true,
+            });
         });
     </script>
 
     <script type="text/javascript">
         $(function () {
-            $('#datepicker_out').datepicker();
+            $('#datepicker_out').datepicker({
+                todayHighlight: true,
+            });
         });
     </script>
 
@@ -385,7 +389,7 @@
                         <div class="video-text-sliders">
                             <h1>Experienceee</h1>
                             <h2>GOA</h2>
-                            <p>LIKE NEVER BEFOReeeE</p>
+                            <p>LIKE NEVER BEFORE</p>
                             <a class="video-btn" href="villas.html">Book Now</a>
                         </div>
                         <div class="banner-bootom-text">
