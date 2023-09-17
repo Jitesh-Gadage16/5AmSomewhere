@@ -275,11 +275,11 @@
         $(function () {
             $('#datepicker_in').datepicker({
                 todayHighlight: true,
+                startDate: new Date(),
             });
         });
-    </script>
 
-    <script type="text/javascript">
+
         $(function () {
             $('#datepicker_out').datepicker({
                 todayHighlight: true,
@@ -371,7 +371,7 @@
             method: 'GET',
             success: function (Data) {
 
-                console.log("slider==>",Data)
+                console.log("slider==>", Data)
 
                 var getlist = Data.data;
                 // Loop through the API data and create slide elements
@@ -384,7 +384,8 @@
                                 <div id="yt-players"></div>
                             </div>
                         </div>
-                       <img src="https://www.rftpm.in/public/uploads/villa/1660203214.png" class="slider-imgess" />
+                        <div class="video-bg-overlay" style="
+                        background-image: url('${item.main_img}">
                         
                         <div class="video-text-sliders">
                             <h1>Experienceee</h1>

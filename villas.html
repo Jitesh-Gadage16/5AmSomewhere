@@ -580,7 +580,9 @@
 
     <script type="text/javascript">
         $(function () {
-            $('#datepicker_in').datepicker();
+            $('#datepicker_in').datepicker({
+                startDate: new Date(),
+            });
         });
     </script>
 

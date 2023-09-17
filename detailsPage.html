@@ -541,7 +541,7 @@
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="details" role="tabpanel"
                                 aria-labelledby="details-tab">
-                                <ul>
+                                <ul class="aminity">
                                     <li>24/7Security</li>
                                     <li>Butler</li>
                                     <li>Cook</li>
@@ -736,7 +736,8 @@
             $("#datepicker_in").datepicker({
                 autoclose: true,
                 todayHighlight: true,
-                orientation:'bottom'
+                orientation:'bottom',
+                startDate: new Date()
             });
         });
 
@@ -891,13 +892,22 @@
 
                     document.querySelector('.villa-img').src = Data.main_img;
 
-                    var facilities = Data.facilities;
+                    var amenities = Data.amenities;
                     // console.log("facilities",JSON.parse(facilities))
 
-                    // const facilitiesArray = facilities.split('\n');
-                    // console.log(JSON.parse(Data.insights));
+                    const amenitiesArray = amenities.split('\n');
+                    console.log(amenitiesArray);
+                    var aminityHtml = "";
+                    amenitiesArray.forEach(val => {
+                    
+                        aminityHtml += `<li>${val}</li>`
+                    })
+
+                    document.querySelector('.aminity').innerHTML = aminityHtml;
 
                     var bannerPoints = JSON.parse(Data.insights);
+                    
+
                     var listHtml = "";
 
                     bannerPoints.forEach(val => {
