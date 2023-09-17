@@ -323,6 +323,15 @@ text-align: center;
     .hp-banner .video-text p, .hp-banner .video-text2 p, .video-text-sliders p {
         margin-top: 0px;
     }
+
+    .check-avail-div{
+        flex-direction: column;
+        gap: 0!important;
+    }
+
+    #filterGuest-booking, .filterGuest-book {
+        width: 100%!important;
+    }
 }
 
 @media (min-width: 768px) {
@@ -1281,9 +1290,16 @@ i.fa.fa-calendar {
         flex-wrap: wrap;
         row-gap: 10px;
     }
-    .popup-div,.popup-div-booking {
+    .popup-div {
         left: 0!important;
         top: 15%!important;
+        height: auto;
+    }
+
+    .popup-div-booking{
+        left: 0!important;
+        top: 0!important;
+        height: auto;
     }
 }
 
@@ -1339,7 +1355,7 @@ i.fa.fa-calendar {
     margin: 0;
 }
 
-.close-popup {
+.close-popup,.close-popup-booking {
     font-size: 40px;
     right: 10px;
     position: absolute;
@@ -1356,7 +1372,7 @@ i.fa.fa-calendar {
     color: #000;
     height: 50;
     /* transform: translate(40%, 10px); */
-    height: 380px;
+    height: auto;
     top: 25%;
     left: 20%;
     z-index: 9999999;
@@ -1364,7 +1380,7 @@ i.fa.fa-calendar {
     padding: 45px;
 }
 
-#filterGuest-booking{
+#filterGuest-booking,.filterGuest-book{
    width: 170px;
 }
 
@@ -1372,7 +1388,7 @@ i.fa.fa-calendar {
     gap: 35px;
 }
 
-#checkAvailablity{
+#checkAvailablity, #Booking{
     background: #b1945c;
     color: #fff;
     padding: 17px 41px;
@@ -1388,9 +1404,11 @@ i.fa.fa-calendar {
     height: 50;
     /* transform: translate(40%, 10px); */
     height:auto;
-    top: 25%;
-    left: 2%;
+    top: 18%;
+    left: 20%;
     z-index: 9999999;
+    border-radius: 20px;
+    padding: 45px;
 }
 
 .single-villa-img {

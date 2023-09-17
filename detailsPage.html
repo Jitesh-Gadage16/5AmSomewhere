@@ -392,6 +392,9 @@
                                 </div>
 
                             </div>
+
+                <div class="show-message text-center text-danger" style="display: none;">successfull</div>
+
                             <div class="d-flex justify-content-center align-items-center">
                                 <button id="checkAvailablity" type="button" class="btn  my-4  btn-lg">Check
                                     Availablity</button>
@@ -404,87 +407,74 @@
 
                     </div>
 
-                    <div class="popup-div-booking col-12 col-md- justify-content-center align-items-start"
+                    <div class="popup-div-booking col-12 col-md-8 justify-content-center align-items-start"
                         style="display: none;">
 
                         <div class="container ">
 
                             <div class="close-popup-booking">
-                                <i class="fa-sharp fa-regular fa-circle-xmark"></i>
+                                <i class="fa-sharp fa-regular fa-circle-xmark close-icons"></i>
                             </div>
                             <h2 class="py-4 text-center">Book Now</h2>
-                            <div class="d-flex justify-content-evenly">
+                            <div class="d-flex justify-content-evenly check-avail-div">
 
 
-                                <div class="start-date">
-                                    <label>Select Start Date: </label>
-                                    <div id="pickstartDate" class="input-group date" data-date-format="mm-dd-yyyy">
-                                        <input class="form-control" type="text" readonly />
-                                        <span class="input-group-addon">
-                                            <i class="fa-regular fa-calendar-days"></i>
+                        
+                                <div class="form-floating mb-3">
+                                    <div class="input-group date" id="pickstartDate">
+                                        <input type="text" class="form-control" placeholder="CHECK IN">
+                                        <span class="input-group-append">
+                                            <span class="input-group-text bg-white">
+                                                <img src="./assets/calendar (1).png" class="calender-icon" alt="">
+                                             </span>
                                         </span>
                                     </div>
                                 </div>
 
-                                <div class="end-date">
-
-                                    <label>Select End Date: </label>
-                                    <div id="pickendDate" class="input-group date" data-date-format="mm-dd-yyyy">
-                                        <input class="form-control" type="text" readonly />
-                                        <span class="input-group-addon">
-                                            <i class="fa-regular fa-calendar-days"></i>
+                                <div class="form-floating mb-3">
+                                    <div class="input-group date" id="pickendDate">
+                                        <input type="text" class="form-control" placeholder="CHECK OUT">
+                                        <span class="input-group-append">
+                                            <span class="input-group-text bg-white">
+                                                <img src="./assets/calendar (1).png" class="calender-icon" alt="">
+                                             </span>
                                         </span>
                                     </div>
                                 </div>
+                                
 
-                                <div class="dropdown d-flex flex-column">
-                                    <label>Select People </label>
-                                    <button class="dropdown-btn"> Rooms</button>
-                                    <div class="dropdown-content ">
-                                        <div class="col-12">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div>
-                                                    <p class="text-dark">Adults</p>
-                                                </div>
-                                                <div class="input-group w-auto justify-content-end align-items-center">
-                                                    <input type="button" value="-"
-                                                        class="button-minus border rounded-circle  icon-shape icon-sm mx-1 "
-                                                        data-field="quantity">
-                                                    <input type="number" step="1" max="10" value="1" name="quantity"
-                                                        class="quantity-field border-0 text-center w-25">
-                                                    <input type="button" value="+"
-                                                        class="button-plus border rounded-circle icon-shape icon-sm "
-                                                        data-field="quantity">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <div>
-                                                    <p class="text-dark">Children</p>
-                                                </div>
-                                                <div class="input-group w-auto justify-content-end align-items-center">
-                                                    <input type="button" value="-"
-                                                        class="button-minus border rounded-circle  icon-shape icon-sm mx-1 "
-                                                        data-field="quantity">
-                                                    <input type="number" step="1" max="10" value="1" name="quantity"
-                                                        class="quantity-field border-0 text-center w-25">
-                                                    <input type="button" value="+"
-                                                        class="button-plus border rounded-circle icon-shape icon-sm "
-                                                        data-field="quantity">
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-                                    </div>
+                                <div class="form-floating mb-3">
+                                    <select name="guest" class="form-select" id="filterGuest-boo">
+                                        <option value="">Select guest</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21+</option>
+                                    </select>
+                                    <label for="filterGuest">GUESTS</label>
                                 </div>
 
 
 
                             </div>
-                            <div class="row  mx-auto mt-3">
+                            <div class="row  mx-auto mt-3 justify-content-center">
                                 <div class="col-sm-6 col-md-8">
                                     <label for="firstName" class="form-label m-0">First name</label>
                                     <input type="text" class="form-control" id="firstName" placeholder="" value=""
@@ -514,9 +504,13 @@
 
 
 
-                            <div class="d-flex justify-content-center align-items-center">
+                            <!-- <div class="d-flex justify-content-center align-items-center">
                                 <button id="Booking" type="button" class="btn btn-primary my-4  btn-lg">Book
-                                    Now</button>
+                                    Now</button> -->
+
+                                    <div class="d-flex justify-content-center align-items-center">
+                                        <button id="Booking" type="button" class="btn  my-4  btn-lg">Book
+                                            Now</button>
 
                             </div>
 
@@ -742,6 +736,7 @@
             $("#datepicker_in").datepicker({
                 autoclose: true,
                 todayHighlight: true,
+                orientation:'bottom'
             });
         });
 
@@ -749,6 +744,7 @@
             $("#datepicker_out").datepicker({
                 autoclose: true,
                 todayHighlight: true,
+                orientation:'bottom'
             });
         });
 
@@ -1087,6 +1083,8 @@
                 .then(response => {
                     console.log("res", response)
 
+                    var result = response
+
                     if (response.status === true) {
                         console.log(response.data)
                         alert(response.message)
@@ -1095,9 +1093,12 @@
                         document.querySelector('.popup-backdrop').style.display = "block";
                         document.querySelector('.body-class').style.overflow = "hidden";
                     } else {
-                        console.log(response.data)
-                        alert(response.message)
-                        document.querySelector('.popup-div').style.display = "none";
+                        console.log("not available",result)
+                        document.querySelector('.show-message').style.display = "block";
+                        document.querySelector('.show-message').innerText    = result.message
+                        // alert(response.message)
+                        document.querySelector('.popup-backdrop').style.display = "block";
+                        document.querySelector('.popup-div').style.display = "block";
                         // document.querySelector('.popup-div-booking').style.display = "flex";
                         document.querySelector('.popup-backdrop').style.display = "none";
                         document.querySelector('.body-class').style.overflow = "inherit";
