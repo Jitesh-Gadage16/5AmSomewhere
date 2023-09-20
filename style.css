@@ -335,7 +335,7 @@ text-align: center;
 }
 
 @media (min-width: 768px) {
-    .video-bg-player {}
+   
     .video-bg-player .video-bg iframe {
         width: 100%;
     }
@@ -1198,6 +1198,10 @@ i.fa.fa-calendar {
         height: 30px;
         margin-left: -10px;
     }
+
+    .property-list{
+        gap: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1218,6 +1222,10 @@ i.fa.fa-calendar {
     .property-list .list-item .prop-list-info {
         flex: 0 0 auto;
         width: 100%;
+    }
+
+    .property-list .list-item {
+        height: fit-content!important;
     }
 
     
@@ -1268,6 +1276,10 @@ i.fa.fa-calendar {
 
     .pg-header .header-content .logo img {
         height: 30px;
+    }
+
+    .property-list .list-item {
+        height: fit-content!important;
     }
 }
 

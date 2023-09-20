@@ -50,7 +50,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-share.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lg-thumbnail.min.
     css"> -->
-    
+
 </head>
 
 <body>
@@ -225,16 +225,16 @@
                     <div class="col-md-6 col-12 mt-sm-3">
                         <div class="list-item shimmer" data-markerid="88">
                             <!-- ... Your existing content ... -->
-                            
-                                <div class="image-card animate"></div>
 
-                                <div class="right-shimmer d-flex flex-column">
-                                    <div class="stroke animate title"></div>
-                                    <div class="stroke animate link"></div>
-                                    <div class="stroke animate description"></div>
-                                </div>
-                           
-                        
+                            <div class="image-card animate"></div>
+
+                            <div class="right-shimmer d-flex flex-column">
+                                <div class="stroke animate title"></div>
+                                <div class="stroke animate link"></div>
+                                <div class="stroke animate description"></div>
+                            </div>
+
+
                         </div>
                     </div>
 
@@ -524,13 +524,52 @@
 
                 </div>
 
+                <div class="row justify-content-between property-list h-100 m-auto" id="show_data_search">
+
+                    <div class="col-md-6 col-12 mt-sm-3">
+                        <div class="list-item shimmer" data-markerid="88">
+                            <!-- ... Your existing content ... -->
+
+                            <div class="image-card animate"></div>
+
+                            <div class="right-shimmer d-flex flex-column">
+                                <div class="stroke animate title"></div>
+                                <div class="stroke animate link"></div>
+                                <div class="stroke animate description"></div>
+                            </div>
 
 
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-12 mt-sm-3">
+                        <div class="list-item shimmer" data-markerid="88">
+                            <div class="image-card animate"></div>
+
+                            <div class="right-shimmer d-flex flex-column">
+                                <div class="stroke animate title"></div>
+                                <div class="stroke animate link"></div>
+                                <div class="stroke animate description"></div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class=" d-flex justify-content-center align-items-center my-4 mx-auto py-3 text-center  other-vilas sreach_other-villa"
+                    style="display: none!important;">
+                    <div class=" other-vila" id="sreach_other-villa">Other Villas </div>
+                </div>
+
+                <div class="row justify-content-between property-list h-100 m-auto" id="show_unfilterdata_search" style="display: none;">
+
+
+
+                </div>
             </div>
-        </div>
 
 
-        <!-- <button type="button" class="btn btn-success" id="dynamic-gallery-demo-load-more">Launch
+            <!-- <button type="button" class="btn btn-success" id="dynamic-gallery-demo-load-more">Launch
             Gallery</button> -->
 
     </section>
@@ -588,7 +627,9 @@
 
     <script type="text/javascript">
         $(function () {
-            $('#datepicker_out').datepicker();
+            $('#datepicker_out').datepicker({
+                startDate: new Date(),
+            });
         });
     </script>
 
@@ -602,188 +643,6 @@
     <script>
         const apiUrl = 'https://file.mycenter.co.in/property/api/allProperty';
 
-        let hrefLocation = window.location.href;
-
-
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const getid = urlParams.get('id');
-        const from_date = urlParams.get('from_date');
-        const to_date = urlParams.get('to_date');
-
-        if (urlParams.get('id')) {
-            getAddress()
-        } else {
-            console.log("id nahi mila")
-        }
-
-        console.log("hrefLocation", getid, from_date, to_date)
-
-        function getAddress() {
-            fetch(apiUrl, {
-                method: 'get',
-            })
-                .then(response => response.json())
-                .then(response => {
-                    // console.log("res",response)
-                    var address = response
-                    response.filtered_data.forEach(val => {
-                        if (val.id == getid) {
-                            address = val.address
-
-                            const formDataUrl = new URLSearchParams();
-                            formDataUrl.append('location', address);
-                            formDataUrl.append('fromDate', from_date);
-                            formDataUrl.append('toDate', to_date);
-
-                            console.log("formDataUrl", formDataUrl)
-
-                            fetch(apiUrl, {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/x-www-form-urlencoded' // Specify URL-encoded content type
-                                },
-                                body: formDataUrl
-                            })
-                                .then(response => response.json())
-                                .then(response => {
-                                    console.log("search response url", response)
-
-                                    var AllVillas = response.filtered_data;
-                                    var unfilterVillas = response.unfiltered_data
-
-
-
-                                    for (let i = 0; i < AllVillas.length; i++) {
-
-
-                                        var val = AllVillas[i]
-
-
-                                        filterContent += `<div class="col-md-6 col-12 mt-sm-3">
-                        <div class="list-item" data-markerid="88">
-                            <a target="_blank" class="property-img relative" href="detailsPage.html?id=${val.id}">
-                                <img class="lazyload"
-                                    src=${val.main_img}>
-                                <i class="fa-regular fa-image open-gallery"></i>
-                            </a>
-                            <div class="prop-list-info d-flex flex-column justify-content-between">
-                                <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
-                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
-                                
-                                <ul class="prop-opt">
-                                    
-                                    ${val.info.map(infoItem => `<li>${infoItem}</li>`).join('')}
-                                </ul>
-
-                               
-                                <div class="prop-footer ">
-                                    <div class="prop-share-new d-flex mt-2">
-                                        <a target="_blank"
-                                        href="${val.whatsapp}"
-                                            class="share-new "><img src="./assets/whatsapp-overlay.png" alt=""></a>
-                                        <a target="_blank"
-                                            href="${val.insta}"
-                                            class="share-new"><img src="./assets/instagram.png" alt=""></a>
-
-                                        <a target="_blank" href="${val.map}" class="share-new "><img src="./assets/airbnb-overlay.png"
-                                                alt=""></a>
-                                        <a target="_blank"
-                                        href="${val.map}"
-                                            class="share-new"><img src="./assets/location-overlay.png" alt=""></a>
-
-                                    </div>
-                                    <div class="prop-extra ">
-                                        Rs.${val.per_night}/Night
-                                        <br>+ 18% taxes<br>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
-                                    }
-
-                                    document.querySelector('#show_data').innerHTML = filterContent;
-
-
-
-                                    for (let i = 0; i < unfilterVillas.length; i++) {
-                                        // console.log("value", unfilterVillas[i])
-
-                                        // var cardpoints = document.querySelector('.prop-opt')
-
-                                        var Info = unfilterVillas[i].info;
-                                        // console.log(info,"is array")
-
-
-                                        var val = unfilterVillas[i]
-
-
-                                        unfilterConent += `<div class="col-md-6 col-12 mt-sm-3">
-                        <div class="list-item" data-markerid="88">
-                            <a target="_blank" class="property-img relative" href="detailsPage.html?id=${val.id}">
-                                <img class="lazyload"
-                                    src=${val.main_img}>
-                                <i class="fa-regular fa-image open-gallery"></i>
-                            </a>
-                            <div class="prop-list-info d-flex flex-column justify-content-between">
-                                <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
-                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
-                                
-                                <ul class="prop-opt">
-                                    
-                                    ${val.info.map(infoItem => `<li>${infoItem}</li>`).join('')}
-                                </ul>
-
-                               
-                                <div class="prop-footer ">
-                                    <div class="prop-share-new d-flex mt-2">
-                                        <a target="_blank"
-                                        href="${val.whatsapp}"
-                                            class="share-new "><img src="./assets/whatsapp-overlay.png" alt=""></a>
-                                        <a target="_blank"
-                                            href="${val.insta}"
-                                            class="share-new"><img src="./assets/instagram.png" alt=""></a>
-
-                                        <a target="_blank" href="${val.map}" class="share-new "><img src="./assets/airbnb-overlay.png"
-                                                alt=""></a>
-                                        <a target="_blank"
-                                        href="${val.map}"
-                                            class="share-new"><img src="./assets/location-overlay.png" alt=""></a>
-
-                                    </div>
-                                    <div class="prop-extra ">
-                                        Rs.${val.per_night}/Night
-                                        <br>+ 18% taxes<br>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>`
-
-
-                                        document.querySelector('.other-vilas').style.display = 'block';
-
-
-
-                                        document.querySelector('#show_unfilterdata').innerHTML = unfilterConent;
-
-
-                                    }
-
-
-                                });
-
-                        }
-                    })
-
-
-
-
-                })
-        }
 
         // getAddress()
 
@@ -857,6 +716,9 @@
 
                         var val = AllVillas[i]
 
+                        const firstThreeElements = val.info.slice(0, 3);
+
+
 
                         filterContent += `<div class="col-md-6 col-12 mt-sm-3">
                         <div class="list-item" data-markerid="88">
@@ -871,7 +733,7 @@
                                 
                                 <ul class="prop-opt">
                                     
-                                    ${val.info.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                    ${firstThreeElements.map(infoItem => `<li>${infoItem}</li>`).join('')}
                                 </ul>
 
                                
@@ -917,6 +779,8 @@
 
                         var val = unfilterVillas[i]
 
+                        
+                        const firstThreeElements = val.info.slice(0, 3);
 
                         unfilterConent += `<div class="col-md-6 col-12 mt-sm-3">
                         <div class="list-item" data-markerid="88">
@@ -931,7 +795,7 @@
                                 
                                 <ul class="prop-opt">
                                     
-                                    ${val.info.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                    ${firstThreeElements.map(infoItem => `<li>${infoItem}</li>`).join('')}
                                 </ul>
 
                                
@@ -963,6 +827,7 @@
 
 
                         document.querySelector('.other-vilas').style.display = 'block';
+                        document.querySelector('.sreach_other-villa').style.display = 'none!important';
 
 
 
@@ -971,6 +836,10 @@
 
                     }
 
+
+                    // document.querySelector('#show_data_search').style.display = 'none';
+                    console.log("===> kya seen iska")
+                    // document.querySelector('#show_unfilterdata_search').style.display = 'none';
 
                 });
         });
@@ -1033,6 +902,11 @@
 
                     var val = AllVillas[i]
 
+                    // console.log("vallll",val.info)
+
+                    const firstThreeElements = val.info.slice(0, 3);
+                    // console.log("firstThreeElements",firstThreeElements)
+
 
                     content += `<div class="col-md-6 col-12 mt-sm-3">
                         <div class="list-item" data-markerid="88">
@@ -1047,7 +921,7 @@
                                 
                                 <ul class="prop-opt">
                                     
-                                    ${val.info.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                    ${firstThreeElements.map(infoItem => `<li>${infoItem}</li>`).join('')}
                                 </ul>
 
                                
@@ -1080,6 +954,11 @@
 
 
                     document.querySelector('#show_data').innerHTML = content;
+                    document.querySelector('#show_data_search').style.display = 'none';
+                    console.log("ye nahi print hona mangaty")
+                    // document.querySelector('#show_unfilterdata_search').style.display = 'none';
+
+
 
 
                 }
@@ -1093,20 +972,196 @@
             .catch(error => console.error('Error fetching data:', error));
 
 
-        // } function end
+            let hrefLocation = window.location.href;
+
+const urlParams = new URLSearchParams(window.location.search);
+const getid = urlParams.get('id');
+const from_date = urlParams.get('from_date');
+const to_date = urlParams.get('to_date');
+
+if (urlParams.get('id')) {
+    getAddress()
+} else {
+    console.log("id nahi mila")
+}
+
+console.log("hrefLocation", getid, from_date, to_date)
+
+function getAddress() {
+    fetch(apiUrl, {
+        method: 'get',
+    })
+        .then(response => response.json())
+        .then(response => {
+            // console.log("res",response)
+            var address = response
+            response.filtered_data.forEach(val => {
+                if (val.id == getid) {
+                    address = val.address
+
+                    const formDataUrl = new URLSearchParams();
+                    formDataUrl.append('location', address);
+                    formDataUrl.append('fromDate', from_date);
+                    formDataUrl.append('toDate', to_date);
+
+                    console.log("formDataUrl", formDataUrl)
+
+                    fetch(apiUrl, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded' // Specify URL-encoded content type
+                        },
+                        body: formDataUrl
+                    })
+                        .then(response => response.json())
+                        .then(response => {
+                            console.log("search response url", response)
+
+                            var AllVillas = response.filtered_data;
+                            var unfilterVillas = response.unfiltered_data
+
+                            document.querySelector('#show_data').style.display = 'none';
+                            document.querySelector('#show_unfilterdata').style.display = 'none';
+                            document.querySelector('#show_data_search').style.display = 'block!important';
+                            document.querySelector('#show_unfilterdata_search').style.display = 'none!important';
+
+                          
+                           
+                            for (let i = 0; i < AllVillas.length; i++) {
+
+
+                                var val = AllVillas[i]
+
+                                const firstThreeElements = val.info.slice(0, 3);
+
+                                filterContent += `<div class="col-md-6 col-12 mt-sm-3">
+                <div class="list-item" data-markerid="88">
+                    <a target="_blank" class="property-img relative" href="detailsPage.html?id=${val.id}">
+                        <img class="lazyload"
+                            src=${val.main_img}>
+                        <i class="fa-regular fa-image open-gallery"></i>
+                    </a>
+                    <div class="prop-list-info d-flex flex-column justify-content-between">
+                        <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
+                        <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
+                        
+                        <ul class="prop-opt">
+                            
+                            ${firstThreeElements.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                        </ul>
+
+                       
+                        <div class="prop-footer ">
+                            <div class="prop-share-new d-flex mt-2">
+                                <a target="_blank"
+                                href="${val.whatsapp}"
+                                    class="share-new "><img src="./assets/whatsapp-overlay.png" alt=""></a>
+                                <a target="_blank"
+                                    href="${val.insta}"
+                                    class="share-new"><img src="./assets/instagram.png" alt=""></a>
+
+                                <a target="_blank" href="${val.map}" class="share-new "><img src="./assets/airbnb-overlay.png"
+                                        alt=""></a>
+                                <a target="_blank"
+                                href="${val.map}"
+                                    class="share-new"><img src="./assets/location-overlay.png" alt=""></a>
+
+                            </div>
+                            <div class="prop-extra ">
+                                Rs.${val.per_night}/Night
+                                <br>+ 18% taxes<br>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+                            }
+
+                            document.querySelector('#show_data_search').style.display = 'block!important'
+                            document.querySelector('#show_data_search').innerHTML = filterContent;
+
+
+
+                            for (let i = 0; i < unfilterVillas.length; i++) {
+                                // console.log("value", unfilterVillas[i])
+
+                                // var cardpoints = document.querySelector('.prop-opt')
+
+                                var Info = unfilterVillas[i].info;
+                                // console.log(info,"is array")
+
+
+                                var val = unfilterVillas[i]
+
+                            const firstThreeElements = val.info.slice(0, 3);
+
+
+
+                                unfilterConent += `<div class="col-md-6 col-12 mt-sm-3">
+                <div class="list-item" data-markerid="88">
+                    <a target="_blank" class="property-img relative" href="detailsPage.html?id=${val.id}">
+                        <img class="lazyload"
+                            src=${val.main_img}>
+                        <i class="fa-regular fa-image open-gallery"></i>
+                    </a>
+                    <div class="prop-list-info d-flex flex-column justify-content-between">
+                        <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
+                        <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
+                        
+                        <ul class="prop-opt">
+                            
+                            ${firstThreeElements.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                        </ul>
+
+                       
+                        <div class="prop-footer ">
+                            <div class="prop-share-new d-flex mt-2">
+                                <a target="_blank"
+                                href="${val.whatsapp}"
+                                    class="share-new "><img src="./assets/whatsapp-overlay.png" alt=""></a>
+                                <a target="_blank"
+                                    href="${val.insta}"
+                                    class="share-new"><img src="./assets/instagram.png" alt=""></a>
+
+                                <a target="_blank" href="${val.map}" class="share-new "><img src="./assets/airbnb-overlay.png"
+                                        alt=""></a>
+                                <a target="_blank"
+                                href="${val.map}"
+                                    class="share-new"><img src="./assets/location-overlay.png" alt=""></a>
+
+                            </div>
+                            <div class="prop-extra ">
+                                Rs.${val.per_night}/Night
+                                <br>+ 18% taxes<br>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`
+
+
+                                document.querySelector('.other-vilas').style.display = 'none!important';
+                                document.querySelector('#show_unfilterdata_search').innerHTML = unfilterConent;
+
+                              
+                            }
+                            document.querySelector('#show_unfilterdata_search').style.display = 'flex'
+                            document.querySelector('#show_data_search').style.display = 'flex'
+                            document.querySelector('.sreach_other-villa').style.display = 'block'
+
+
+                        });
+
+                }
+            })
 
 
 
 
-
-
-
-
-            // })
-
-
-
-
+        })
+}
 
 
 
