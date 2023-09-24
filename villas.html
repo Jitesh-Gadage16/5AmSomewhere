@@ -524,11 +524,12 @@
 
                 </div>
 
-                <div class="row justify-content-between property-list h-100 m-auto" id="show_data_search">
+                <div class="row justify-content-between property-list h-100 m-auto" id="show_data_search"
+                    style="display: none;">
 
                     <div class="col-md-6 col-12 mt-sm-3">
                         <div class="list-item shimmer" data-markerid="88">
-        
+
 
                             <div class="image-card animate"></div>
 
@@ -570,9 +571,9 @@
             </div>
 
 
-             <!-- <button type="button" class="btn btn-success" id="dynamic-gallery-demo-load-more">Launch
+            <!-- <button type="button" class="btn btn-success" id="dynamic-gallery-demo-load-more">Launch
             Gallery</button>  -->
-            
+
 
     </section>
 
@@ -617,7 +618,11 @@
             thumbHeight: 100,
 
         });
+
+
     </script>
+
+
 
     <script type="text/javascript">
         $(function () {
@@ -628,8 +633,8 @@
                 datesDisabled: [new Date()]
             })
         });
-   
-       
+
+
 
         $(function () {
             $('#datepicker_out').datepicker({
@@ -650,6 +655,22 @@
     <script>
         const apiUrl = 'https://file.mycenter.co.in/property/api/allProperty';
 
+        var hrefLocation = window.location.href;
+
+        var urlParams = new URLSearchParams(window.location.search);
+        var getid = urlParams.get('id');
+        var from_date = urlParams.get('from_date');
+        var to_date = urlParams.get('to_date');
+
+        if (urlParams.get('id')) {
+            getAddress()
+        } else {
+            console.log("id nahi mila")
+        }
+
+        console.log("hrefLocation", getid, from_date, to_date)
+
+
 
         // getAddress()
 
@@ -662,7 +683,7 @@
 
         const villaContainer = document.getElementById('show_data');
 
-        
+
 
 
         fetch(apiUrl, {
@@ -745,6 +766,7 @@
 
             })
             .catch(error => console.error('Error fetching data:', error));
+
 
 
         const searchButton = document.getElementById('onClickToValidateFilter');
@@ -981,7 +1003,7 @@
 
 
 
-        
+
 
 
 
@@ -1053,23 +1075,8 @@
 
         // function getVilllasList() {
 
-   
 
 
-        let hrefLocation = window.location.href;
-
-        const urlParams = new URLSearchParams(window.location.search);
-        const getid = urlParams.get('id');
-        const from_date = urlParams.get('from_date');
-        const to_date = urlParams.get('to_date');
-
-        if (urlParams.get('id')) {
-            getAddress()
-        } else {
-            console.log("id nahi mila")
-        }
-
-        console.log("hrefLocation", getid, from_date, to_date)
 
         function getAddress() {
             fetch(apiUrl, {
