@@ -803,6 +803,11 @@
             //     to_Date:toDate
             // }
 
+            if(fromDate == toDate){
+                alert("end date should be greater than start date");
+                return false;
+            } else {
+                
             const formData = new URLSearchParams();
             formData.append('location', selectedLocation);
             formData.append('fromDate', fromDate);
@@ -955,6 +960,8 @@
                     // document.querySelector('#show_unfilterdata_search').style.display = 'none';
 
                 });
+            }
+
         });
 
 

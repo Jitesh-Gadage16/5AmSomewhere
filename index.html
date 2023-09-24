@@ -276,7 +276,7 @@
             $('#datepicker_in').datepicker({
                 // todayHighlight: true,
                 startDate: new Date(),
-                autoclose:true,
+                autoclose: true,
                 datesDisabled: [new Date()]
             });
         });
@@ -285,7 +285,7 @@
         $(function () {
             $('#datepicker_out').datepicker({
                 startDate: new Date(),
-                autoclose:true,
+                autoclose: true,
                 datesDisabled: [new Date()]
             });
         });
@@ -495,10 +495,17 @@
             // Do something with the selected value
             console.log('Selected :', dataId, fromDate, toDate);
 
-            const redirectURL = `${hrefLocation}villas.html?id=${dataId}&from_date=${fromDate}&to_date=${toDate}`;
+            if (fromDate == toDate) {
+                alert("end date should be greater than start date");
+                return false;
+            } else {
+                const redirectURL = `${hrefLocation}villas.html?id=${dataId}&from_date=${fromDate}&to_date=${toDate}`;
 
-            // Redirect to the new URL
-            window.location.href = redirectURL;
+                // Redirect to the new URL
+                window.location.href = redirectURL;
+
+            }
+
 
             // var formData = {
             //     location :selectedLocation,
