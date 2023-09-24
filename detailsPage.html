@@ -735,17 +735,20 @@
         $(function () {
             $("#datepicker_in").datepicker({
                 autoclose: true,
-                todayHighlight: true,
+                // todayHighlight: true,
                 orientation:'bottom',
-                startDate: new Date()
+                startDate: new Date(),
+                datesDisabled: [new Date()]
             });
         });
 
         $(function () {
             $("#datepicker_out").datepicker({
                 autoclose: true,
-                todayHighlight: true,
-                orientation:'bottom'
+                // todayHighlight: true,
+                orientation:'bottom',
+                startDate: new Date(),
+                datesDisabled: [new Date()]
             });
         });
 
@@ -1071,13 +1074,19 @@
             // Reconstruct the date in the desired format "dd-mm-yyyy"
             const toDate = `${checkinComponents[1]}-${checkinComponents[0]}-${checkinComponents[2]}`;
 
+            // const formDataCheck = {
+            //     "id":id,
+            //     "from_date":fromDate,
+            //     "to_date":toDate
+            // }
 
-            const formData = new URLSearchParams();
-            formData.append('id', id);
-            formData.append('from_date', fromDate);
-            formData.append('to_date', toDate);
 
-            console.log("formData", formData)
+            const formDataCheck = new URLSearchParams();
+            formDataCheck.append('id', id);
+            formDataCheck.append('from_date', fromDate);
+            formDataCheck.append('to_date', toDate);
+
+            console.log("formDataCheck", formDataCheck)
 
 
 
@@ -1086,7 +1095,7 @@
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                body: formData
+                body: formDataCheck
             })
 
                 .then(response => response.json())
@@ -1110,7 +1119,6 @@
                         document.querySelector('.popup-backdrop').style.display = "block";
                         document.querySelector('.popup-div').style.display = "block";
                         // document.querySelector('.popup-div-booking').style.display = "flex";
-                        document.querySelector('.popup-backdrop').style.display = "none";
                         document.querySelector('.body-class').style.overflow = "inherit";
                     }
                 })

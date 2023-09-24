@@ -1073,6 +1073,10 @@ i.fa.fa-calendar {
 }
 
 
+#Book_now:hover{
+    color: #ffffff;
+}
+
 
 
 /* 
@@ -1671,7 +1675,7 @@ i.fa.fa-calendar {
 
 .villa-details .prop-chat-new {
     background: #003f36;
-    color: #fff;
+    color: #d4cece;
     min-width: 170px;
     text-align: center;
     border-radius: 0.25rem;

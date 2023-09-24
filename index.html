@@ -274,15 +274,19 @@
     <script type="text/javascript">
         $(function () {
             $('#datepicker_in').datepicker({
-                todayHighlight: true,
+                // todayHighlight: true,
                 startDate: new Date(),
+                autoclose:true,
+                datesDisabled: [new Date()]
             });
         });
 
 
         $(function () {
             $('#datepicker_out').datepicker({
-                todayHighlight: true,
+                startDate: new Date(),
+                autoclose:true,
+                datesDisabled: [new Date()]
             });
         });
     </script>
@@ -415,6 +419,9 @@
         // console.log("sliderDiv",sliderDiv)
         const apiUrl = 'https://file.mycenter.co.in/property/api/allProperty';
 
+        let hrefLocation = window.location.href;
+        console.log(hrefLocation)
+
 
 
         fetch(apiUrl, {
@@ -488,7 +495,7 @@
             // Do something with the selected value
             console.log('Selected :', dataId, fromDate, toDate);
 
-            const redirectURL = `http://127.0.0.1:5502/villas.html?id=${dataId}&from_date=${fromDate}&to_date=${toDate}`;
+            const redirectURL = `${hrefLocation}villas.html?id=${dataId}&from_date=${fromDate}&to_date=${toDate}`;
 
             // Redirect to the new URL
             window.location.href = redirectURL;

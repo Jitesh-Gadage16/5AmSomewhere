@@ -515,7 +515,7 @@
 
                 </div>
                 <div class=" d-flex justify-content-center align-items-center my-4 mx-auto py-3 text-center  other-vilas"
-                    style="display: none!important;">
+                    style="display: none;">
                     <div class=" other-vila">Other Villas </div>
                 </div>
 
@@ -524,7 +524,7 @@
 
                 </div>
 
-                <div class="row justify-content-between property-list h-100 m-auto" id="show_data_search">
+                <!-- <div class="row justify-content-between property-list h-100 m-auto" id="show_data_search">
 
                     <div class="col-md-6 col-12 mt-sm-3">
                         <div class="list-item shimmer" data-markerid="88">
@@ -566,13 +566,12 @@
 
 
 
-                </div>
+                </div> -->
             </div>
 
 
-             <!-- <button type="button" class="btn btn-success" id="dynamic-gallery-demo-load-more">Launch
-            Gallery</button>  -->
-            
+            <!-- <button type="button" class="btn btn-success" id="dynamic-gallery-demo-load-more">Launch
+            Gallery</button> -->
 
     </section>
 
@@ -625,11 +624,10 @@
                 // todayHighlight: true,
                 startDate: new Date(),
                 autoclose: true,
-                datesDisabled: [new Date()]
             })
         });
-   
-       
+
+
 
         $(function () {
             $('#datepicker_out').datepicker({
@@ -662,7 +660,7 @@
 
         const villaContainer = document.getElementById('show_data');
 
-        
+
 
 
         fetch(apiUrl, {
@@ -747,8 +745,99 @@
             .catch(error => console.error('Error fetching data:', error));
 
 
+
+
+        function updateFilteredData(data) {
+
+            console.log("data from unfile", data);
+            for (let i = 0; i < data.length; i++) {
+                // console.log("value", unfilterVillas[i])
+
+                // var cardpoints = document.querySelector('.prop-opt')
+
+                var Info = data[i].info;
+                // console.log(info,"is array")
+
+
+                var val = data[i]
+
+
+                const firstThreeElements = val.info.slice(0, 3);
+
+                unfilterConent += `<div class="col-md-6 col-12 mt-sm-3">
+                        <div class="list-item" data-markerid="88">
+                            <a target="_blank" class="property-img relative" href="detailsPage.html?id=${val.id}">
+                                <img class="lazyload"
+                                    src=${val.main_img}>
+                                <i class="fa-regular fa-image open-gallery"></i>
+                            </a>
+                            <div class="prop-list-info d-flex flex-column justify-content-between">
+                                <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
+                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
+                                
+                                <ul class="prop-opt">
+                                    
+                                    ${firstThreeElements.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                </ul>
+
+                               
+                                <div class="prop-footer ">
+                                    <div class="prop-share-new d-flex mt-2">
+                                        <a target="_blank"
+                                        href="${val.whatsapp}"
+                                            class="share-new "><img src="./assets/whatsapp-overlay.png" alt=""></a>
+                                        <a target="_blank"
+                                            href="${val.insta}"
+                                            class="share-new"><img src="./assets/instagram.png" alt=""></a>
+
+                                        <a target="_blank" href="${val.map}" class="share-new "><img src="./assets/airbnb-overlay.png"
+                                                alt=""></a>
+                                        <a target="_blank"
+                                        href="${val.map}"
+                                            class="share-new"><img src="./assets/location-overlay.png" alt=""></a>
+
+                                    </div>
+                                    <div class="prop-extra ">
+                                        Rs.${val.per_night}/Night
+                                        <br>+ 18% taxes<br>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`
+
+
+                document.querySelector('.other-vilas').style.display = 'block';
+                // document.querySelector('.sreach_other-villa').style.display = 'none!important';
+
+
+
+               
+
+
+            }
+
+            var cardContainer =  document.querySelector('#show_data');
+
+            cardContainer.innerHTML = ''; // Clear the existing content
+            cardContainer.innerHTML = unfilterConent;
+        }
+
+        function updateUnfilteredData(data) {
+            console.log("data file", data)
+            // const unfilterContent = data
+            //     .map((val) => createCard(val))
+            //     .join('');
+            // unfilteredCardContainer.innerHTML = ''; // Clear the existing content
+            // unfilteredCardContainer.innerHTML = unfilterContent;
+        }
+
+
+
         const searchButton = document.getElementById('onClickToValidateFilter');
         searchButton.addEventListener('click', function (event) {
+            document.querySelector('#show_data').innerHTML = '';
 
 
             event.preventDefault(); // Prevent the default form submission
@@ -785,6 +874,9 @@
             formData.append('location', selectedLocation);
             formData.append('fromDate', fromDate);
             formData.append('toDate', toDate);
+
+            fetchDataFromApi(formData)
+
 
             fetch(apiUrl, {
                 method: 'POST',
@@ -937,6 +1029,31 @@
 
 
 
+        function fetchDataFromApi(formData) {
+            const fetchOptions = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formData,
+            };
+
+            fetch(apiUrl, fetchOptions)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then((response) => {
+                    console.log("===")
+                    updateFilteredData(response.filtered_data);
+                    updateUnfilteredData(response.unfiltered_data);
+                })
+                .catch((error) => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
 
 
 
@@ -981,7 +1098,7 @@
 
 
 
-        
+
 
 
 
@@ -1053,7 +1170,7 @@
 
         // function getVilllasList() {
 
-   
+
 
 
         let hrefLocation = window.location.href;
@@ -1253,61 +1370,6 @@
 
 
 
-    <!-- <script>
-        $(document).ready(function () {
-            const $dynamicGallery = document.getElementById("dynamic-gallery-demo-load-more")
-                .addEventListener('click', () => {
-
-                    newItems: [
-                        {
-                            src:
-                                "https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1400&q=80",
-                            responsive:
-                                "https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80 800",
-                            thumb:
-                                "https://images.unsplash.com/photo-1609342122563-a43ac8917a3a?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=240&q=80",
-                            subHtml: `<div class="lightGallery-captions">
-                <h4>Photo by <a href="https://unsplash.com/@brookecagle">Brooke Cagle</a></h4>
-                <p>Description of the slide 1</p>
-            </div>`
-                        },
-                        {
-                            video: { "source": [{ "src": "https://www.lightgalleryjs.com//videos/video1.mp4", "type": "video/mp4" }], "attributes": { "preload": false, "controls": true } },
-                            thumb:
-                                "https://www.lightgalleryjs.com//images/demo/html5-video-poster.jpg",
-                            subHtml: `<div class="lightGallery-captions">
-                <h4>Photo by <a href="https://unsplash.com/@brookecagle">Brooke Cagle</a></h4>
-                <p>Description of the slide 2</p>
-            </div>`
-                        },
-                        {
-                            src:
-                                "https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
-                            responsive:
-                                "https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=480&q=80 480, https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80 800",
-                            thumb:
-                                "https://images.unsplash.com/photo-1477322524744-0eece9e79640?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=240&q=80"
-                        },
-                        {
-                            src: "//www.youtube.com/watch?v=egyIeygdS_E",
-                            poster: "https://img.youtube.com/vi/egyIeygdS_E/maxresdefault.jpg",
-                            thumb: "https://img.youtube.com/vi/egyIeygdS_E/maxresdefault.jpg"
-                        }
-                    ]
-                });
-            const updatedDynamicElements = [ newItems];
-            dynamicGallery.refresh(updatedDynamicElements);
-
-            // To open gallery after updating slides,
-            dynamicGallery.openGallery();
-
-
-        });
-
-
-
-
-    </script>  -->
 
 </body>
 
