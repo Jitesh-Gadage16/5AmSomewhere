@@ -656,6 +656,11 @@
     </section>
 
 
+
+    <button type="button" class="btn btn-success" id="dynamic-gallery">
+        Launch Gallery with additional images
+    </button>
+
     <!-- <button type="button" class="dynamic-gallery-test">Open Gallery</button>
     <button type="button" class="dynamic-gallery-test">Open Gallery</button>
     <button type="button" class="dynamic-gallery-test">Open Gallery</button> -->
@@ -686,12 +691,22 @@
 
 
 
-// $dynamicGallerytest.addEventListener('click', function () {
-//     // Starts with third item.(Optional).
-//     // This is useful if you want use dynamic mode with
-//     // custom thumbnails (thumbnails outside gallery),
-//     dynamicGalleryTest.openGallery(2);
-// });
+var dyanmicArray = [{"src":"https://file.mycenter.co.in/property/upload/gallery/La-Cascada_3.jpg","thumb":"https://file.mycenter.co.in/property/upload/gallery/La-Cascada_3.jpg"},{"src":"https://file.mycenter.co.in/property/upload/gallery/La-Cascada_1.jpg","thumb":"https://file.mycenter.co.in/property/upload/gallery/La-Cascada_1.jpg"}]
+        const $dynamicGallerytest = document.querySelectorAll('#dynamic-gallery');
+        console.log("dynamicGallerytest");
+        console.log("dynamicGallerytest", $dynamicGallerytest)
+        const dynamicGalleryTest = lightGallery($dynamicGallerytest, {
+            dynamic: true,
+            dynamicEl: dyanmicArray,
+        });
+
+        $('.dynamic-gallery').each(function (index, button) {
+            $(button).on('click', function () {
+                dynamicGalleryTest.openGallery(2);
+                console.log('Button ' + (index + 1) + ' clicked.');
+                // Your event handling code here
+            });
+        });
 
     </script>
 
