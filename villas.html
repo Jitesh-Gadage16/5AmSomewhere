@@ -247,7 +247,7 @@
                         </div>
                     </div>
 
-                   
+
                 </div>
                 <div class=" d-flex justify-content-center align-items-center my-4 mx-auto py-3 text-center  other-vilas"
                     style="display: none!important;">
@@ -462,7 +462,7 @@
     <script>
         const apiUrl = 'https://file.mycenter.co.in/property/api/allProperty';
 
-      
+
 
         var hrefLocation = window.location.href;
 
@@ -470,6 +470,8 @@
         var getid = urlParams.get('id');
         var from_date = urlParams.get('from_date');
         var to_date = urlParams.get('to_date');
+
+
 
         if (urlParams.get('id')) {
             getAddress()
@@ -503,7 +505,7 @@
                 console.log("response", response.filtered_data);
                 var AllVillas = response.filtered_data;
 
-                
+
                 for (let i = 0; i < AllVillas.length; i++) {
 
                     var val = AllVillas[i]
@@ -521,8 +523,9 @@
                                     src=${val.main_img}>
                                 <i class="fa-regular fa-image open-gallery"></i>
                             </div>
+                            
                             <div class="prop-list-info d-flex flex-column justify-content-between">
-                                <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
+                                <a target="_blank" href="detailsPage.html?id=${val.id}" class="info-title"><b>${val.name}</b></a>
                                 <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
                                 
                                 <ul class="prop-opt">
@@ -615,6 +618,10 @@
 
             document.querySelector('#show_data').innerHTML = "";
 
+            var parentCardDiv = document.querySelector('#show_data');
+            var parentUnfilterCardDiv = document.querySelector('#show_unfilterdata')
+
+
 
 
             if (fromDate == toDate) {
@@ -638,147 +645,121 @@
                     .then(response => {
                         console.log("res search btn", response)
 
-                        var AllVillasList = "";
-                        var unfilterVillasList = "";
+                        parentCardDiv.innerHTML = '';
+                        parentUnfilterCardDiv.innerHTML = "";
 
                         var result = response;
 
                         AllVillasList = result.filtered_data;
                         unfilterVillasList = result.unfiltered_data
 
+                        for (const property of response.filtered_data) {
 
-                        document.querySelector('#show_data').innerHTML
+                            const firstThreeElementss = property.info.slice(0, 3);
 
-                        console.log("show_data", document.querySelector('#show_data'));
-                        for (let i = 0; i < AllVillasList.length; i++) {
-
-
-                            var val = AllVillasList[i]
-
-                            const firstThreeElements = val.info.slice(0, 3);
-
-
-
-                            filterContent += `<div class="col-md-6 col-12 mt-sm-3">
-                        <div class="list-item" data-markerid="88">
+                            const childDiv = document.createElement('div');
+                            childDiv.className = 'col-md-6 col-12 mt-sm-3';
+                            childDiv.innerHTML = `
+                            <div class="list-item" data-markerid="88">
                             <div  class="property-img dynamic-gallery-demo relative" >
                                 <img class="lazyload"
-                                    src=${val.main_img}>
+                                    src=${property.main_img}>
                                 <i class="fa-regular fa-image open-gallery"></i>
                             </div>
                             <div class="prop-list-info d-flex flex-column justify-content-between">
-                                <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
-                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
+                                <a target="_blank" href="detailsPage.html?id=${property.id}" class="info-title"><b>${property.name}</b></a>
+                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${property.address} </span></div>
                                 
                                 <ul class="prop-opt">
                                     
-                                    ${firstThreeElements.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                    ${firstThreeElementss.map(infoItem => `<li>${infoItem}</li>`).join('')}
                                 </ul>
 
                                
                                 <div class="prop-footer ">
                                     <div class="prop-share-new d-flex mt-2">
                                         <a target="_blank"
-                                        href="${val.whatsapp}"
+                                        href="${property.whatsapp}"
                                             class="share-new "><img src="./assets/whatsapp-overlay.png" alt=""></a>
                                         <a target="_blank"
-                                            href="${val.insta}"
+                                            href="${property.insta}"
                                             class="share-new"><img src="./assets/instagram.png" alt=""></a>
 
-                                        <a target="_blank" href="${val.map}" class="share-new "><img src="./assets/airbnb-overlay.png"
+                                        <a target="_blank" href="${property.map}" class="share-new "><img src="./assets/airbnb-overlay.png"
                                                 alt=""></a>
                                         <a target="_blank"
-                                        href="${val.map}"
+                                        href="${property.map}"
                                             class="share-new"><img src="./assets/location-overlay.png" alt=""></a>
 
                                     </div>
                                     <div class="prop-extra ">
-                                        Rs.${val.per_night}/Night
+                                        Rs.${property.per_night}/Night
                                         <br>+ 18% taxes<br>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>`
+                `;
+                            parentCardDiv.appendChild(childDiv);
                         }
 
-                        document.querySelector('#show_data').innerHTML = filterContent;
+                        document.querySelector('.other-vilas').style.display = 'block';
 
+                        for (const property of response.unfiltered_data) {
 
+                            const firstThreeElementss = property.info.slice(0, 3);
 
-                        for (let i = 0; i < unfilterVillasList.length; i++) {
-                            // console.log("value", unfilterVillasList[i])
-
-                            // var cardpoints = document.querySelector('.prop-opt')
-
-                            var Info = unfilterVillasList[i].info;
-                            // console.log(info,"is array")
-
-
-                            var val = unfilterVillasList[i]
-
-
-                            const firstThreeElements = val.info.slice(0, 3);
-
-                            unfilterConent += `<div class="col-md-6 col-12 mt-sm-3">
-                        <div class="list-item" data-markerid="88">
+                            const childDiv = document.createElement('div');
+                            childDiv.className = 'col-md-6 col-12 mt-sm-3';
+                            childDiv.innerHTML = `
+                            <div class="list-item" data-markerid="88">
                             <div  class="property-img dynamic-gallery-demo relative" >
                                 <img class="lazyload"
-                                    src=${val.main_img}>
+                                    src=${property.main_img}>
                                 <i class="fa-regular fa-image open-gallery"></i>
                             </div>
                             <div class="prop-list-info d-flex flex-column justify-content-between">
-                                <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
-                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
+                                <a target="_blank" href="detailsPage.html?id=${property.id}" class="info-title"><b>${property.name}</b></a>
+                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${property.address} </span></div>
                                 
                                 <ul class="prop-opt">
                                     
-                                    ${firstThreeElements.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                    ${firstThreeElementss.map(infoItem => `<li>${infoItem}</li>`).join('')}
                                 </ul>
 
                                
                                 <div class="prop-footer ">
                                     <div class="prop-share-new d-flex mt-2">
                                         <a target="_blank"
-                                        href="${val.whatsapp}"
+                                        href="${property.whatsapp}"
                                             class="share-new "><img src="./assets/whatsapp-overlay.png" alt=""></a>
                                         <a target="_blank"
-                                            href="${val.insta}"
+                                            href="${property.insta}"
                                             class="share-new"><img src="./assets/instagram.png" alt=""></a>
 
-                                        <a target="_blank" href="${val.map}" class="share-new "><img src="./assets/airbnb-overlay.png"
+                                        <a target="_blank" href="${property.map}" class="share-new "><img src="./assets/airbnb-overlay.png"
                                                 alt=""></a>
                                         <a target="_blank"
-                                        href="${val.map}"
+                                        href="${property.map}"
                                             class="share-new"><img src="./assets/location-overlay.png" alt=""></a>
 
                                     </div>
                                     <div class="prop-extra ">
-                                        Rs.${val.per_night}/Night
+                                        Rs.${property.per_night}/Night
                                         <br>+ 18% taxes<br>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>`
+                `;
 
-
-                            document.querySelector('.other-vilas').style.display = 'block';
-                            // document.querySelector('.sreach_other-villa').style.display = 'none!important';
-
-
-
-                            document.querySelector('#show_unfilterdata').innerHTML = unfilterConent;
-
-
+                            parentUnfilterCardDiv.appendChild(childDiv);
                         }
 
 
-                        // document.querySelector('#show_data_search').style.display = 'none';
-                        console.log("===> kya seen iska")
-                        // document.querySelector('#show_unfilterdata_search').style.display = 'none';
+
 
                     });
             }
@@ -835,37 +816,9 @@
 
 
 
-        fetch(apiUrl, {
-            method: 'get',
-        })
-            .then(response => response.json())
-            .then(response => {
-
-                var option = '';
-
-                var valuess = response.filtered_data;
-                console.log("value", valuess)
-                var slectDiv = document.querySelector('#inputPropertyVillage')
 
 
 
-                valuess.forEach((val, index) => {
-                    option += `<option value="${val.address}" data_id="${index}">${val.address}</option>`
-                })
-
-                document.querySelector('#inputPropertyVillage').innerHTML = option;
-
-                var optiondiv = document.createElement('option');
-                optiondiv.innerHTML = 'Choose your location.. '
-                optiondiv.selected = true;
-                optiondiv.className = "default-option"
-                slectDiv.appendChild(optiondiv);
-
-                const defaultOption = document.querySelector('.default-option');
-            })
-
-
-       
         // function getVilllasList() {
 
 

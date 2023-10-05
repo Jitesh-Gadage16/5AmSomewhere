@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./gallery-style.css">
     <link href="./lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Bootstarp css cdn  -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,7 +15,518 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <link rel='stylesheet' id='luxuryvilla-bootstrap-css'
+    href='https://okthemes.com/luxuryvilla/wp-content/themes/luxuryvilla/assets/bootstrap/css/bootstrap.min.css?ver=1.0'
+    type='text/css' media='all' />
 
+
+    <style type="text/css">
+		img.wp-smiley,
+		img.emoji {
+			display: inline !important;
+			border: none !important;
+			box-shadow: none !important;
+			height: 1em !important;
+			width: 1em !important;
+			margin: 0 0.07em !important;
+			vertical-align: -0.1em !important;
+			background: none !important;
+			padding: 0 !important;
+		}
+	</style>
+	<link rel='stylesheet' id='wp-block-library-css'
+		href='https://okthemes.com/luxuryvilla/wp-includes/css/dist/block-library/style.min.css?ver=6.2' type='text/css'
+		media='all' />
+	<link rel='stylesheet' id='classic-theme-styles-css'
+		href='https://okthemes.com/luxuryvilla/wp-includes/css/classic-themes.min.css?ver=6.2' type='text/css'
+		media='all' />
+	<style id='global-styles-inline-css' type='text/css'>
+		body {
+			--wp--preset--color--black: #000000;
+			--wp--preset--color--cyan-bluish-gray: #abb8c3;
+			--wp--preset--color--white: #ffffff;
+			--wp--preset--color--pale-pink: #f78da7;
+			--wp--preset--color--vivid-red: #cf2e2e;
+			--wp--preset--color--luminous-vivid-orange: #ff6900;
+			--wp--preset--color--luminous-vivid-amber: #fcb900;
+			--wp--preset--color--light-green-cyan: #7bdcb5;
+			--wp--preset--color--vivid-green-cyan: #00d084;
+			--wp--preset--color--pale-cyan-blue: #8ed1fc;
+			--wp--preset--color--vivid-cyan-blue: #0693e3;
+			--wp--preset--color--vivid-purple: #9b51e0;
+			--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg, rgba(6, 147, 227, 1) 0%, rgb(155, 81, 224) 100%);
+			--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg, rgb(122, 220, 180) 0%, rgb(0, 208, 130) 100%);
+			--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg, rgba(252, 185, 0, 1) 0%, rgba(255, 105, 0, 1) 100%);
+			--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg, rgba(255, 105, 0, 1) 0%, rgb(207, 46, 46) 100%);
+			--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg, rgb(238, 238, 238) 0%, rgb(169, 184, 195) 100%);
+			--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg, rgb(74, 234, 220) 0%, rgb(151, 120, 209) 20%, rgb(207, 42, 186) 40%, rgb(238, 44, 130) 60%, rgb(251, 105, 98) 80%, rgb(254, 248, 76) 100%);
+			--wp--preset--gradient--blush-light-purple: linear-gradient(135deg, rgb(255, 206, 236) 0%, rgb(152, 150, 240) 100%);
+			--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg, rgb(254, 205, 165) 0%, rgb(254, 45, 45) 50%, rgb(107, 0, 62) 100%);
+			--wp--preset--gradient--luminous-dusk: linear-gradient(135deg, rgb(255, 203, 112) 0%, rgb(199, 81, 192) 50%, rgb(65, 88, 208) 100%);
+			--wp--preset--gradient--pale-ocean: linear-gradient(135deg, rgb(255, 245, 203) 0%, rgb(182, 227, 212) 50%, rgb(51, 167, 181) 100%);
+			--wp--preset--gradient--electric-grass: linear-gradient(135deg, rgb(202, 248, 128) 0%, rgb(113, 206, 126) 100%);
+			--wp--preset--gradient--midnight: linear-gradient(135deg, rgb(2, 3, 129) 0%, rgb(40, 116, 252) 100%);
+			--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');
+			--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');
+			--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');
+			--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');
+			--wp--preset--duotone--midnight: url('#wp-duotone-midnight');
+			--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');
+			--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');
+			--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');
+			--wp--preset--font-size--small: 13px;
+			--wp--preset--font-size--medium: 20px;
+			--wp--preset--font-size--large: 36px;
+			--wp--preset--font-size--x-large: 42px;
+			--wp--preset--spacing--20: 0.44rem;
+			--wp--preset--spacing--30: 0.67rem;
+			--wp--preset--spacing--40: 1rem;
+			--wp--preset--spacing--50: 1.5rem;
+			--wp--preset--spacing--60: 2.25rem;
+			--wp--preset--spacing--70: 3.38rem;
+			--wp--preset--spacing--80: 5.06rem;
+			--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+			--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+			--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);
+			--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+		}
+
+		:where(.is-layout-flex) {
+			gap: 0.5em;
+		}
+
+		body .is-layout-flow>.alignleft {
+			float: left;
+			margin-inline-start: 0;
+			margin-inline-end: 2em;
+		}
+
+		body .is-layout-flow>.alignright {
+			float: right;
+			margin-inline-start: 2em;
+			margin-inline-end: 0;
+		}
+
+		body .is-layout-flow>.aligncenter {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained>.alignleft {
+			float: left;
+			margin-inline-start: 0;
+			margin-inline-end: 2em;
+		}
+
+		body .is-layout-constrained>.alignright {
+			float: right;
+			margin-inline-start: 2em;
+			margin-inline-end: 0;
+		}
+
+		body .is-layout-constrained>.aligncenter {
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+			max-width: var(--wp--style--global--content-size);
+			margin-left: auto !important;
+			margin-right: auto !important;
+		}
+
+		body .is-layout-constrained>.alignwide {
+			max-width: var(--wp--style--global--wide-size);
+		}
+
+		body .is-layout-flex {
+			display: flex;
+		}
+
+		body .is-layout-flex {
+			flex-wrap: wrap;
+			align-items: center;
+		}
+
+		body .is-layout-flex>* {
+			margin: 0;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		.has-black-color {
+			color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-color {
+			color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-color {
+			color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-color {
+			color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-color {
+			color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-color {
+			color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-color {
+			color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-color {
+			color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-color {
+			color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-color {
+			color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-color {
+			color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-color {
+			color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-background-color {
+			background-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-background-color {
+			background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-background-color {
+			background-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-background-color {
+			background-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-background-color {
+			background-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-background-color {
+			background-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-background-color {
+			background-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-background-color {
+			background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-background-color {
+			background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-background-color {
+			background-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-black-border-color {
+			border-color: var(--wp--preset--color--black) !important;
+		}
+
+		.has-cyan-bluish-gray-border-color {
+			border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+		}
+
+		.has-white-border-color {
+			border-color: var(--wp--preset--color--white) !important;
+		}
+
+		.has-pale-pink-border-color {
+			border-color: var(--wp--preset--color--pale-pink) !important;
+		}
+
+		.has-vivid-red-border-color {
+			border-color: var(--wp--preset--color--vivid-red) !important;
+		}
+
+		.has-luminous-vivid-orange-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-amber-border-color {
+			border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+		}
+
+		.has-light-green-cyan-border-color {
+			border-color: var(--wp--preset--color--light-green-cyan) !important;
+		}
+
+		.has-vivid-green-cyan-border-color {
+			border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+		}
+
+		.has-pale-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+		}
+
+		.has-vivid-cyan-blue-border-color {
+			border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+		}
+
+		.has-vivid-purple-border-color {
+			border-color: var(--wp--preset--color--vivid-purple) !important;
+		}
+
+		.has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+			background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;
+		}
+
+		.has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+			background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;
+		}
+
+		.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;
+		}
+
+		.has-luminous-vivid-orange-to-vivid-red-gradient-background {
+			background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;
+		}
+
+		.has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+			background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;
+		}
+
+		.has-cool-to-warm-spectrum-gradient-background {
+			background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;
+		}
+
+		.has-blush-light-purple-gradient-background {
+			background: var(--wp--preset--gradient--blush-light-purple) !important;
+		}
+
+		.has-blush-bordeaux-gradient-background {
+			background: var(--wp--preset--gradient--blush-bordeaux) !important;
+		}
+
+		.has-luminous-dusk-gradient-background {
+			background: var(--wp--preset--gradient--luminous-dusk) !important;
+		}
+
+		.has-pale-ocean-gradient-background {
+			background: var(--wp--preset--gradient--pale-ocean) !important;
+		}
+
+		.has-electric-grass-gradient-background {
+			background: var(--wp--preset--gradient--electric-grass) !important;
+		}
+
+		.has-midnight-gradient-background {
+			background: var(--wp--preset--gradient--midnight) !important;
+		}
+
+		.has-small-font-size {
+			font-size: var(--wp--preset--font-size--small) !important;
+		}
+
+		.has-medium-font-size {
+			font-size: var(--wp--preset--font-size--medium) !important;
+		}
+
+		.has-large-font-size {
+			font-size: var(--wp--preset--font-size--large) !important;
+		}
+
+		.has-x-large-font-size {
+			font-size: var(--wp--preset--font-size--x-large) !important;
+		}
+
+		.wp-block-navigation a:where(:not(.wp-element-button)) {
+			color: inherit;
+		}
+
+		:where(.wp-block-columns.is-layout-flex) {
+			gap: 2em;
+		}
+
+		.wp-block-pullquote {
+			font-size: 1.5em;
+			line-height: 1.6;
+		}
+	</style>
+    <style type="text/css">
+		#lang_sel a,
+		#lang_sel a.lang_sel_sel {
+			color: #444444;
+		}
+
+		#lang_sel a:hover,
+		#lang_sel a.lang_sel_sel:hover {
+			color: #000000;
+		}
+
+		#lang_sel a.lang_sel_sel,
+		#lang_sel a.lang_sel_sel:visited {
+			background-color: #ffffff;
+		}
+
+		#lang_sel a.lang_sel_sel:hover {
+			background-color: #eeeeee;
+		}
+
+		#lang_sel li ul a,
+		#lang_sel li ul a:visited {
+			color: #444444;
+		}
+
+		#lang_sel li ul a:hover {
+			color: #000000;
+		}
+
+		#lang_sel li ul a,
+		#lang_sel li ul a:link,
+		#lang_sel li ul a:visited {
+			background-color: #ffffff;
+		}
+
+		#lang_sel li ul a:hover {
+			background-color: #eeeeee;
+		}
+
+		#lang_sel a,
+		#lang_sel a:visited {
+			border-color: #cdcdcd;
+		}
+
+		#lang_sel ul ul {
+			border-top: 1px solid #cdcdcd;
+		}
+	</style>
+
+
+
+	<link href='http://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900' rel='stylesheet'
+		type='text/css'>
+
+
+
+	<style type="text/css">
+		body {
+			color: #18191a;
+
+		}
+
+		.gm-style {
+			font-family: eurofurence regular;
+			font-size: 16px;
+		}
+
+		p.meta a,
+		article.post h2.entry-title,
+		article.post h2.entry-title a,
+		article.post h2.entry-title a:hover,
+		body.search article.page h2.entry-title,
+		body.search article.page h2.entry-title a,
+		body.search article.page h2.entry-title a:hover,
+		body.search article.property_cpt h2.entry-title,
+		body.search article.property_cpt h2.entry-title a,
+		body.search article.property_cpt h2.entry-title a:hover,
+		article.post footer ul.post-tags li a,
+		.featured-icon-box h5,
+		.featured-image-box h5 {
+			font-family: eurofurence regular;
+		}
+
+		p.meta a,
+		article.post footer ul.post-tags li a,
+		.nav-pills>li>a,
+		.categories_filter a,
+		.contact-map-wrapper .contact-map-overlay .contact-map-address-wrapper a.gg-contact-email,
+		.contact-map-address-wrapper,
+		.wpb_content_element .wpb_tour_tabs_wrapper .wpb_tabs_nav a,
+		.wpb_content_element .wpb_accordion_header a,
+		.room-wrapper .room-price,
+		.widget.widget_archive a,
+		.widget.widget_calendar a,
+		.widget.widget_categories a,
+		.widget.widget_pages a,
+		.widget.widget_meta a,
+		.widget.widget_recent_comments a,
+		.widget.widget_recent_entries a,
+		.widget.widget_tag_cloud a,
+		.widget.widget_nav_menu a,
+		a.more-link,
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		cite,
+		.btn,
+		legend,
+		.form-control,
+		#site-title a.brand,
+		#site-title small,
+		#main-menu.nav>li>a,
+		.dropdown-menu>li>a,
+		.dropdown-header,
+		.datepicker td,
+		.datepicker th,
+		.slideshow-property-meta ul.property-meta,
+		.single-property-content ul.property-meta,
+		.homepage-var3-property-meta ul.property-meta,
+		.homepage-var5-property-meta ul.property-meta,
+		.single-property-img-caption,
+		.single-property-content-area .post-social .gg-share,
+		.pagination>li>a,
+		.pagination>li>span,
+		.error404 #content .gg-404,
+		#areas-map-controls .ullist li a,
+		.contact-map-wrapper .contact-map-overlay .contact-map-address-wrapper,
+		.booking-form-wrapper.form-inline label,
+		.booking-form-wrapper legend span,
+		.booking-form-wrapper #gg-ajax-rooms .radio label .gg-room-name,
+		.booking-form-wrapper #gg-ajax-rooms .radio label .gg-room-type,
+		.booking-form-wrapper #gg-ajax-rooms .radio label .gg-room-price,
+		.vc_progress_bar .vc_single_bar small.vc_label,
+		.counter-holder p,
+		.panel-heading,
+		.minict_wrapper,
+		.minict_wrapper span {
+			font-family: Raleway;
+		}
+
+		/* Link colors */
+
+		/* Headings colors */
+
+		/* Primary colors */
+	</style>
 
 
 </head>
@@ -79,567 +590,733 @@
     </section>
 
 
-    <div class="py-5">
-        <ul class="el-grid nogap-cols" data-layout-mode="masonry" data-gap="nogap" style="position: relative; height: 3388.64px;">
+    <section id="content">
+        <div class="container-fluid gg-master-container">
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+
+
+                    <div class="gg_posts_grid">
+
+                        <div class="filter-wrapper">
+                            <ul class="categories_filter clearfix nav nav-pills">
+                                <li class="active"><a href="#" data-filter="*">All</a></li>
+
+                                <li>
+                                    <a data-toggle="collapse" aria-expanded="false"
+                                        data-target="#subfield-villa-amelia" data-filter=".grid-cat-villa-amelia">
+                                        Villa Amelia </a>
+
+
+                                    <ul id="subfield-villa-amelia" class="collapse">
+
+                                        <li>
+                                            <a data-filter=".grid-cat-villa-amelia.grid-subcat-indoor">
+                                                Indoor
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-filter=".grid-cat-villa-amelia.grid-subcat-outdoor">
+                                                Outdoor
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-filter=".grid-cat-villa-amelia.grid-subcat-rooms">
+                                                Rooms
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" aria-expanded="false"
+                                        data-target="#subfield-villa-tsiunea" data-filter=".grid-cat-villa-tsiunea">
+                                        Villa Tsiunea </a>
+
+
+                                    <ul id="subfield-villa-tsiunea" class="collapse">
+
+                                        <li>
+                                            <a data-filter=".grid-cat-villa-tsiunea.grid-subcat-exterior-view">
+                                                Exterior view
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-filter=".grid-cat-villa-tsiunea.grid-subcat-lobby">
+                                                Lobby
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" aria-expanded="false"
+                                        data-target="#subfield-apartment-tiffiny"
+                                        data-filter=".grid-cat-apartment-tiffiny">
+                                        Apartment Tiffiny </a>
+
+
+                                    <ul id="subfield-apartment-tiffiny" class="collapse">
+
+                                        <li>
+                                            <a data-filter=".grid-cat-apartment-tiffiny.grid-subcat-living-room">
+                                                Living room
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-filter=".grid-cat-apartment-tiffiny.grid-subcat-bathroom">
+                                                Bathroom
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-filter=".grid-cat-apartment-tiffiny.grid-subcat-kitchen">
+                                                Kitchen
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" aria-expanded="false"
+                                        data-target="#subfield-apartment-london"
+                                        data-filter=".grid-cat-apartment-london">
+                                        Apartment London </a>
+
+
+                                    <ul id="subfield-apartment-london" class="collapse">
+
+                                        <li>
+                                            <a data-filter=".grid-cat-apartment-london.grid-subcat-bedroom">
+                                                Bedroom
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-filter=".grid-cat-apartment-london.grid-subcat-bathroom">
+                                                Bathroom
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-filter=".grid-cat-apartment-london.grid-subcat-complex">
+                                                Complex
+                                            </a>
+                                        </li>
+                                    </ul>
 
+                                </li>
+                                <li>
+                                    <a data-toggle="collapse" aria-expanded="false"
+                                        data-target="#subfield-cottage-euridyce"
+                                        data-filter=".grid-cat-cottage-euridyce">
+                                        Cottage Euridyce </a>
 
 
+                                    <ul id="subfield-cottage-euridyce" class="collapse">
 
+                                        <li>
+                                            <a data-filter=".grid-cat-cottage-euridyce.grid-subcat-interior-view">
+                                                Interior view
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a data-filter=".grid-cat-cottage-euridyce.grid-subcat-exterior-view">
+                                                Exterior view
+                                            </a>
+                                        </li>
+                                    </ul>
 
+                                </li>
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-amelia grid-subcat-indoor" style="position: absolute; left: 0px; top: 0px;">
-                <figure class="effect-milo-sh">
+                            </ul>
+                        </div>
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_17.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_17.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Spacious</span> living room</h4>
-                    </figcaption>
+                        <ul class="el-grid nogap-cols" data-layout-mode="masonry" data-gap="nogap">
 
-                </figure>
-            </li>
-            <!-- // property item column -->
 
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-amelia grid-subcat-indoor" style="position: absolute; left: 496px; top: 0px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_16.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_16.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Luxurious</span> furniture</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-amelia grid-subcat-indoor">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_17.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_17.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Spacious</span> living room</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-amelia grid-subcat-outdoor" style="position: absolute; left: 992px; top: 0px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_prop1.jpg" alt="">
+                            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-amelia grid-subcat-indoor">
+                                <figure class="effect-milo-sh">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_prop1.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Night</span> lights</h4>
-                    </figcaption>
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_16.jpg"
+                                        alt="" />
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_16.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Luxurious</span> furniture</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-amelia grid-subcat-outdoor" style="position: absolute; left: 0px; top: 331px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_prop1_1.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_prop1_1.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Outdoor</span> view</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-amelia grid-subcat-outdoor">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_prop1.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_prop1.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Night</span> lights</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-amelia grid-subcat-rooms" style="position: absolute; left: 496px; top: 331px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/executive_suite.jpg" alt="">
+                            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-amelia grid-subcat-outdoor">
+                                <figure class="effect-milo-sh">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/executive_suite.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Gentlemen</span> suite</h4>
-                    </figcaption>
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_prop1_1.jpg"
+                                        alt="" />
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_prop1_1.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Outdoor</span> view</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-amelia grid-subcat-rooms" style="position: absolute; left: 992px; top: 563px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/junior_suite.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/junior_suite.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Designer</span> touch</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-amelia grid-subcat-rooms">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/executive_suite.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/executive_suite.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Gentlemen</span> suite</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
 
+                            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-amelia grid-subcat-rooms">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/junior_suite.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/junior_suite.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Designer</span> touch</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-tsiunea grid-subcat-exterior-view" style="position: absolute; left: 496px; top: 662px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_13.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_13.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Night</span> view</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
 
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-tsiunea grid-subcat-exterior-view" style="position: absolute; left: 992px; top: 893px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_4.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_4.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Complex</span> view</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-tsiunea grid-subcat-exterior-view">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_13.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_13.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Night</span> view</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-tsiunea grid-subcat-lobby" style="position: absolute; left: 0px; top: 894px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_5.jpg" alt="">
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-tsiunea grid-subcat-exterior-view">
+                                <figure class="effect-milo-sh">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_5.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Spacious</span> lobby</h4>
-                    </figcaption>
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_4.jpg"
+                                        alt="" />
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_4.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Complex</span> view</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
 
 
 
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-villa-tsiunea grid-subcat-lobby">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_5.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_5.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Spacious</span> lobby</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-tiffiny grid-subcat-living-room" style="position: absolute; left: 496px; top: 959px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/11/blog_img_2.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/11/blog_img_2.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Classic</span> living room</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
 
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-tiffiny grid-subcat-living-room" style="position: absolute; left: 992px; top: 1204px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_10.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_10.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Spacious</span> kitchen</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-tiffiny grid-subcat-living-room">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/11/blog_img_2.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/11/blog_img_2.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Classic</span> living room</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-tiffiny grid-subcat-bathroom" style="position: absolute; left: 496px; top: 1240px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_7.jpg" alt="">
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-tiffiny grid-subcat-living-room">
+                                <figure class="effect-milo-sh">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_7.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Modern</span> bathroom</h4>
-                    </figcaption>
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_10.jpg"
+                                        alt="" />
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_10.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Spacious</span> kitchen</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
 
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-tiffiny grid-subcat-kitchen" style="position: absolute; left: 992px; top: 1535px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_3.jpg" alt="">
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-tiffiny grid-subcat-bathroom">
+                                <figure class="effect-milo-sh">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_3.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Large</span> cooking area</h4>
-                    </figcaption>
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_7.jpg"
+                                        alt="" />
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_7.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Modern</span> bathroom</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
 
 
 
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-tiffiny grid-subcat-kitchen">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_3.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_3.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Large</span> cooking area</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-london grid-subcat-bedroom" style="position: absolute; left: 496px; top: 1613px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_room.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_room.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">SIngle</span> room</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
 
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-london grid-subcat-bedroom" style="position: absolute; left: 0px; top: 1649px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/queen_room.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/queen_room.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Queen</span> room</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-london grid-subcat-bedroom">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_room.jpg"
+                                        alt="" />
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-london grid-subcat-bedroom" style="position: absolute; left: 992px; top: 1865px;">
-                <figure class="effect-milo-sh">
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_room.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>SIngle</span> room</h4>
+                                    </figcaption>
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/king_room.jpg" alt="">
+                                </figure>
+                            </li><!-- // property item column -->
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/king_room.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">King</span> room</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-london grid-subcat-bedroom">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/queen_room.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/queen_room.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Queen</span> room</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-london grid-subcat-bathroom" style="position: absolute; left: 496px; top: 1944px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_7.jpg" alt="">
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-london grid-subcat-bedroom">
+                                <figure class="effect-milo-sh">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_7.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Modern</span> bathroom</h4>
-                    </figcaption>
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/king_room.jpg"
+                                        alt="" />
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/king_room.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>King</span> room</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
 
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-london grid-subcat-complex" style="position: absolute; left: 0px; top: 1980px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_4.jpg" alt="">
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-london grid-subcat-bathroom">
+                                <figure class="effect-milo-sh">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_4.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Complex</span> view</h4>
-                    </figcaption>
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_7.jpg"
+                                        alt="" />
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_7.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Modern</span> bathroom</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-london grid-subcat-complex" style="position: absolute; left: 992px; top: 2196px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_9.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_9.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Left</span> side view</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-london grid-subcat-complex">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_4.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_4.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Complex</span> view</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
 
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-apartment-london grid-subcat-complex">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_9.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_9.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Left</span> side view</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-cottage-euridyce grid-subcat-interior-view" style="position: absolute; left: 0px; top: 2290px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_12.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_12.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Large</span> windows</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
 
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-cottage-euridyce grid-subcat-interior-view" style="position: absolute; left: 496px; top: 2316px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_11.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_11.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Colorful</span> walls</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-cottage-euridyce grid-subcat-interior-view">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_12.jpg"
+                                        alt="" />
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-cottage-euridyce grid-subcat-interior-view" style="position: absolute; left: 992px; top: 2494px;">
-                <figure class="effect-milo-sh">
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_12.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Large</span> windows</h4>
+                                    </figcaption>
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_6.jpg" alt="">
+                                </figure>
+                            </li><!-- // property item column -->
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_6.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Relaxing</span> interior</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-cottage-euridyce grid-subcat-interior-view">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_11.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_11.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Colorful</span> walls</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-cottage-euridyce grid-subcat-exterior-view" style="position: absolute; left: 0px; top: 2621px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_1.jpg" alt="">
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-cottage-euridyce grid-subcat-interior-view">
+                                <figure class="effect-milo-sh">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_1.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Terrace</span> view</h4>
-                    </figcaption>
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_6.jpg"
+                                        alt="" />
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_6.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Relaxing</span> interior</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-cottage-euridyce grid-subcat-exterior-view" style="position: absolute; left: 496px; top: 2647px;">
-                <figure class="effect-milo-sh">
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_8.jpg" alt="">
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_8.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Patio</span> view</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-cottage-euridyce grid-subcat-exterior-view">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_1.jpg"
+                                        alt="" />
 
-            <li class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-cottage-euridyce grid-subcat-exterior-view" style="position: absolute; left: 992px; top: 2825px;">
-                <figure class="effect-milo-sh">
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_1.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Terrace</span> view</h4>
+                                    </figcaption>
 
-                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_prop1_1.jpg" alt="">
+                                </figure>
+                            </li><!-- // property item column -->
 
-                    <figcaption>
-                        <span class="el-grid-more">
-                            <a class="lightbox-el link-wrapper"
-                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_prop1_1.jpg">
-                                <i class="entypo entypo-popup"></i>
-                            </a>
-                        </span>
-                        <h4><span class="gg-first-word">Outdoor</span> view</h4>
-                    </figcaption>
 
-                </figure>
-            </li>
-            <!-- // property item column -->
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-cottage-euridyce grid-subcat-exterior-view">
+                                <figure class="effect-milo-sh">
 
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_8.jpg"
+                                        alt="" />
 
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/gallery_8.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Patio</span> view</h4>
+                                    </figcaption>
 
+                                </figure>
+                            </li><!-- // property item column -->
 
 
-        </ul>
-    </div>
+                            <li
+                                class="col-xs-12 col-sm-6 col-md-4 isotope-item grid-cat-cottage-euridyce grid-subcat-exterior-view">
+                                <figure class="effect-milo-sh">
+
+                                    <img src="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_prop1_1.jpg"
+                                        alt="" />
+
+                                    <figcaption>
+                                        <span class="el-grid-more">
+                                            <a class="lightbox-el link-wrapper"
+                                                href="https://okthemes.com/luxuryvilla/wp-content/uploads/2014/10/single_prop1_1.jpg">
+                                                <i class="entypo entypo-popup"></i>
+                                            </a>
+                                        </span>
+                                        <h4><span class='gg-first-word'>Outdoor</span> view</h4>
+                                    </figcaption>
+
+                                </figure>
+                            </li><!-- // property item column -->
+
+
+
+
+
+                        </ul>
+
+                    </div><!-- /.gg_posts_grid -->
+
+
+                </div>
+
+            </div>
+        </div>
+    </section>
 
 
 
@@ -743,6 +1420,12 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type='text/javascript'
+		src='https://okthemes.com/luxuryvilla/wp-content/themes/luxuryvilla/assets/bootstrap/js/bootstrap.min.js?ver=1.0'
+		id='bootstrap-js-js'></script>
+	<script type='text/javascript'
+		src='https://okthemes.com/luxuryvilla/wp-content/themes/luxuryvilla/assets/bootstrap-validator/js/bootstrapValidator.js?ver=1.0'
+		id='bootval-js'></script>
     <!-- <script src="your-script.js"></script> -->
 
 
