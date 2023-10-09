@@ -1108,9 +1108,9 @@ var dyanmicArray = [{"src":"https://file.mycenter.co.in/property/upload/gallery/
             fetch(apiUrl, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                body: formDataCheck
+                        'Content-Type': 'application/x-www-form-urlencoded' // Specify URL-encoded content type
+                    },
+                    body: formDataCheck
             })
 
                 .then(response => response.json())
