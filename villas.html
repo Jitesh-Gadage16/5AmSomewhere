@@ -219,9 +219,9 @@
 
                 <div class="row justify-content-between property-list h-100 m-auto" id="show_data">
 
-                    <div class="col-md-6 col-12 mt-sm-3">
+                    <!-- <div class="col-md-6 col-12 mt-sm-3">
                         <div class="list-item shimmer" data-markerid="88">
-                            <!-- ... Your existing content ... -->
+
 
                             <div class="image-card animate"></div>
 
@@ -245,11 +245,11 @@
                                 <div class="stroke animate description"></div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
                 </div>
-                <div class=" d-flex justify-content-center align-items-center my-4 mx-auto py-3 text-center  other-vilas"
+                <div class="justify-content-center align-items-center my-4 mx-auto py-3 text-center  other-vilas villa-other"
                     style="display: none!important;">
                     <div class=" other-vila">Other Villas </div>
                 </div>
@@ -292,7 +292,7 @@
 
 
                 </div>
-                <div class=" d-flex justify-content-center align-items-center my-4 mx-auto py-3 text-center  other-vilas sreach_other-villa"
+                <div class=" justify-content-center align-items-center my-4 mx-auto py-3 text-center  other-vilas sreach_other-villa"
                     style="display: none!important;">
                     <div class=" other-vila" id="sreach_other-villa">Other Villas </div>
                 </div>
@@ -406,11 +406,11 @@
                     });
 
                     $('.dynamic-gallery-demo').each(function (index, button) {
-                        $(button).on('click', function () {
+                        // $(button).on('click', function () {
                             dynamicGallery.openGallery(0);
                             console.log('Button ' + (index + 1) + ' clicked.');
                             // Your event handling code here
-                        });
+                        // });
                     });
                     // $dynamicGallery.addEventListener("click", () => {
                     //     console.log("clicked")
@@ -474,7 +474,7 @@
 
 
         if (urlParams.get('id')) {
-            getAddress()
+            // getAddress()
         } else {
             console.log("id nahi mila")
         }
@@ -494,9 +494,14 @@
 
         const villaContainer = document.getElementById('show_data');
 
+        if(getid){
 
-
-
+            getAddress()
+            console.log("url se aygo vo print karneka")
+        } else {
+            console.log("print all data")
+            // document.querySelector('.sreach_other-villa').style.display = 'none!important';
+     
         fetch(apiUrl, {
             method: 'GET',
         })
@@ -504,6 +509,62 @@
             .then(response => {
                 console.log("response", response.filtered_data);
                 var AllVillas = response.filtered_data;
+                var parentCardDiv = document.querySelector('#show_data');
+
+               
+
+
+                for (const property of response.filtered_data) {
+
+                    const firstThreeElementss = property.info.slice(0, 3);
+                    
+
+                    const childDiv = document.createElement('div');
+                    childDiv.className = 'col-md-6 col-12 mt-sm-3';
+                    childDiv.innerHTML = `
+                            <div class="list-item" data-markerid="88">
+                            <div  class="property-img dynamic-gallery-demo relative" id=${property.id} onclick=getGallery(${property.id})>
+                                <img class="lazyload"
+                                     src=${property.main_img}>
+                                <i class="fa-regular fa-image open-gallery"></i>
+                            </div>
+                            <div class="prop-list-info d-flex flex-column justify-content-between">
+                                <a target="_blank" href="detailsPage.html?id=${property.id}" class="info-title"><b>${property.name}</b></a>
+                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${property.address} </span></div>
+    
+                                <ul class="prop-opt">
+        
+                                    ${firstThreeElementss.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                </ul>
+
+   
+                                <div class="prop-footer ">
+                                    <div class="prop-share-new d-flex mt-2">
+                                        <a target="_blank"
+                                        href="${property.whatsapp}"
+                                            class="share-new "><img src="./assets/whatsapp-overlay.png" alt=""></a>
+                                        <a target="_blank"
+                                            href="${property.insta}"
+                                            class="share-new"><img src="./assets/instagram.png" alt=""></a>
+
+                                        <a target="_blank" href="${property.map}" class="share-new "><img src="./assets/airbnb-overlay.png"
+                                                alt=""></a>
+                                        <a target="_blank"
+                                        href="${property.map}"
+                                            class="share-new"><img src="./assets/location-overlay.png" alt=""></a>
+
+                                    </div>
+                                    <div class="prop-extra ">
+                                        Rs.${property.per_night}/Night
+                                        <br>+ 18% taxes<br>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                            `;
+                    parentCardDiv.appendChild(childDiv);
+                }
 
 
                 for (let i = 0; i < AllVillas.length; i++) {
@@ -562,23 +623,28 @@
 
 
 
-                    document.querySelector('#show_data').innerHTML = content;
+                    // document.querySelector('#show_data').innerHTML = content;
                     // document.querySelector('#show_data_search').style.display = 'none';
                     console.log("ye nahi print hona mangaty")
-                    // document.querySelector('#show_unfilterdata_search').style.display = 'none';
+                    // document.querySelector('.sreach_other-villa').style.display = 'none!important';
 
 
 
 
                 }
 
+               
 
+              
 
 
                 // Create cards for each villa listing
 
             })
             .catch(error => console.error('Error fetching data:', error));
+
+
+        }
 
 
 
@@ -661,7 +727,7 @@
                             childDiv.className = 'col-md-6 col-12 mt-sm-3';
                             childDiv.innerHTML = `
                             <div class="list-item" data-markerid="88">
-                            <div  class="property-img dynamic-gallery-demo relative" >
+                            <div  class="property-img dynamic-gallery-demo relative" id=${property.id} onclick=getGallery(${property.id})>
                                 <img class="lazyload"
                                     src=${property.main_img}>
                                 <i class="fa-regular fa-image open-gallery"></i>
@@ -704,7 +770,7 @@
                             parentCardDiv.appendChild(childDiv);
                         }
 
-                        document.querySelector('.other-vilas').style.display = 'block';
+                        document.querySelector('.villa-other').style.display = 'block';
 
                         for (const property of response.unfiltered_data) {
 
@@ -714,7 +780,7 @@
                             childDiv.className = 'col-md-6 col-12 mt-sm-3';
                             childDiv.innerHTML = `
                             <div class="list-item" data-markerid="88">
-                            <div  class="property-img dynamic-gallery-demo relative" >
+                            <div  class="property-img dynamic-gallery-demo relative" id=${property.id} onclick=getGallery(${property.id})>
                                 <img class="lazyload"
                                     src=${property.main_img}>
                                 <i class="fa-regular fa-image open-gallery"></i>
@@ -758,8 +824,14 @@
                             parentUnfilterCardDiv.appendChild(childDiv);
                         }
 
+                    document.querySelector('#show_data_search').style.display = 'none';
+                    document.querySelector('#show_data').style.display = 'block';
+                    document.querySelector('#show_unfilterdata').style.display = 'flex';
+                    document.querySelector('.sreach_other-villa').style.display = 'block!important';
 
-
+                    document.querySelector('#show_unfilterdata_search').style.display = 'none';
+                    document.querySelector('.sreach_other-villa').style.display = 'none'
+                    
 
                     });
             }
@@ -859,8 +931,8 @@
 
                                     document.querySelector('#show_data').style.display = 'none';
                                     document.querySelector('#show_unfilterdata').style.display = 'none';
-                                    document.querySelector('#show_data_search').style.display = 'block!important';
-                                    document.querySelector('#show_unfilterdata_search').style.display = 'none!important';
+                                    // document.querySelector('#show_data_search').style.display = 'block!important';
+                                    // document.querySelector('#show_unfilterdata_search').style.display = 'none!important';
 
 
 
@@ -873,7 +945,7 @@
 
                                         filterContent += `<div class="col-md-6 col-12 mt-sm-3">
                 <div class="list-item" data-markerid="88">
-                    <div  class="property-img dynamic-gallery-demo relative" >
+                    <div  class="property-img dynamic-gallery-demo relative" id=${val.id} onclick=getGallery(${val.id})>
                                 <img class="lazyload"
                                     src=${val.main_img}>
                                 <i class="fa-regular fa-image open-gallery"></i>
@@ -937,7 +1009,7 @@
 
                                         unfilterConent += `<div class="col-md-6 col-12 mt-sm-3">
                 <div class="list-item" data-markerid="88">
-                    <div  class="property-img dynamic-gallery-demo relative" >
+                    <div  class="property-img dynamic-gallery-demo relative" id=${val.id} onclick=getGallery(${val.id})>
                                 <img class="lazyload"
                                     src=${val.main_img}>
                                 <i class="fa-regular fa-image open-gallery"></i>
@@ -979,20 +1051,35 @@
             </div>`
 
 
-                                        document.querySelector('.other-vilas').style.display = 'none!important';
+                                        
                                         document.querySelector('#show_unfilterdata_search').innerHTML = unfilterConent;
 
 
                                     }
+                                    
+
+                                    console.log("sdsd",document.querySelector('.villa-other'))
+                                    document.querySelector('.villa-other').style.display = 'none!important';
+
+
+
+
                                     document.querySelector('#show_unfilterdata_search').style.display = 'flex'
                                     document.querySelector('#show_data_search').style.display = 'flex'
                                     document.querySelector('.sreach_other-villa').style.display = 'block'
 
 
+                                 
+
+
                                 });
+
+                             
 
                         }
                     })
+
+                    document.querySelector('.sreach_other-villa').style.display = 'flex!important'
 
 
 
