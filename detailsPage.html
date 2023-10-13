@@ -235,7 +235,7 @@
                         id="title"></span>
                 </div>
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-8 left-div">
                         <div class="villa-titl-features  text-secondary"></div>
 
 
@@ -257,7 +257,7 @@
 
 
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 right-div">
                         <div class="villa-booking">
                             <div class="booking-titl">
 
@@ -571,7 +571,9 @@
 
                     <div class="property-social-icons d-flex justify-content-center align-items-center gap-2 mb-3">
                         <div class="img-social-icons">
-                            <img src="./assets/whatsapp-overlay.png" alt="">
+                            <a href="//api.whatsapp.com/send?phone=919137897117">
+                                <img src="./assets/whatsapp-overlay.png" alt="">
+                            </a>
                         </div>
                         <div class="img-social-icons">
                             <img src="./assets/fb-overlay.png" alt="">
@@ -606,16 +608,47 @@
                                 <input type="hidden" name="token" id="select_location" value="" />
                                 <label for="inputPropertyVillage">GOING TO</label>
                             </div>
+
+                            <!-- <div class="form-floating mb-3"> -->
+                            <!-- <input type="text" name="check_in" class="form-control datepickerField" -->
+                            <!-- id="datepickerCheckIn" value="" placeholder="dd/mm/yyyy" /> -->
+                            <!-- <label for="form_in">CHECK IN</label> -->
+                            <!-- </div> -->
+                            <!-- <div class="form-floating mb-3"> -->
+                            <!-- <input type="text" name="check_out" class="form-control datepickerField" -->
+                            <!-- id="datepickerCheckOut" value="" placeholder="dd/mm/yyyy" /> -->
+                            <!-- <label for="form_out">CHECK OUT</label> -->
+                            <!-- </div> -->
+
+
+
                             <div class="form-floating mb-3">
-                                <input type="text" name="check_in" class="form-control datepickerField"
-                                    id="datepickerCheckIn" value="" placeholder="dd/mm/yyyy" />
-                                <label for="form_in">CHECK IN</label>
+                                <div class="input-group date" id="datepicker_checkin">
+                                    <input type="text" class="form-control" placeholder="CHECK IN">
+                                    <span class="input-group-append">
+                                        <span class="input-group-text bg-white">
+                                            <img src="./assets/calendar (1).png" class="calender-icon" alt="">
+                                        </span>
+                                    </span>
+                                </div>
                             </div>
+
+
                             <div class="form-floating mb-3">
-                                <input type="text" name="check_out" class="form-control datepickerField"
-                                    id="datepickerCheckOut" value="" placeholder="dd/mm/yyyy" />
-                                <label for="form_out">CHECK OUT</label>
+                                <div class="input-group date" id="datepicker_checkout">
+                                    <input type="text" class="form-control" placeholder="CHECK OUT">
+                                    <span class="input-group-append">
+                                        <span class="input-group-text bg-white">
+                                            <img src="./assets/calendar (1).png" class="calender-icon" alt="">
+                                        </span>
+                                    </span>
+                                </div>
                             </div>
+
+
+
+
+
                             <div class="form-floating mb-3">
                                 <select name="guest" class="form-select" id="filterGuest">
                                     <option value="">Select guest</option>
@@ -657,9 +690,9 @@
 
 
 
-    <button type="button" class="btn btn-success" id="dynamic-gallery">
+    <!-- <button type="button" class="btn btn-success" id="dynamic-gallery">
         Launch Gallery with additional images
-    </button>
+    </button> -->
 
     <!-- <button type="button" class="dynamic-gallery-test">Open Gallery</button>
     <button type="button" class="dynamic-gallery-test">Open Gallery</button>
@@ -762,6 +795,25 @@ var dyanmicArray = [{"src":"https://file.mycenter.co.in/property/upload/gallery/
                 autoclose: true,
                 // todayHighlight: true,
                 orientation:'bottom',
+                startDate: new Date(),
+                datesDisabled: [new Date()]
+            });
+        });
+        $(function () {
+            $("#datepicker_checkin").datepicker({
+                autoclose: true,
+                // todayHighlight: true,
+                orientation:'top',
+                startDate: new Date(),
+                datesDisabled: [new Date()]
+            });
+        });
+
+        $(function () {
+            $("#datepicker_checkout").datepicker({
+                autoclose: true,
+                // todayHighlight: true,
+                orientation:'top',
                 startDate: new Date(),
                 datesDisabled: [new Date()]
             });
@@ -873,6 +925,10 @@ var dyanmicArray = [{"src":"https://file.mycenter.co.in/property/upload/gallery/
 
     <script>
         let hrefLocation = window.location.href;
+        const baseUrl = new URL(hrefLocation).origin;
+        // console.log("baseUrl",baseUrl)
+
+        const apiUrlList = 'https://file.mycenter.co.in/property/api/allProperty';
 
         const urlParams = new URLSearchParams(window.location.search);
         const id = urlParams.get('id');
@@ -1096,7 +1152,7 @@ var dyanmicArray = [{"src":"https://file.mycenter.co.in/property/upload/gallery/
             // }
 
 
-            const formDataCheck = new URLSearchParams();
+            var formDataCheck = new URLSearchParams();
             formDataCheck.append('id', id);
             formDataCheck.append('from_date', fromDate);
             formDataCheck.append('to_date', toDate);
@@ -1208,6 +1264,110 @@ var dyanmicArray = [{"src":"https://file.mycenter.co.in/property/upload/gallery/
                     }
                 })
         })
+
+
+
+
+        fetch(apiUrlList, {
+            method: 'get',
+        })
+            .then(response => response.json())
+            .then(response => {
+
+                var option = '';
+
+                var valuess = response.filtered_data;
+                console.log("value", valuess)
+                var slectDiv = document.querySelector('#inputPropertyVillage')
+
+                console.log("slectDiv",slectDiv)
+
+
+
+                valuess.forEach((val, index) => {
+                    option += `<option value="${val.address}" data_id="${val.id}">${val.address}</option>`
+                })
+
+                document.querySelector('#inputPropertyVillage').innerHTML = option;
+
+                var optiondiv = document.createElement('option');
+                optiondiv.innerHTML = 'Choose your location.. '
+                optiondiv.selected = true;
+                optiondiv.className = "default-option"
+                slectDiv.appendChild(optiondiv);
+
+                const defaultOption = document.querySelector('.default-option');
+
+
+
+                if (defaultOption) {
+                    slectDiv.insertBefore(defaultOption, slectDiv.firstChild);
+                }
+
+            })
+
+
+        const searchButton = document.getElementById('onClickToValidateFilter');
+        searchButton.addEventListener('click', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the selected value of the inputPropertyVillage <select> element
+            const selectedLocation = document.getElementById('inputPropertyVillage')
+
+            // Get the selected option
+            var selectedOption = selectedLocation.options[selectedLocation.selectedIndex];
+
+            // Get the value of the "data_id" attribute
+            var dataId = selectedOption.getAttribute("data_id");
+
+            console.log(dataId)
+
+            // Get the value of the check-in date
+            const checkinDate = document.querySelector('#datepicker_checkin input').value;
+            const checkinComponents = checkinDate.split('/');
+
+            // Reconstruct the date in the desired format "dd-mm-yyyy"
+            const fromDate = `${checkinComponents[1]}-${checkinComponents[0]}-${checkinComponents[2]}`;
+
+
+            // Get the value of the check-out date
+            const checkoutDate = document.querySelector('#datepicker_checkout input').value;
+            const checkoutComponents = checkoutDate.split('/');
+
+            // Reconstruct the date in the desired format "dd-mm-yyyy"
+            const toDate = `${checkoutComponents[1]}-${checkoutComponents[0]}-${checkoutComponents[2]}`;
+
+
+            // Do something with the selected value
+            console.log('Selected :', dataId, fromDate, toDate);
+
+            if (fromDate == toDate) {
+                alert("end date should be greater than start date");
+                return false;
+            } else {
+                const redirectURL = `${baseUrl}/villas.html?id=${dataId}&from_date=${fromDate}&to_date=${toDate}`;
+
+                // Redirect to the new URL
+                window.location.href = redirectURL;
+
+            }
+
+
+            // var formData = {
+            //     location :selectedLocation,
+            //     from_date: fromDate,
+            //     to_Date:toDate
+            // }
+
+            const formData = new URLSearchParams();
+            formData.append('location', selectedLocation);
+            formData.append('fromDate', fromDate);
+            formData.append('toDate', toDate);
+
+            console.log("formData", formData)
+
+        });
+
 
 
 

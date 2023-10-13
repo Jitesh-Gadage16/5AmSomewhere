@@ -32,6 +32,10 @@ button {
     outline: 0px none !important;
 }
 
+.card-text{
+    font-size: 1rem;
+}
+
 
 /*  homepage banner  */
 
@@ -313,6 +317,17 @@ text-align: center;
         
         font-size: 52px!important;
         
+    }
+
+    .single-villa-img .villa-title .hero__title {
+        
+        line-height: 1px;
+    }
+    .single-villa-img .villa-title .hero__sub {
+        line-height: 0.2em!important;
+    }
+    .col-md-8.left-div {
+        margin-bottom: 30px;
     }
 
     .hp-banner .video-text-sliders h1{

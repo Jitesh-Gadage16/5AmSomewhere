@@ -407,9 +407,9 @@
 
                     $('.dynamic-gallery-demo').each(function (index, button) {
                         // $(button).on('click', function () {
-                            dynamicGallery.openGallery(0);
-                            console.log('Button ' + (index + 1) + ' clicked.');
-                            // Your event handling code here
+                        dynamicGallery.openGallery(0);
+                        console.log('Button ' + (index + 1) + ' clicked.');
+                        // Your event handling code here
                         // });
                     });
                     // $dynamicGallery.addEventListener("click", () => {
@@ -494,34 +494,34 @@
 
         const villaContainer = document.getElementById('show_data');
 
-        if(getid){
+        if (getid) {
 
             getAddress()
             console.log("url se aygo vo print karneka")
         } else {
             console.log("print all data")
             // document.querySelector('.sreach_other-villa').style.display = 'none!important';
-     
-        fetch(apiUrl, {
-            method: 'GET',
-        })
-            .then(response => response.json())
-            .then(response => {
-                console.log("response", response.filtered_data);
-                var AllVillas = response.filtered_data;
-                var parentCardDiv = document.querySelector('#show_data');
 
-               
+            fetch(apiUrl, {
+                method: 'GET',
+            })
+                .then(response => response.json())
+                .then(response => {
+                    console.log("response", response.filtered_data);
+                    var AllVillas = response.filtered_data;
+                    var parentCardDiv = document.querySelector('#show_data');
 
 
-                for (const property of response.filtered_data) {
 
-                    const firstThreeElementss = property.info.slice(0, 3);
-                    
 
-                    const childDiv = document.createElement('div');
-                    childDiv.className = 'col-md-6 col-12 mt-sm-3';
-                    childDiv.innerHTML = `
+                    for (const property of response.filtered_data) {
+
+                        const firstThreeElementss = property.info.slice(0, 3);
+
+
+                        const childDiv = document.createElement('div');
+                        childDiv.className = 'col-md-6 col-12 mt-sm-3';
+                        childDiv.innerHTML = `
                             <div class="list-item" data-markerid="88">
                             <div  class="property-img dynamic-gallery-demo relative" id=${property.id} onclick=getGallery(${property.id})>
                                 <img class="lazyload"
@@ -529,13 +529,15 @@
                                 <i class="fa-regular fa-image open-gallery"></i>
                             </div>
                             <div class="prop-list-info d-flex flex-column justify-content-between">
-                                <a target="_blank" href="detailsPage.html?id=${property.id}" class="info-title"><b>${property.name}</b></a>
-                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${property.address} </span></div>
+                                <a target="_blank" href="detailsPage.html?id=${property.id}" class="info-title">
+                                    <b>${property.name}</b>
+                                    <div class="card-text"><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${property.address} </span></div>
+                                    <ul class="prop-opt card-text">
+                                       ${firstThreeElementss.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                    </ul>
+                                </a>
     
-                                <ul class="prop-opt">
-        
-                                    ${firstThreeElementss.map(infoItem => `<li>${infoItem}</li>`).join('')}
-                                </ul>
+                               
 
    
                                 <div class="prop-footer ">
@@ -563,21 +565,21 @@
                             </div>
                             </div>
                             `;
-                    parentCardDiv.appendChild(childDiv);
-                }
+                        parentCardDiv.appendChild(childDiv);
+                    }
 
 
-                for (let i = 0; i < AllVillas.length; i++) {
+                    for (let i = 0; i < AllVillas.length; i++) {
 
-                    var val = AllVillas[i]
+                        var val = AllVillas[i]
 
-                    // console.log("vallll",val.info)
+                        // console.log("vallll",val.info)
 
-                    const firstThreeElements = val.info.slice(0, 3);
-                    // console.log("firstThreeElements",firstThreeElements)
+                        const firstThreeElements = val.info.slice(0, 3);
+                        // console.log("firstThreeElements",firstThreeElements)
 
 
-                    content += `<div class="col-md-6 col-12 mt-sm-3">
+                        content += `<div class="col-md-6 col-12 mt-sm-3">
                         <div class="list-item" data-markerid="88">
                             <div  class="property-img dynamic-gallery-demo relative" id=${val.id} onclick=getGallery(${val.id})>
                                 <img class="lazyload"
@@ -623,25 +625,25 @@
 
 
 
-                    // document.querySelector('#show_data').innerHTML = content;
-                    // document.querySelector('#show_data_search').style.display = 'none';
-                    console.log("ye nahi print hona mangaty")
-                    // document.querySelector('.sreach_other-villa').style.display = 'none!important';
+                        // document.querySelector('#show_data').innerHTML = content;
+                        // document.querySelector('#show_data_search').style.display = 'none';
+                        console.log("ye nahi print hona mangaty")
+                        // document.querySelector('.sreach_other-villa').style.display = 'none!important';
 
 
 
 
-                }
-
-               
-
-              
+                    }
 
 
-                // Create cards for each villa listing
 
-            })
-            .catch(error => console.error('Error fetching data:', error));
+
+
+
+                    // Create cards for each villa listing
+
+                })
+                .catch(error => console.error('Error fetching data:', error));
 
 
         }
@@ -729,19 +731,21 @@
                             <div class="list-item" data-markerid="88">
                             <div  class="property-img dynamic-gallery-demo relative" id=${property.id} onclick=getGallery(${property.id})>
                                 <img class="lazyload"
-                                    src=${property.main_img}>
+                                     src=${property.main_img}>
                                 <i class="fa-regular fa-image open-gallery"></i>
                             </div>
                             <div class="prop-list-info d-flex flex-column justify-content-between">
-                                <a target="_blank" href="detailsPage.html?id=${property.id}" class="info-title"><b>${property.name}</b></a>
-                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${property.address} </span></div>
-                                
-                                <ul class="prop-opt">
-                                    
-                                    ${firstThreeElementss.map(infoItem => `<li>${infoItem}</li>`).join('')}
-                                </ul>
-
+                                <a target="_blank" href="detailsPage.html?id=${property.id}" class="info-title">
+                                    <b>${property.name}</b>
+                                    <div class="card-text"><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${property.address} </span></div>
+                                    <ul class="prop-opt card-text">
+                                       ${firstThreeElementss.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                    </ul>
+                                </a>
+    
                                
+
+   
                                 <div class="prop-footer ">
                                     <div class="prop-share-new d-flex mt-2">
                                         <a target="_blank"
@@ -765,8 +769,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                `;
+                            </div>
+                            `;
                             parentCardDiv.appendChild(childDiv);
                         }
 
@@ -782,19 +786,21 @@
                             <div class="list-item" data-markerid="88">
                             <div  class="property-img dynamic-gallery-demo relative" id=${property.id} onclick=getGallery(${property.id})>
                                 <img class="lazyload"
-                                    src=${property.main_img}>
+                                     src=${property.main_img}>
                                 <i class="fa-regular fa-image open-gallery"></i>
                             </div>
                             <div class="prop-list-info d-flex flex-column justify-content-between">
-                                <a target="_blank" href="detailsPage.html?id=${property.id}" class="info-title"><b>${property.name}</b></a>
-                                <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${property.address} </span></div>
-                                
-                                <ul class="prop-opt">
-                                    
-                                    ${firstThreeElementss.map(infoItem => `<li>${infoItem}</li>`).join('')}
-                                </ul>
-
+                                <a target="_blank" href="detailsPage.html?id=${property.id}" class="info-title">
+                                    <b>${property.name}</b>
+                                    <div class="card-text"><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${property.address} </span></div>
+                                    <ul class="prop-opt card-text">
+                                       ${firstThreeElementss.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                    </ul>
+                                </a>
+    
                                
+
+   
                                 <div class="prop-footer ">
                                     <div class="prop-share-new d-flex mt-2">
                                         <a target="_blank"
@@ -818,20 +824,20 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                `;
-
+                            </div>
+                            `;
+  
                             parentUnfilterCardDiv.appendChild(childDiv);
                         }
 
-                    document.querySelector('#show_data_search').style.display = 'none';
-                    document.querySelector('#show_data').style.display = 'block';
-                    document.querySelector('#show_unfilterdata').style.display = 'flex';
-                    document.querySelector('.sreach_other-villa').style.display = 'block!important';
+                        document.querySelector('#show_data_search').style.display = 'none';
+                        document.querySelector('#show_data').style.display = 'block';
+                        document.querySelector('#show_unfilterdata').style.display = 'flex';
+                        document.querySelector('.sreach_other-villa').style.display = 'block!important';
 
-                    document.querySelector('#show_unfilterdata_search').style.display = 'none';
-                    document.querySelector('.sreach_other-villa').style.display = 'none'
-                    
+                        document.querySelector('#show_unfilterdata_search').style.display = 'none';
+                        document.querySelector('.sreach_other-villa').style.display = 'none'
+
 
                     });
             }
@@ -951,13 +957,13 @@
                                 <i class="fa-regular fa-image open-gallery"></i>
                             </div>
                     <div class="prop-list-info d-flex flex-column justify-content-between">
-                        <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
-                        <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
-                        
-                        <ul class="prop-opt">
-                            
-                            ${firstThreeElements.map(infoItem => `<li>${infoItem}</li>`).join('')}
-                        </ul>
+                        <a target="_blank" href="detailsPage.html?id=${val.id}" class="info-title">
+                                    <b>${val.name}</b>
+                                    <div class="card-text"><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
+                                    <ul class="prop-opt card-text">
+                                       ${firstThreeElements.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                    </ul>
+                                </a>
 
                        
                         <div class="prop-footer ">
@@ -1015,13 +1021,13 @@
                                 <i class="fa-regular fa-image open-gallery"></i>
                             </div>
                     <div class="prop-list-info d-flex flex-column justify-content-between">
-                        <a target="_blank" href="property/amger.html" class="info-title"><b>${val.name}</b></a>
-                        <div><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
-                        
-                        <ul class="prop-opt">
-                            
-                            ${firstThreeElements.map(infoItem => `<li>${infoItem}</li>`).join('')}
-                        </ul>
+                        <a target="_blank" href="detailsPage.html?id=${val.id}" class="info-title">
+                                    <b>${val.name}</b>
+                                    <div class="card-text"><i class="fa fa-map-marker pl-2" aria-hidden="true"></i> <span class="pl-2"> ${val.address} </span></div>
+                                    <ul class="prop-opt card-text">
+                                       ${firstThreeElements.map(infoItem => `<li>${infoItem}</li>`).join('')}
+                                    </ul>
+                         </a>
 
                        
                         <div class="prop-footer ">
@@ -1051,14 +1057,14 @@
             </div>`
 
 
-                                        
+
                                         document.querySelector('#show_unfilterdata_search').innerHTML = unfilterConent;
 
 
                                     }
-                                    
 
-                                    console.log("sdsd",document.querySelector('.villa-other'))
+
+                                    console.log("sdsd", document.querySelector('.villa-other'))
                                     document.querySelector('.villa-other').style.display = 'none!important';
 
 
@@ -1069,12 +1075,12 @@
                                     document.querySelector('.sreach_other-villa').style.display = 'block'
 
 
-                                 
+
 
 
                                 });
 
-                             
+
 
                         }
                     })

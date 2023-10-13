@@ -143,7 +143,7 @@
             </div>
         </section>
 
-        <!-- Hero section End  -->
+        <!-- Hero section End  -->  
 
         <!-- Footer Start  -->
         <section class="footer-section">
@@ -421,6 +421,8 @@
 
         let hrefLocation = window.location.href;
         console.log(hrefLocation)
+        const baseUrl = new URL(hrefLocation).origin;
+        console.log("baseUrl",baseUrl)
 
 
 
@@ -499,7 +501,7 @@
                 alert("end date should be greater than start date");
                 return false;
             } else {
-                const redirectURL = `${hrefLocation}villas.html?id=${dataId}&from_date=${fromDate}&to_date=${toDate}`;
+                const redirectURL = `${baseUrl}/villas.html?id=${dataId}&from_date=${fromDate}&to_date=${toDate}`;
 
                 // Redirect to the new URL
                 window.location.href = redirectURL;
