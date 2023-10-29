@@ -1152,12 +1152,12 @@ var dyanmicArray = [{"src":"https://file.mycenter.co.in/property/upload/gallery/
             // }
 
 
-            var formDataCheck = new URLSearchParams();
-            formDataCheck.append('id', id);
-            formDataCheck.append('from_date', fromDate);
-            formDataCheck.append('to_date', toDate);
+            let formData = new URLSearchParams();
+            formData.append('id', id);
+            formData.append('from_date', fromDate);
+            formData.append('to_date', toDate);
 
-            console.log("formDataCheck", formDataCheck)
+            console.log("formDataCheck", formData)
 
 
 
@@ -1166,7 +1166,7 @@ var dyanmicArray = [{"src":"https://file.mycenter.co.in/property/upload/gallery/
                 headers: {
                         'Content-Type': 'application/x-www-form-urlencoded' // Specify URL-encoded content type
                     },
-                    body: formDataCheck
+                    body: formData
             })
 
                 .then(response => response.json())
@@ -1228,6 +1228,8 @@ var dyanmicArray = [{"src":"https://file.mycenter.co.in/property/upload/gallery/
             const firstName = document.querySelector('#firstName').value;
             const phonenumber = document.querySelector('#phonenumber').value;
             const email = document.querySelector('#email').value;
+
+            console.log("first",fromDate,toDate);
 
 
             const formData = new URLSearchParams();
