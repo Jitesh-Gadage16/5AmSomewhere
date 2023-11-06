@@ -322,7 +322,7 @@ text-align: center;
     .property-list .list-item .property-img img{
         
     max-width: 100%;
-     height: fit-content;
+     height: fit-content!important;
     }
 
     .single-villa-img .villa-title .hero__title {
