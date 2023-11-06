@@ -319,6 +319,11 @@ text-align: center;
         font-size: 52px!important;
         
     }
+    .property-list .list-item .property-img img{
+        
+    max-width: 100%;
+     height: fit-content;
+    }
 
     .single-villa-img .villa-title .hero__title {
         
